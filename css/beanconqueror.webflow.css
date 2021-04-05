@@ -357,7 +357,9 @@ figcaption {
 
 .card.no-border {
   position: relative;
-  background-color: #f0f0f0;
+  border-style: solid;
+  border-color: #f0f0f0;
+  background-color: #fff;
 }
 
 .card.no-border.image-caption-overlay {
@@ -743,6 +745,13 @@ figcaption {
   grid-template-rows: auto;
 }
 
+.row.row-justify-center {
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
 .style-guide-title {
   position: relative;
   width: 336px;
@@ -1065,8 +1074,8 @@ figcaption {
   -webkit-flex: 1;
   -ms-flex: 1;
   flex: 1;
-  background-color: #f0f0f0;
-  text-align: center;
+  background-color: #fff;
+  text-align: left;
 }
 
 .card-body.card-body-large {
@@ -1204,6 +1213,10 @@ figcaption {
 }
 
 .card-body.footer-card {
+  background-color: #fff;
+}
+
+.card-body.faq-card-body {
   background-color: #fff;
 }
 
@@ -6257,6 +6270,27 @@ figcaption {
   font-size: 22px;
 }
 
+.card-body-2 {
+  padding: 24px;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+.expandable-heading-2 {
+  margin-bottom: 0px;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+  font-family: 'Baloo 2', sans-serif;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.expandable-heading-2:hover {
+  color: #ae9f87;
+}
+
 @media screen and (min-width: 1920px) {
   .container {
     max-width: 100%;
@@ -7724,6 +7758,10 @@ figcaption {
     -ms-grid-columns: 1fr;
     grid-template-columns: 1fr;
   }
+
+  .card-body-2 {
+    padding: 16px;
+  }
 }
 
 @media screen and (max-width: 479px) {
@@ -8522,6 +8560,10 @@ figcaption {
     -ms-flex-pack: center;
     justify-content: center;
     text-align: center;
+  }
+
+  .card-body-2 {
+    padding: 12px;
   }
 }
 
