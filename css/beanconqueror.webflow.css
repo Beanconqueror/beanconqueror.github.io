@@ -1214,6 +1214,7 @@ figcaption {
 
 .card-body.footer-card {
   background-color: #fff;
+  text-align: center;
 }
 
 .card-body.faq-card-body {
