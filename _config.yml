@@ -1,6 +1,2 @@
 include: [".well-known"]
-webrick:
-  headers:
-    Content-Type: application/json
-    My-Header: My-Value
-    My-Other-Header: My-Other-Value
+
