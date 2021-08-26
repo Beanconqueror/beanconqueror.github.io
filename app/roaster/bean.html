@@ -55,7 +55,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 window.addEventListener('load', (event) => {
   var beanId = getUrlParameter('id');
- document.getElementById('importButton').href = "beanconqueror://ADD_BEAN_ONLINE?" + beanId;
+ document.getElementById('importButton').href = "beanconqueror://ADD_BEAN_ONLINE?id=" + beanId;
 });
 
 </script>
