@@ -56,7 +56,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 };
 window.addEventListener('load', (event) => {
   var beanId = getUrlParameter('qr');
-  if (beanId !== null && beanId !== undefined && beanId !== "") {
+  if (beanId !== null && beanId !== undefined && beanId !== "" && beanId !== false) {
     window.location.href = 'https://beanconqueror.com/app/roaster/bean.html?id=' + beanId;
   }
 
