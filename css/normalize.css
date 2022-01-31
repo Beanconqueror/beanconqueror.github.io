@@ -12,6 +12,14 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
 }
+@font-face {
+  font-family: "Baloo 2";
+  src: url('/fonts/BalooTamma2-Regular.ttf') format("truetype");
+}
+@font-face {
+  font-family: "Karla";
+  src: url('/fonts/Karla-Regular.ttf') format("truetype");
+}
 /**
  * Remove default margin.
  */
