@@ -58,7 +58,10 @@ window.addEventListener('load', (event) => {
   if (beanId !== null && beanId !== undefined && beanId !== "" && beanId !== false) {
     window.location.href = 'https://beanconqueror.com/app/roaster/bean.html?id=' + beanId;
   }
-
+  var shareUserBean = getUrlParameter('shareUserBean');
+  if (shareUserBean !== null && shareUserBean !== undefined && shareUserBean !== "" && shareUserBean !== false) {
+    window.location.href = 'https://beanconqueror.com/app/roaster/userBean.html?json=' + shareUserBean;
+  }
 });
 </script>
   <script type="text/javascript" src="js/iubenda_stub.js"></script>
