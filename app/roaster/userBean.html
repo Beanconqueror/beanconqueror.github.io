@@ -53,7 +53,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
   return false;
 };
 window.addEventListener('load', (event) => {
-  var shareUserBean = getUrlParameter('shareUserBean');
+  var shareUserBean = getUrlParameter('json');
   if (shareUserBean !== null && shareUserBean !== undefined && shareUserBean !== "" && shareUserBean !== false) {
     document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?json=" + shareUserBean;
   } else {
