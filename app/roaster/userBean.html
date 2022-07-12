@@ -53,11 +53,25 @@ var getUrlParameter = function getUrlParameter(sParam) {
   return false;
 };
 window.addEventListener('load', (event) => {
-  var shareUserBean = getUrlParameter('json');
+  var shareUserBean = getUrlParameter('shareUserBean0');
+
+  var searchingURL = window.location.search.substring(1);
+  var userBeanJSON = '';
+
+  var regex = /((shareUserBean)[0-9]+(?=\=))/gi;
+  var foundJSONParams = searchingURL.match(regex);
+  for (const param of foundJSONParams) {
+    if (userBeanJSON === '') {
+      userBeanJSON += '?' + param+"=" +getUrlParameter(param);
+    } else {
+      userBeanJSON += '&' + param+"=" +getUrlParameter(param);
+    }
+  }
+
   if (shareUserBean !== null && shareUserBean !== undefined && shareUserBean !== "" && shareUserBean !== false) {
-    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?json=" + shareUserBean;
+    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN" + userBeanJSON;
   } else {
-    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?json=";
+    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?shareUserBean0=";
   }
 
 });
