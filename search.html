@@ -29,12 +29,42 @@ body{
   -moz-osx-font-smoothing: grayscale;
 }
 </style>
-  <script type="text/javascript">
-var _iub = _iub || [];
-_iub.csConfiguration = {"consentOnContinuedBrowsing":false,"ccpaAcknowledgeOnDisplay":true,"whitelabel":false,"lang":"en","siteId":2190454,"enableCcpa":true,"countryDetection":true,"floatingPreferencesButtonColor":"#ffffff","floatingPreferencesButtonCaptionColor":"#ae9f87","perPurposeConsent":true,"cookiePolicyId":85070651, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"position":"bottom","acceptButtonColor":"#cdc2ac","acceptButtonCaptionColor":"white","customizeButtonColor":"#212121","customizeButtonCaptionColor":"white","textColor":"#282013","backgroundColor":"#ffffff","closeButtonDisplay":false }};
-</script>
-  <script type="text/javascript" src="js/iubenda_stub.js"></script>
-  <script type="text/javascript" src="js/iubenda_cs.js" charset="UTF-8" async=""></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+  <script>
+    window.addEventListener('load', function(){
+      window.cookieconsent.initialise({
+        revokeBtn: "<div class='cc-revoke'></div>",
+        type: "opt-in",
+        palette: {
+          popup: {
+            background: "#000",
+            text: "#fff"
+          },
+          button: {
+            background: "#fd0",
+            text: "#000"
+          }
+        },
+        content: {
+          link: "Cookie notice",
+          href: "https://beanconqueror.com/legal-policies.html"
+        },
+        onInitialise: function(status) {
+          if(status == cookieconsent.status.allow) myScripts();
+        },
+        onStatusChange: function(status) {
+          if (this.hasConsented()) myScripts();
+        }
+      })
+    });
+
+    function myScripts() {
+
+
+
+    }
+  </script>
 </head>
 <body>
   <div class="navigation-container navbar-sticky"></div>
