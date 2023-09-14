@@ -120,6 +120,52 @@ body{
                 <div class="card-2 no-border">
                   <div class="card-body-2">
                     <div class="accordion-title">
+                      <h3 class="expandable-heading-2">How to import/export on Android?</h3><img src="https://uploads-ssl.webflow.com/604e5b0737044224035e7739/604e5b0737044296255e77ae_icon-chevron-right.svg" alt="" class="expandable-arrow">
+                    </div>
+                    <div class="expandable-text expandable-accordion-text">
+                      <div class="paragraph align-left" >
+                        Due to the new changes beginning with Android 13, which meant, that Android restricted the access to folders like "Download", Beanconqueror needed a new Release and started with 6.6.2 to match those restrictions.<br/>
+                        This was a big issue, because Beanconqueror did an automatic backup solution, which wrote files to the "Download"-Folder where user then could export or import when changing to a new device.<br/>
+                        After this restriction changes, Beanconqueror is not allowed anymore to write to the "Download"-Folder, therefore an automatic backup version is not possible there anymore<br/>
+                        This restrictions also enforced me, to update the minimum requirement Android Version to 7.0.</br>
+                        Android does not give any possibility to get the old rights back, which where before 'READ_EXTERNAL_STORAGE' just if Beanconqueror would be a file manager.<br/>
+                        You can read more here <a href="https://developer.android.com/about/versions/13/behavior-changes-13">Android 13 changes</a><br/><br/>
+                        Therefore we needed a new solution, this one is called <a href="https://cordova.apache.org/docs/en/11.x/reference/cordova-plugin-file/#android-file-system-layout">"externalDataDirectory"</a>.<br/>
+                        After normal file-manager may not support these way, please make sure to download the special app: Total Commander to get access to those structures<br/>
+                        <a href="https://play.google.com/store/apps/details?id=com.ghisler.android.TotalCommander">Total Commander</a><br/>
+                        <br/><br/>
+                        When you press "Export" the files are now Downloaded to: 'Android/data/com.beanconqueror.app/files/Download/Beanconqueror_export/**'<br/>
+                        You may beed to search a bit, because this folder can lay below 'storage/emulated/0/Android' or like '/sdcard/Android' and so on, this will differ from device to device.<br/>
+                        <img src="images/total_commander.jpeg" width="300" sizes="(max-width: 479px) 90vw, 300px" alt="Total Commander"><br/>
+                        <br/><br/>
+                        <b>Swapping your Android device or importing a backup file?</b><br/>
+                        This one is a bit tricky now.<br/>
+                        Please export the whole 'com.beanconqueror.app' folder (you can move the whole directory to the Download folder e.g.), and then on your new phone, install Beanconqueror, don't open it, copy this folder again into the same place.<br/>
+                        Put your 'Beanconqueror.zip' file into your normal 'Download' folder, open up Beanconqueror, and press Import, select the zip file, and voila, everything should work :)<br/>
+                        If you don't want to import attachments/brew-jsons, just import your ZIP-File, you don't need to copy the whole 'com.beanconqueror.app' folder so.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="expandable expandable-accordion">
+                <div class="card-2 no-border">
+                  <div class="card-body-2">
+                    <div class="accordion-title">
+                      <h3 class="expandable-heading-2">How to use Beanconqueror on an older Android Device (5.1, 6, 7?)</h3><img src="https://uploads-ssl.webflow.com/604e5b0737044224035e7739/604e5b0737044296255e77ae_icon-chevron-right.svg" alt="" class="expandable-arrow">
+                    </div>
+                    <div class="expandable-text expandable-accordion-text">
+                      <div class="paragraph align-left" >
+                        You can still Download an older APK from Github: <a href="https://github.com/graphefruit/Beanconqueror/releases/tag/v6.6.1">6.6.1 release</a> or below.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="expandable expandable-accordion">
+                <div class="card-2 no-border">
+                  <div class="card-body-2">
+                    <div class="accordion-title">
                       <h3 class="expandable-heading-2">Sync data between devices (iOS Sync) / User Login</h3><img src="https://uploads-ssl.webflow.com/604e5b0737044224035e7739/604e5b0737044296255e77ae_icon-chevron-right.svg" alt="" class="expandable-arrow">
                     </div>
                     <div class="expandable-text expandable-accordion-text">
