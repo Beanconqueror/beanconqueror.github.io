@@ -26,12 +26,16 @@ var _mtm = window._mtm = window._mtm || [];
 _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
 var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 g.type='text/javascript'; g.async=true; g.src='https://analytics-beanconqueror.com/js/container_UhEJWcUP.js'; s.parentNode.insertBefore(g,s);
+
 </script>
   <!--  End Matomo Tag Manager  -->
   <style>
 body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+#importButton[disabled] {
+  opacity: 0.3;
 }
 </style>
   <script type="text/javascript">
@@ -52,6 +56,11 @@ var getUrlParameter = function getUrlParameter(sParam) {
   }
   return false;
 };
+
+var hasTouchSupport = function() {
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+}
+
 window.addEventListener('load', (event) => {
   var shareUserBean = getUrlParameter('shareUserBean0');
 
@@ -68,11 +77,24 @@ window.addEventListener('load', (event) => {
     }
   }
 
-  if (shareUserBean !== null && shareUserBean !== undefined && shareUserBean !== "" && shareUserBean !== false) {
-    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN" + userBeanJSON;
+  if (hasTouchSupport()) {
+    if (shareUserBean !== null && shareUserBean !== undefined && shareUserBean !== "" && shareUserBean !== false) {
+      document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN" + userBeanJSON;
+    } else {
+      document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?shareUserBean0=";
+    }
   } else {
-    document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN?shareUserBean0=";
+    document.getElementById('importBox').style.display = 'block'
+    document.getElementById('importButton').setAttribute("disabled", "disabled");
+    var message = function (e) {
+
+      e.preventDefault();
+      return false;
+    };
+    document.getElementById('importButton').href = "#";
+    document.getElementById('importButton').addEventListener('click', message, false);
   }
+
 
 });
 
@@ -132,6 +154,11 @@ window.addEventListener('load', (event) => {
         <a id="importButton" target="_blank" class="link-block button-import w-inline-block">
           <p class="paragraph-2 paragraph-button-import">Import Now</p>
         </a>
+        <br/>
+
+      </div>
+      <div class="container-center spacer-bottom-button w-container" id="importBox" style="display:none;">
+        <h2  class="subheading text-primary-1 headline-h2" style="color:darkred;font-weight:bold;margin-top: 0px;font-style: italic;">Import is just working on a mobile device</h2>
       </div>
       <p class="paragraph">You don&#x27;t have the app installed yet? Then please go ahead, we will wait here...</p>
       <div class="section-title-wide no-bottom-space">
