@@ -23,9 +23,9 @@
     <script src="js/html5shiv.min.js"
             type="text/javascript"></script><![endif] -->
     <script type="text/javascript">!function (o, c) {
-		var n = c.documentElement, t = " w-mod-";
-		n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
-	}(window, document);</script>
+        var n = c.documentElement, t = " w-mod-";
+        n.className += t + "js", ("ontouchstart" in o || o.DocumentTouch && c instanceof DocumentTouch) && (n.className += t + "touch")
+    }(window, document);</script>
     <link href="images/favicon.png" rel="shortcut icon" type="image/x-icon">
     <link href="images/webclip.png" rel="apple-touch-icon"><!--  Matomo Tag Manager  -->
 
@@ -36,41 +36,42 @@
             -moz-osx-font-smoothing: grayscale;
         }
     </style>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js" data-cfasync="false"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.js"
+            data-cfasync="false"></script>
     <script>
-		window.addEventListener('load', function(){
-			window.cookieconsent.initialise({
-				revokeBtn: "<div class='cc-revoke'></div>",
-				type: "opt-in",
-				palette: {
-					popup: {
-						background: "#000",
-						text: "#fff"
-					},
-					button: {
-						background: "#fd0",
-						text: "#000"
-					}
-				},
-				content: {
-					link: "Cookie notice",
-					href: "https://beanconqueror.com/legal-policies.html"
-				},
-				onInitialise: function(status) {
-					if(status == cookieconsent.status.allow) myScripts();
-				},
-				onStatusChange: function(status) {
-					if (this.hasConsented()) myScripts();
-				}
-			})
-		});
+        window.addEventListener('load', function () {
+            window.cookieconsent.initialise({
+                revokeBtn: "<div class='cc-revoke'></div>",
+                type: "opt-in",
+                palette: {
+                    popup: {
+                        background: "#000",
+                        text: "#fff"
+                    },
+                    button: {
+                        background: "#fd0",
+                        text: "#000"
+                    }
+                },
+                content: {
+                    link: "Cookie notice",
+                    href: "https://beanconqueror.com/legal-policies.html"
+                },
+                onInitialise: function (status) {
+                    if (status == cookieconsent.status.allow) myScripts();
+                },
+                onStatusChange: function (status) {
+                    if (this.hasConsented()) myScripts();
+                }
+            })
+        });
 
-		function myScripts() {
+        function myScripts() {
 
 
-
-		}
+        }
     </script>
 </head>
 <body>
@@ -137,6 +138,49 @@
                             <div class="card-2 no-border spacer-top">
                                 <div class="card-body">
                                     <div class="accordion-title">
+                                        <h3 class="expandable-heading">Release 7.4.0 (August, 2024)</h3><img
+                                            src="https://uploads-ssl.webflow.com/604e5b0737044224035e7739/604e5b0737044296255e77ae_icon-chevron-right.svg"
+                                            alt="" class="expandable-arrow">
+                                    </div>
+                                    <div class="expandable-text expandable-accordion-text">
+                                        <div class="paragraph align-left">
+                                            <strong>Beans</strong><br/>
+                                            Its now possible to freeze your coffee beans, activate this feature in the
+                                            settings<br/>
+                                            Added best and open date for beans, you need to activate this parameter<br/>
+                                            Beans can now be directly added from the select overview<br/>
+                                            <br/>
+                                            <strong>Thermometer</strong><br/>
+                                            Support of the Combustion Inc. Thermometer - Thanks for the Device!<br/>
+                                            Support of the Meater Thermometer (not Meater 2 or Meater +) - Thanks to
+                                            Yannick!<br/>
+                                            <br/>
+                                            <strong>Water Section</strong><br/>
+                                            Added Pure Coffee Water<br/>
+                                            Added Empirical Water<br/>
+                                            <br/>
+                                            <strong>Preparation Tools</strong><br/>
+                                            Sort now your preparation tools<br/>
+                                            <br/>
+                                            <strong>Grinder</strong><br/>
+                                            Grinder images are now shown in the select overview<br/>
+                                            <br/>
+                                            <strong>Settings</strong><br/>
+                                            Security message if you changed the rating for brews or beans, and the
+                                            maximum is lower then an already rated entry<br/>
+                                            <br/>
+                                            <strong>Other</strong><br/>
+                                            Reverted the direct seconds focus when opening the timer<br/>
+                                            Some technical changes in the code<br/>
+                                            Small tweaks
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-2 no-border spacer-top">
+                                <div class="card-body">
+                                    <div class="accordion-title">
                                         <h3 class="expandable-heading">Release 7.3.0 (June, 2024)</h3><img
                                             src="https://uploads-ssl.webflow.com/604e5b0737044224035e7739/604e5b0737044296255e77ae_icon-chevron-right.svg"
                                             alt="" class="expandable-arrow">
@@ -151,13 +195,16 @@
                                             <br/>
                                             <strong>Pressure Sensor</strong><br/>
                                             Support of Bookoo-Pressure Sensor - Thanks to Yannick!<br/>
-                                            Please note that the actual threshold-autostart is currently not supported.<br/>
+                                            Please note that the actual threshold-autostart is currently not
+                                            supported.<br/>
                                             <br/>
                                             <strong>Haptic Engine</strong><br/>
-                                            Let the phone vibrate when you start a brew - Experimental feature - Enable in settings<br/>
+                                            Let the phone vibrate when you start a brew - Experimental feature - Enable
+                                            in settings<br/>
                                             <br/>
                                             <strong>Just iOS - Text to Speech</strong><br/>
-                                            Enable text to speech and speak out all scale weight values aswell as the brew timer - Experimental feature - Enable in settings<br/>
+                                            Enable text to speech and speak out all scale weight values aswell as the
+                                            brew timer - Experimental feature - Enable in settings<br/>
                                             <br/>
                                             <strong>Visualizer</strong><br/>
                                             Send Extraction Yield to Visualizer</strong><br/>
@@ -168,8 +215,10 @@
                                             <strong>Brew</strong><br/>
                                             When opening the timer, focus seconds directly<br/>
                                             Hide hours or minutes in the timer overlay<br/>
-                                            Show icon if the portafilter Xenia or Meticulous is connected or disconnected in the toolbar<br/>
-                                            Fixing that you could not save a brew when in edit mode when the while brewing section was not visible<br/>
+                                            Show icon if the portafilter Xenia or Meticulous is connected or
+                                            disconnected in the toolbar<br/>
+                                            Fixing that you could not save a brew when in edit mode when the while
+                                            brewing section was not visible<br/>
                                             <br/>
                                             <strong>Bean</strong><br/>
                                             Unarchive a bean in the action list<br/>
@@ -196,11 +245,13 @@
                                             Support of Polish - Thanks to MarcinSachs<br/>
                                             <br/>
                                             <strong>Bluetooth Scales</strong><br/>
-                                            Time start will wait, until the scale is reporting several 0 weight reports, when you set 'Tare scale when starting timer'<br/>
+                                            Time start will wait, until the scale is reporting several 0 weight reports,
+                                            when you set 'Tare scale when starting timer'<br/>
                                             <br/>
                                             <strong>Xenia</strong><br/>
                                             Adding toggle for V1 and V2 Api usage<br/>
-                                            Adding a Brew By Weight Feature with automatic calculcation to stop the shot on wished weight<br/>
+                                            Adding a Brew By Weight Feature with automatic calculcation to stop the shot
+                                            on wished weight<br/>
                                             <br/>
                                             <strong>Meticulous</strong><br/>
                                             First Meticulous integration - Thanks to the whole Meticulous Team!<br/>
@@ -214,7 +265,8 @@
                                             Showing popups if the database access could not be established.<br/>
                                             <br/>
                                             <strong>Thanks</strong><br/>
-                                            A big thank you to all translators who are putting in tremendous effort to make the app available in multiple languages.<br/>
+                                            A big thank you to all translators who are putting in tremendous effort to
+                                            make the app available in multiple languages.<br/>
                                         </div>
                                     </div>
                                 </div>
@@ -253,7 +305,8 @@
                                             RPM parameter now visible in the list view and selection view<br/>
                                             <br/>
                                             <strong>Settings</strong><br/>
-                                            Define your own time axis for filter or espresso with connected bluetooth devices<br/>
+                                            Define your own time axis for filter or espresso with connected bluetooth
+                                            devices<br/>
                                             Adding different date formats to also match American format<br/>
                                             <br/>
                                             <strong>Other</strong><br/>
@@ -272,12 +325,16 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>Bluetooth Scale Mode</strong><br/>
-                                            Start the timer on the first detected change in weight - Activatable in the settings (new button visible)<br/>
-                                            Ignore the current transmitted weight - e.g., for swirls, stirs, or removing weight without intentional graph spikes - Activateable in the settings (new button visible)<br/>
+                                            Start the timer on the first detected change in weight - Activatable in the
+                                            settings (new button visible)<br/>
+                                            Ignore the current transmitted weight - e.g., for swirls, stirs, or removing
+                                            weight without intentional graph spikes - Activateable in the settings (new
+                                            button visible)<br/>
                                             <br/>
                                             <strong>Bluetooth Scales</strong><br/>
                                             Support for a Bluetooth-No-Name scale<br/>
-                                            When connecting a DiFluid Microbalance or Felicita scale, the command delay is set directly<br/>
+                                            When connecting a DiFluid Microbalance or Felicita scale, the command delay
+                                            is set directly<br/>
                                             <br/>
                                             <strong>Graph Area</strong><br/>
                                             Activate the graph area in the settings<br/>
@@ -286,23 +343,28 @@
                                             Upload your own graph - Export a .JSON file from your brews<br/>
                                             <br/>
                                             <strong>Visualizer</strong><br/>
-                                            Automatically upload each new brew with a connected graph to Visualizer - Activatable in the settings<br/>
+                                            Automatically upload each new brew with a connected graph to Visualizer -
+                                            Activatable in the settings<br/>
                                             Manually upload all brews to Visualizer if needed<br/>
                                             Thanks to Miha for the support!<br/>
                                             <br/>
                                             <strong>Brews</strong><br/>
                                             Repeat a brew from the detail view<br/>
-                                            First-drop can now be activated for a preparation method, even if it is not an espresso method (e.g., Pulsar)<br/>
+                                            First-drop can now be activated for a preparation method, even if it is not
+                                            an espresso method (e.g., Pulsar)<br/>
                                             Display of brew rate with a connected scale in the maximized view<br/>
-                                            Last brews are now sorted alphabetically, and the last used date is displayed<br/>
-                                            Real-time flow with a connected scale now shows values under 1g/s for espresso<br/>
+                                            Last brews are now sorted alphabetically, and the last used date is
+                                            displayed<br/>
+                                            Real-time flow with a connected scale now shows values under 1g/s for
+                                            espresso<br/>
                                             <br/>
                                             <strong>Beans</strong><br/>
                                             Repeat the last brew or the best brew from the beans view card<br/>
                                             <br/>
                                             <strong>Preparation method</strong><br/>
                                             Preparation tools are now sorted alphabetically and can be filtered<br/>
-                                            Last usage of the preparation methodology is now displayed when selected<br/>
+                                            Last usage of the preparation methodology is now displayed when
+                                            selected<br/>
                                             <br/>
                                             <strong>Grinders</strong><br/>
                                             Last grind size and last usage are now visible when selecting a grinder<br/>
@@ -311,7 +373,8 @@
                                             Bug fix: Deactivated scripts are no longer executed<br/>
                                             <br/>
                                             <strong>Settings</strong><br/>
-                                            Display of a security prompt if you have made changes to a brew or a bean - Activatable in the settings<br/>
+                                            Display of a security prompt if you have made changes to a brew or a bean -
+                                            Activatable in the settings<br/>
                                             Now set your individual start X- and Y-Axis for brews with bluetooth devices<br/>
                                             <br/>
                                             <strong>Ionic 7</strong><br/>
@@ -321,7 +384,8 @@
                                             <br/>
                                             <strong>Lokalise</strong><br/>
                                             Use of Lokalise for all translations - Many thanks to Yannick<br/>
-                                            Want to translate too? With Localise, it's now easy. Contact us: info@beanconqueror.com<br/>
+                                            Want to translate too? With Localise, it's now easy. Contact us:
+                                            info@beanconqueror.com<br/>
                                             <br/>
                                             <strong>Other</strong><br/>
                                             Minor bug fixes
@@ -339,12 +403,18 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>Android 13 - Filestorage permissions</strong><br/>
-                                            Due to changes in the file system permissions in Android, the access paths for how files are backed up and imported had to be revised. In addition, camera and image access no longer worked on Android 13 devices and got fixed with this update.<br/>
-                                            Due to these changes, the minimum requirement for this app also had to be raised to Android 7.0.<br/>
-                                            You can find out how Import/Export works now here: https://beanconqueror.com/faq<br/>
+                                            Due to changes in the file system permissions in Android, the access paths
+                                            for how files are backed up and imported had to be revised. In addition,
+                                            camera and image access no longer worked on Android 13 devices and got fixed
+                                            with this update.<br/>
+                                            Due to these changes, the minimum requirement for this app also had to be
+                                            raised to Android 7.0.<br/>
+                                            You can find out how Import/Export works now here:
+                                            https://beanconqueror.com/faq<br/>
                                             <br/>
                                             <strong>iOS - Updated libraries</strong>
-                                            Due to library changes in cordova, this is a release to match all these :)<br/>
+                                            Due to library changes in cordova, this is a release to match all these
+                                            :)<br/>
                                         </div>
                                     </div>
                                 </div>
@@ -410,9 +480,12 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>Bluetooth scales</strong><br/>
-                                            Support of DiFluid Microbalance aswell as Smart Chef Scale - Thanks to Yannick!<br/>
-                                            For Espresso: Activate in Settings, allow a brew to be automatically stopped when no flow rate is detected<br/>
-                                            Added warning popup, when Beanconqueror doesn't receive any weight updates from a scale<br/>
+                                            Support of DiFluid Microbalance aswell as Smart Chef Scale - Thanks to
+                                            Yannick!<br/>
+                                            For Espresso: Activate in Settings, allow a brew to be automatically stopped
+                                            when no flow rate is detected<br/>
+                                            Added warning popup, when Beanconqueror doesn't receive any weight updates
+                                            from a scale<br/>
                                             <br/>
                                             <strong>Beans</strong><br/>
                                             Share beans as an image now as well as a URL<br/>
@@ -424,8 +497,10 @@
                                             If a brew is stopped, the brew graph is now fully displayed<br/>
                                             <br/>
                                             <strong>Export/Import</strong><br/>
-                                            Instead of a .json file we're now using .zip files, for data import and export<br/>
-                                            Please make sure to go to settings and do a one-time safety backup, combined with the already existing automatic backup to ensure data safety<br/>
+                                            Instead of a .json file we're now using .zip files, for data import and
+                                            export<br/>
+                                            Please make sure to go to settings and do a one-time safety backup, combined
+                                            with the already existing automatic backup to ensure data safety<br/>
                                             <br/>
                                             <strong>Improvements</strong><br/>
                                             Small improvements<br/>
@@ -466,8 +541,10 @@
                                             Sharing functionality on brew-graphs is working now on IOS<br/>
                                             Export of Beanconqueror.json is working again on iOS <br/>
                                             Bluetooth connection orders, and the reconnect loops sometimes<br/>
-                                            Adding a heartbeat timer you can set on the settings yourself (just for Acaia)<br/>
-                                            Brewgraph issues with negative values / anomalies activated, where weight jump back to zero<br/>
+                                            Adding a heartbeat timer you can set on the settings yourself (just for
+                                            Acaia)<br/>
+                                            Brewgraph issues with negative values / anomalies activated, where weight
+                                            jump back to zero<br/>
                                             Weight tile keeps weight update now still after resetting<br/>
                                             Typeahead suggestions<br/>
                                             Loading spinner sometimes doesn't hide again<br/>
@@ -488,22 +565,27 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>Xenia</strong><br/>
-                                            Connect your Xenia portafilter and control it, also with a bluetooth scale connected<br/>
+                                            Connect your Xenia portafilter and control it, also with a bluetooth scale
+                                            connected<br/>
                                             <br/>
                                             <strong>Bluetooth thermometers</strong><br/>
-                                            Support for ETI Ltd thermometers (ThermaQ Blue, BlueTherm, etc) - Sensors - Thanks to Myles<br/>
+                                            Support for ETI Ltd thermometers (ThermaQ Blue, BlueTherm, etc) - Sensors -
+                                            Thanks to Myles<br/>
                                             Autostart timer on a specific temperature - editable in settings<br/>
                                             <br/>
                                             <strong>Bluetooth scales</strong><br/>
                                             Support of Skale 2<br/>
-                                            If a bluetooth scale wants to reset a brew, the user will get an approval dialogue<br/>
+                                            If a bluetooth scale wants to reset a brew, the user will get an approval
+                                            dialogue<br/>
                                             <br/>
                                             <strong>Visualizer</strong><br/>
-                                            Upload your recorded brews with used bluetooth-devices manually to visualizer.coffee - Thanks to Miha for your support<br/>
+                                            Upload your recorded brews with used bluetooth-devices manually to
+                                            visualizer.coffee - Thanks to Miha for your support<br/>
                                             (Step 2: Automatic upload)</br>
                                             <br/>
                                             <strong>Bean</strong><br/>
-                                            Bean parameters and list parameters can now be individualized and changed<br/>
+                                            Bean parameters and list parameters can now be individualized and
+                                            changed<br/>
                                             Beans can now be filtered by roast degree<br/>
                                             Bean page can now be set as starting page - see settings<br/>
                                             Type ahead fields for specific fields added, e.g. Variety<br/>
@@ -511,14 +593,17 @@
                                             <br/>
                                             <strong>Brews</strong><br/>
                                             New button, where a preparation method can be chosen directly<br/>
-                                            Individualize which parameters shall be preset when choosing 'Repeat' - Default: all<br/>
+                                            Individualize which parameters shall be preset when choosing 'Repeat' -
+                                            Default: all<br/>
                                             Added a filter for all brews which have bluetooth device data attached<br/>
                                             Re-work of live brew graphic<br/>
-                                            Added brew-ratio calculator for brew add/edit to enable faster calculation<br/>
+                                            Added brew-ratio calculator for brew add/edit to enable faster
+                                            calculation<br/>
                                             Pressing 'Save' will stop the timer<br/>
                                             <br/>
                                             <strong>Discord</strong><br/>
-                                            Join the Beanconqueror Discord Server to discuss, report bugs, as questions or give feedback<br/>
+                                            Join the Beanconqueror Discord Server to discuss, report bugs, as questions
+                                            or give feedback<br/>
                                             <br/>
                                             <strong>Android</strong><br/>
                                             Sharing functionality is working again<br/>
@@ -526,7 +611,8 @@
                                             <br/>
                                             <strong>Improvements</strong><br/>
                                             Display the number of entries that exist when using filtering<br/>
-                                            On brew add/edit, the save or cancel button will be hidden as long as the keyboard is shown<br/>
+                                            On brew add/edit, the save or cancel button will be hidden as long as the
+                                            keyboard is shown<br/>
                                             Numeric keyboard for the grind size field - activate in settings<br/>
                                             <br/>
                                             <strong>Others</strong><br/>
@@ -550,10 +636,12 @@
                                             <br/>
                                             <strong>Brews</strong><br/>
                                             Reset the Brewtime dates<br/>
-                                            If Bluetooth-Scale connected, the last brew weight will be displayed in the tile<br/>
+                                            If Bluetooth-Scale connected, the last brew weight will be displayed in the
+                                            tile<br/>
                                             Bigger buttons on the maximized brew graph<br/>
                                             Choose excel or json by downloading the brew data<br/>
-                                            Bean pictures can now be displayed, instead of preparation method icons/pictures -> Activate in the settings<br/>
+                                            Bean pictures can now be displayed, instead of preparation method
+                                            icons/pictures -> Activate in the settings<br/>
                                             <br/>
                                             <strong>Beans</strong><br/>
                                             Beans can now be searched by there varieties<br/>
@@ -562,12 +650,14 @@
                                             Displaying notes inside the list and detail view<br/>
                                             <br/>
                                             <strong>Improvements</strong><br/>
-                                            Choose how many milliseconds shall be displayed (Entered values still need to be 3 decimal places)<br/>
+                                            Choose how many milliseconds shall be displayed (Entered values still need
+                                            to be 3 decimal places)<br/>
                                             Added donation buttons<br/>
                                             Textareas are now scrollable<br/>
                                             Brewtime at statistics are now formatted<br/>
                                             Notification popups appear now on top and can be closed by X<br/>
-                                            Disabled detail parameter are active now, e.g. can now be the Grinder be hidden<br/>
+                                            Disabled detail parameter are active now, e.g. can now be the Grinder be
+                                            hidden<br/>
                                             Analytics can be deactivated or activated<br/>
                                             <br/>
                                             <strong>Others</strong><br/>
@@ -595,15 +685,18 @@
                                             <br/>
                                             <strong>Bluetooth scales</strong><br/>
                                             Support of Eureka Precisa - Thanks to Mimoja<br/>
-                                            Define the behavior of the bluetooth scale on a new brew - editable in settings<br/>
-                                            Define which graphs should be displayed on filter or espresso - editable in settings<br/>
+                                            Define the behavior of the bluetooth scale on a new brew - editable in
+                                            settings<br/>
+                                            Define which graphs should be displayed on filter or espresso - editable in
+                                            settings<br/>
                                             Sequential processing of bluetooth commands to reduce issues<br/>
                                             Display name of bluetooth scale and mac-address on connect<br/>
                                             <br/>
                                             <strong>Brews</strong><br/>
                                             Supports now milliseconds - Activate in settings<br/>
                                             Filtersystem expanded, search for roast type and roastery<br/>
-                                            You can reconnect your bluetooth scale or pressure device on the brew add/edit page<br/>
+                                            You can reconnect your bluetooth scale or pressure device on the brew
+                                            add/edit page<br/>
                                             <br/>
                                             <strong>Beans</strong><br/>
                                             Share your bean (without server needed) - Thanks to Mike<br/>
@@ -641,7 +734,8 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>QR Codes<br/></strong>
-                                            Scan your coffee bags! All coffee information are directly inserted from the roastery.<br/>
+                                            Scan your coffee bags! All coffee information are directly inserted from the
+                                            roastery.<br/>
                                             <br/>
                                             <strong>Bluetooth scales<br/></strong>
                                             Support of Acaia Pearl 2021 - Thanks to Micah and Mike<br/>
@@ -654,7 +748,8 @@
                                             Weight changes are now visible without starting a brew via timer<br/>
                                             <br/>
                                             <strong>Brew overview<br/></strong>
-                                            Customize your visible brew parameters in the overview in general or for each preparation method<br/>
+                                            Customize your visible brew parameters in the overview in general or for
+                                            each preparation method<br/>
                                             Preparation images are now visible in the listview<br/>
                                             <br/>
                                             <strong>Brew graph<br/></strong>
@@ -677,8 +772,10 @@
                                             <br/>
                                             <strong>Settings<br/></strong>
                                             Ratings can now be stepped (1, 0.75, 0.5, 0.25, 0.1)<br/>
-                                            Bluetooth scale - Define if the scale should be set to weight zero when starting a new brew, or starting the timer<br/>
-                                            Bluetooth scale - Define if you want to ignore anomalies or negative values - if yes, a live graph won't be possible<br/>
+                                            Bluetooth scale - Define if the scale should be set to weight zero when
+                                            starting a new brew, or starting the timer<br/>
+                                            Bluetooth scale - Define if you want to ignore anomalies or negative values
+                                            - if yes, a live graph won't be possible<br/>
                                             Choose now, if you want to see archived brews on the home page<br/>
                                             Export also now exports the raw data of the saved bluetooth values<br/>
                                             <br/>
@@ -692,7 +789,8 @@
                                             Small bug fixes<br/>
                                             <br/>
                                             <strong>Others:<br/></strong>
-                                            Updating to Ionic-Framework 6, therefore some small visual changes takes place<br/>
+                                            Updating to Ionic-Framework 6, therefore some small visual changes takes
+                                            place<br/>
                                         </div>
                                     </div>
                                 </div>
@@ -707,7 +805,8 @@
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left">
                                             <strong>Bluetooth scales<br/></strong>
-                                            Support of the first bluetooth scale - Decent-Scale - Big thanks to Decent Espresso<br/>
+                                            Support of the first bluetooth scale - Decent-Scale - Big thanks to Decent
+                                            Espresso<br/>
                                             Support of Acaia Lunar<br/>
                                             <br/>
                                             <strong>Aroma cupping<br/></strong>
@@ -726,7 +825,8 @@
                                             Edit brew while in detail view<br/>
                                             Choose multiple images at once<br/>
                                             Support of brix to TDS conversion<br/>
-                                            If bean package is empty, you'll be asked if you want to archive the package on the last brew<br/>
+                                            If bean package is empty, you'll be asked if you want to archive the package
+                                            on the last brew<br/>
                                             Reset of roastdate supported<br/>
                                             Support of detail views on beans, grinders and preparation methods<br/>
                                             Added brew ratio (g/l)<br/>
@@ -741,7 +841,8 @@
                                             Small bug fixes<br/>
                                             <br/>
                                             <strong>Others:<br/></strong>
-                                            Beans, grinders and preparation methods are now sorted alphabetic in dropdowns<br/>
+                                            Beans, grinders and preparation methods are now sorted alphabetic in
+                                            dropdowns<br/>
                                         </div>
                                     </div>
                                 </div>
@@ -755,32 +856,42 @@
                                     </div>
                                     <div class="expandable-text expandable-accordion-text">
                                         <div class="paragraph align-left"><strong>Roasting section:<br/></strong>
-                                            Manage all of your green beans and roasters (can be activated in the settings menu)<br/>
+                                            Manage all of your green beans and roasters (can be activated in the
+                                            settings menu)<br/>
                                             Save all of your green beans and transfer them into roasted onces<br/>
-                                            Add your roaster and connect them with your different kind of roasted beans<br/>
+                                            Add your roaster and connect them with your different kind of roasted
+                                            beans<br/>
                                             <br/>
                                             <strong>Website:<br/></strong>
                                             Go live of our new website! -> https://beanconqueror.com<br/>
                                             <br/>
                                             <strong>Support us:<br/></strong>
-                                            You've always wanted to support Beanconqueror? We've added a new 'Buy me a coffee' connection<br/>
+                                            You've always wanted to support Beanconqueror? We've added a new 'Buy me a
+                                            coffee' connection<br/>
                                             <br/>
                                             <strong>iOS - iCloud:<br/></strong>
-                                            The first step into iCloud support was made. At the very first start all of your existing app data will be moved into the support iCloud directory.<br/>
-                                            You have to activate this option in the iCloud Settings first in order to save Beanconqueror on iCloud<br/>
+                                            The first step into iCloud support was made. At the very first start all of
+                                            your existing app data will be moved into the support iCloud directory.<br/>
+                                            You have to activate this option in the iCloud Settings first in order to
+                                            save Beanconqueror on iCloud<br/>
                                             <br/>
                                             <strong>Android/iOS - Automated file-export:<br/></strong>
-                                            Automated Beanconqueror.json-File is saved for a maximum of 7 days, after that they will be automated deleted again<br/>
-                                            Android: Download/Beanconqueror_export/Beanconqueror_automatic_export_DAY.json<br/>
-                                            iOS: Files/Download/Beanconqueror_export/Beanconqueror_automatic_export_FILE.json<br/>
+                                            Automated Beanconqueror.json-File is saved for a maximum of 7 days, after
+                                            that they will be automated deleted again<br/>
+                                            Android:
+                                            Download/Beanconqueror_export/Beanconqueror_automatic_export_DAY.json<br/>
+                                            iOS:
+                                            Files/Download/Beanconqueror_export/Beanconqueror_automatic_export_FILE.json<br/>
                                             <br/>
                                             <strong>Settings:<br/></strong>
                                             Excel - Export all of your data to excel to work with it even further<br/>
                                             Define your own image quality between 50% to 100% (default 100%)<br/>
-                                            Brew rating - Define how much stars/points you'd like to set for each brew. Minimum 5, maximum 100<br/>
+                                            Brew rating - Define how much stars/points you'd like to set for each brew.
+                                            Minimum 5, maximum 100<br/>
                                             <br/>
                                             <strong>New tracking:<br/></strong>
-                                            We've changed to our open source service Matomo, which will be hosted on our own server<br/>
+                                            We've changed to our open source service Matomo, which will be hosted on our
+                                            own server<br/>
                                             Removed Google Analytics / Firebase<br/>
                                             <br/>
                                             <strong>Bug fixes:<br/></strong>
@@ -788,7 +899,8 @@
                                             Sometimes brew rating stars weren't filled (Brew ad<br/>d/edit)<br/>
                                             Edit via long tap, screen wasn't scrollable<br/>
                                             Import of bigger files on iOS led to misconduct<br/>
-                                            Delete procedure of beans / preparations or mills were not consistent and lead to graphical issues<br/>
+                                            Delete procedure of beans / preparations or mills were not consistent and
+                                            lead to graphical issues<br/>
                                             Wrong calculation of beverage quantity in statistics and list views<br/>
                                             <br/>
                                             <strong>Share:<br/></strong>
@@ -905,7 +1017,10 @@
                                                                                             class="social-icon social-icon-dark"></a>
                     </li>
                     <li class="list-item">
-                        <a href="https://discord.gg/vDzA5dZjG8" target="_blank" class="button-circle button-small bg-gray-3 w-inline-block"><img src="images/discord.svg" alt="" class="social-icon social-icon-dark"></a>
+                        <a href="https://discord.gg/vDzA5dZjG8" target="_blank"
+                           class="button-circle button-small bg-gray-3 w-inline-block"><img src="images/discord.svg"
+                                                                                            alt=""
+                                                                                            class="social-icon social-icon-dark"></a>
                     </li>
                 </ul>
             </div>
@@ -920,7 +1035,9 @@
             <a href="legal-policies.html" class="link-3 link-extra">Legal &amp; Privacy Policy</a>
 
             <div class="html-embed-2 spacer-top w-embed w-script">
-                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script><script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'B0B4H6KVC');kofiwidget2.draw();</script>
+                <script type='text/javascript' src='https://storage.ko-fi.com/cdn/widget/Widget_2.js'></script>
+                <script type='text/javascript'>kofiwidget2.init('Support Me on Ko-fi', '#29abe0', 'B0B4H6KVC');
+                kofiwidget2.draw();</script>
             </div>
             <div class="html-embed-2 spacer-top w-embed w-script">
                 <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js"
