@@ -71,6 +71,27 @@ window.addEventListener('load', (event) => {
 
     //window.location.href =
   }
+
+  var shareVisualizer = getUrlParameter('visualizerShare');
+  if (shareVisualizer !== null && shareVisualizer !== undefined && shareVisualizer !== "" && shareVisualizer !== false) {
+
+    var searchingURL = window.location.search.substring(1);
+    var visualizerCode = '';
+
+    var regex = /((visualizerShare)(?=\=))/gi;
+    var foundJSONParams = searchingURL.match(regex);
+    console.log(foundJSONParams);
+    for (const param of foundJSONParams) {
+      if (visualizerCode === '') {
+        visualizerCode += '?' + param+"=" +getUrlParameter(param);
+      }
+    }
+
+
+    window.location.replace('https://beanconqueror.com/app/visualizer/importVisualizer.html' + visualizerCode);
+
+    //window.location.href =
+  }
 });
 </script>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.1.1/cookieconsent.min.css" />
