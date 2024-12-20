@@ -5143,3 +5143,5 @@ resources/_gen/images/images/service-3_hu7748408967971566999.webp
 resources/_gen/images/images/service-3_hu7960699937684789824.webp
 .hugo_build.lock
 hugo_stats.json
+
+node_modules/
