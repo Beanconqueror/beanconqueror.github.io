@@ -1,0 +1,48 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "The App"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Roastery"
+url = "/about"
+weight = 2
+
+[[main]]
+name = "Device manufacturers"
+url = "/elements"
+weight = 3
+
+[[main]]
+name = "Supporters"
+url = "/authors"
+weight = 4
+
+[[main]]
+name = "Help center"
+url = "/blog"
+weight = 5
+
+[[main]]
+name = "Contact"
+url = "/contact"
+weight = 6
+
+# footer menu
+[[footer]]
+name = "About"
+url = "/about"
+weight = 1
+
+[[footer]]
+name = "Elements"
+url = "/elements"
+weight = 2
+
+[[footer]]
+name = "Privacy Policy"
+url = "/privacy-policy"
+weight = 3
