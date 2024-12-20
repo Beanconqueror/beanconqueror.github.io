@@ -1,0 +1,24 @@
+{
+  "main": [
+    {
+      "name": "facebook",
+      "icon": "fab fa-facebook",
+      "link": "https://www.facebook.com/Beanconqueror/"
+    },
+    {
+      "name": "Instagram",
+      "icon": "fab fa-instagram",
+      "link": "https://instagram.com"
+    },
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/graphefruit/Beanconqueror"
+    },
+    {
+      "name": "Discord",
+      "icon": "fab fa-discord",
+      "link": "https://discord.com/invite/vDzA5dZjG8"
+    }
+  ]
+}
