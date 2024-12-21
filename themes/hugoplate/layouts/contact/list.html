@@ -1,10 +1,19 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
 
-
   <section class="section-sm">
     <div class="container">
       <div class="row">
+        <div class="md:col-10 lg:col-6 mx-auto" style="margin-bottom:20px;">
+          We are not perfect - we know that - so if you have any question, feature request, angry or
+          happy messages, kudos etc. just drop us a line
+          and we will answer you asap.<br/>
+
+          We are looking forward hearing from you - until then, we will sip on our coffee and wait for your message :)
+        </div>
+      </div>
+      <div class="row">
+
         <div class="md:col-10 lg:col-6 mx-auto">
           <form action="{{ site.Params.contact_form_action }}" method="POST">
             <div class="mb-6">
