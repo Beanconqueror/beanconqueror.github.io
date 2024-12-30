@@ -60,6 +60,54 @@
   {{ end }}
   <!-- /Banner -->
 
+  <!-- Top-Features -->
+  {{ with site.GetPage "sections/topfeatures" }}
+    {{ if .Params.enable }}
+    <section class="section">
+      <div class="container">
+        <div class="row">
+          <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
+            <h2 class="mb-4">
+              {{ .Title | markdownify }}
+            </h2>
+            <p>
+              {{ .Params.description | markdownify }}
+            </p>
+          </div>
+        <div class="container">
+          <div class="grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
+            {{ range $index, $topfeatures := .Params.topfeatures }}
+            <div class="relative bg-theme-light dark:bg-darkmode-theme-light rounded-lg">
+              <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+                <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
+                  <h3 class="mb-1">
+                    {{ .name | markdownify }}
+                  </h3>
+                  <p class="mb-1 text-lg">
+                    {{ .content | markdownify }}
+                  </p>
+                </div>
+                <div class="relative min-h-[20rem] w-full grow [container-type:inline-size] max-lg:mx-auto max-lg:max-w-sm">
+                  <div class="absolute inset-x-10 bottom-0 top-6 mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+                    <div class="h-[32px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-gray-800 dark:bg-gray-800 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                    {{ partial "image" (dict "Src" .image "Alt" "topfeature image" "DisplayXL" "520x" "DisplayLG" "425x" "DisplayMD" "360x") }}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{ end }}{{ end }}
+          </div> 
+        </div>
+        </div>
+      </div>
+    </section>
+  {{ end }}
+  <!-- /Top-Features -->
+
   <!-- Features -->
   {{ range $i, $e:= .Params.features }}
     <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
@@ -104,6 +152,36 @@
   {{ end }}
   <!-- /Features -->
 
+  <!-- FAQ -->
+  {{ with site.GetPage "sections/faq" }}
+  {{ if .Params.enable }}
+  <section class="section rounded-t-3xl bg-white dark:bg-gray-800">
+    <div class="container">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
+          <h2 class="mb-4">
+            {{ .Title | markdownify }}
+          </h2>
+        </div>
+    </div>
+    <div class="container grid divide-y-2 divide-solid divide-dark dark:divide-light mx-auto mt-8">
+      {{ range $index, $faqs := .Params.faqs }}
+            <div class="py-5">
+              <details class="group">
+                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                  <h5>{{ .question | markdownify }}</h5>
+                  <span class="transition group-open:rotate-180">
+                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                  </span>
+                </summary>
+                <p class="text-dark dark:text-white mt-3 group-open:animate-fadeIn">{{ .answer | markdownify }}</p>
+              </details>
+            </div>
+        {{ end }}
+     </div>
+  </section>
+  {{ end }}{{ end }}
+  <!-- /FAQ -->
+
   <!-- Testimonials -->
   {{ with site.GetPage "sections/testimonial" }}
     {{ if .Params.enable }}
@@ -118,53 +196,40 @@
                 {{ .Params.description | markdownify }}
               </p>
             </div>
-            <div class="col-12">
-              <div class="swiper testimonial-slider">
-                <div class="swiper-wrapper">
-                  {{ range .Params.testimonials }}
-                    <div class="swiper-slide">
-                      <div
-                        class="bg-theme-light dark:bg-darkmode-theme-light rounded-lg px-7 py-10">
-                        <div class="text-dark dark:text-white">
-                          <svg
-                            width="33"
-                            height="20"
-                            viewBox="0 0 33 20"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                              d="M1.28375 19.41L0.79375 18.64C1.21375 17.0067 1.75042 15.07 2.40375 12.83C3.05708 10.5433 3.75708 8.28 4.50375 6.04C5.29708 3.75333 6.06708 1.77 6.81375 0.0899959H15.3538C14.9338 2.09666 14.4904 4.26667 14.0238 6.6C13.5571 8.88666 13.1371 11.15 12.7638 13.39C12.4371 15.5833 12.1571 17.59 11.9238 19.41H1.28375ZM31.69 0.0899959L32.18 0.859998C31.76 2.54 31.2233 4.5 30.57 6.74C29.9167 8.98 29.2167 11.2433 28.47 13.53C27.7233 15.77 26.9533 17.73 26.16 19.41H17.69C18.0167 17.9167 18.3433 16.33 18.67 14.65C18.9967 12.9233 19.3 11.22 19.58 9.54C19.9067 7.81333 20.1867 6.15667 20.42 4.57C20.7 2.93666 20.91 1.44333 21.05 0.0899959H31.69Z"
-                              fill="currentColor" />
-                          </svg>
-                        </div>
-                        <blockquote class="mt-8">
-                          {{ .content | markdownify }}
-                        </blockquote>
-                        <div class="mt-11 flex items-center">
-                          <div class="text-dark dark:text-white">
-                            {{ partial "image" (dict "Src" .avatar "Size" "50x50" "Class" "rounded-full" "Alt" .name) }}
-                          </div>
-                          <div class="ml-4">
-                            <h3 class="h5 font-primary font-semibold">
-                              {{ .name }}
-                            </h3>
-                            <p class="text-dark dark:text-white">
-                              {{ .designation | markdownify }}
-                            </p>
-                          </div>
-                        </div>
+          </div>
+          <div class="container">
+            <div id="testimonials-container" class="mt-4 grid gap-4 sm:mt-8 lg:grid-cols-1">
+              {{ range $index, $testimonial := .Params.testimonials }}
+                <div class="testimonial {{ if ge $index 3 }}hidden{{ end }}">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light p-6 rounded-lg">
+                  <blockquote class="p-0">
+                     "{{ $testimonial.content | markdownify }}"
+                    <div class="mt-4 flex items-center">
+                      <div class="text-dark dark:text-white">
+                        {{ partial "image" (dict "Src" $testimonial.avatar "Size" "50x50" "Class" "rounded-full" "Alt" $testimonial.name) }}
+                      </div>
+                      <div class="ml-4">
+                        <h3 class="h5 font-primary font-semibold">
+                          {{ $testimonial.name }}
+                        </h3>
+                        <p class="text-dark dark:text-white">
+                          {{ $testimonial.designation | markdownify }}
+                        </p>
                       </div>
                     </div>
-                  {{ end }}
+                  </blockquote>  
                 </div>
-                <div
-                  class="testimonial-slider-pagination mt-9 flex items-center justify-center text-center"></div>
               </div>
+              {{ end }}
             </div>
           </div>
-        </div>
+          {{ if gt (len .Params.testimonials) 3 }}
+            <div class="text-center mt-8">
+              <button id="load-more" class="btn btn-primary" data-total-testimonials="{{ len .Params.testimonials }}">Load more</button>
+            </div>
+          {{ end }}
       </section>
     {{ end }}
-  {{ end }}
+{{ end }}
   <!-- /Testimonials -->
 {{ end }}

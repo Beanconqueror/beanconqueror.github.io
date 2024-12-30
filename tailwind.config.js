@@ -39,6 +39,10 @@ module.exports = {
       xl: "1280px",
       "2xl": "1536px",
     },
+    borderRadius: {
+      '3xl': '4rem',
+      
+    },
     container: {
       center: true,
       padding: "2rem",
