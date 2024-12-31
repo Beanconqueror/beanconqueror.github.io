@@ -78,28 +78,27 @@
 </script>
 
 <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
-        <script>
-             let numbers = document.querySelectorAll("[countTo]");
-
-                numbers.forEach((number) => {
-                    let ID = number.getAttribute("id");
-                    let value = number.getAttribute("countTo");
-                    let countUp = new CountUp(ID, value);
-
-                    if (number.hasAttribute("data-decimal")) {
-                    const options = {
-                          decimalPlaces: 1,
-                        };
-                    countUp = new CountUp(ID, 2.8, options);
-                    } else {
-                    countUp = new CountUp(ID, value);
-                    }
-
-                    if (!countUp.error) {
-                    countUp.start();
-                    } else {
-                    console.error(countUp.error);
-                    number.innerHTML = value;
-                    }
-                }); 
-        </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const countElements = document.querySelectorAll('.countTo');
+    
+    countElements.forEach(element => {
+      const target = parseInt(element.getAttribute('data-count'), 10);
+      let count = 0;
+      const duration = 2000; // 2 seconds
+      const steps = 50;
+      const increment = target / steps;
+  
+      const timer = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+          clearInterval(timer);
+          element.textContent = target;
+        } else {
+          element.textContent = Math.round(count);
+        }
+      }, duration / steps);
+    });
+  });
+  </script>
+  

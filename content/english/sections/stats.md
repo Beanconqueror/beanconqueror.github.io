@@ -1,22 +1,16 @@
 ---
 enable: true
-
-# Top-Features
 stats:
-    - number: "250"
-      attribute: "+"
-      content: "Count what you want"
-
-    - number: "500"
-      attribute: "m"
-      content: "Count what you want"
-      
-    - number: "4.9"
-      attribute: "k"
-      content: "Count what you want" 
-
-    - number: "4.93"
-      attribute: "views"
-      content: "Count what you want"
-      
+  - attribute: "+"
+    number: "2500"
+    content: "Zufriedene Kunden"
+  - attribute: "+"
+    number: "500"
+    content: "Abgeschlossene Projekte"
+  - attribute: "+"
+    number: "100"
+    content: "Teamexperten"
+  - attribute: "+"
+    number: "10"
+    content: "Jahre Erfahrung"
 ---
