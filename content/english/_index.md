@@ -36,9 +36,9 @@ features:
       - "**Open Source and Free**"
       - "Developed since 8 years"
       - "Focuses on bean to cup principle"
-      - "Every feature can be used stand alone"
       - "Supports multiple languages"
       - "Integrates with smart devices"
+      - "Control your portafilters"
     button:
       enable: false
       label: ""
