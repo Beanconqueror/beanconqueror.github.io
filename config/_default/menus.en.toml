@@ -38,8 +38,8 @@ url = "/about"
 weight = 1
 
 [[footer]]
-name = "Elements"
-url = "/elements"
+name = "Changelog"
+url = "/changelog"
 weight = 2
 
 [[footer]]
