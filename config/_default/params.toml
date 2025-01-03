@@ -5,9 +5,9 @@ favicon = "images/favicon.png"
 logo = "images/beanconqueror-logo.svg"
 logo_darkmode = "images/beanconqueror-logo.svg"
 # use `px` or `x` with logo_width, example: "100px".
-# Note: logo_width is not work with .svg file
-logo_width = "300px"
-logo_height = ""
+# Note: logo_height is not work with .svg file
+logo_width = "256"
+logo_height = "23"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
 logo_webp = true
 # logo text will only show when logo is missing.
@@ -81,7 +81,7 @@ mastodon = "" # Your verification code
 # cookies
 # cookies module: https://github.com/gethugothemes/hugo-modules/tree/master/components/cookie-consent
 [cookies]
-enable = false
+enable = true
 expire_days = 60
 content = "This site uses cookies. By continuing to use this website, you agree to their use."
 button = "I Accept"
@@ -110,3 +110,10 @@ enable = false
 # mailchimp subsciption
 mailchimp_form_action = "https://gmail.us4.list-manage.com/subscribe/post?u=463ee871f45d2d93748e77cad&amp;id=a0a2c6d074" # replace this url with yours
 mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"
+
+
+# matomo tracking: see https://matomo.org/
+[matomo]
+enable = false
+url = ""       # your matomo url
+id = ""        # your matomo id

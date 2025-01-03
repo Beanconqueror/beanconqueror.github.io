@@ -7,24 +7,29 @@
         {{ range .Pages.ByPublishDate.Reverse }}
         <li class="relative pl-10">
           <div class="absolute left-0 top-12 -translate-y-1/2 w-8 h-8 bg-theme-light dark:bg-darkmode-theme-light rounded-full flex items-center justify-center">
-            <div class="w-3 h-3 rounded-full"></div>
+            <div class="w-3 h-3 rounded-full bg-theme-dark"></div>
           </div>
-          <div class="absolute left-8 top-12 w-8 h-1 bg-theme-light dark:bg-darkmode-theme-light"></div>
-          <div class="bg-theme-light dark:bg-darkmode-theme-light rounded-[2rem] p-8">
-            <div class="flex items-center justify-between mb-4">
-              <div class="flex items-center space-x-4">
-                <a rel="noopener noreferrer" href="{{ .Permalink }}" class="text-xl hover:underline">{{ .Params.version }}</a>
-                <a rel="noopener noreferrer" href="{{ .Permalink }}" class="inline-flex items-center px-3 py-1 space-x-2 text-xl border rounded-full group btn btn-primary">
-                  <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-violet-600"></span>
-                  <span class="group-hover:underline">{{ .Params.type }}</span>
-                </a>
-              </div>
-              <span class="whitespace-nowrap">{{ .Date.Format "Jan 2, 2006" }}</span>
+          <div class="absolute left-8 top-12 w-8 h-1 bg-theme-dark dark:bg-darkmode-theme-dark"></div>
+            <div class="bg-theme-light dark:bg-darkmode-theme-light rounded-lg lg:rounded-[2rem] p-8 hover:m-2 transition-all duration-150 ease-out hover:ease-in">
+                <div class="flex items-center justify-between mb-4">
+                <div class="flex items-center space-x-4">
+                    <a rel="noopener noreferrer" href="{{ .Permalink }}" class="text-xl hover:underline">{{ .Params.version }}</a>
+                    <a rel="noopener noreferrer" href="{{ .Permalink }}" class="inline-flex items-center px-3 py-1 space-x-2 text-xl border rounded-full group btn btn-primary">
+                    <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full bg-violet-600"></span>
+                    <span class="group-hover:underline">{{ .Params.type }}</span>
+                    </a>
+                </div>
+                <span class="whitespace-nowrap">{{ .Date.Format "Jan 2, 2006" }}</span>
+                </div>
+                <div class="space-y-2">
+                {{ .Summary }}
+                </div>
+                {{ if .Params.readMoreText }}
+                <div class="mt-4">
+                  <a href="{{ .Permalink }}" class="btn btn-primary">{{ .Params.readMoreText }}</a>
+                </div>
+                {{ end }}
             </div>
-            <div class="space-y-2">
-              {{ .Summary }}
-            </div>
-          </div>
         </li>
         {{ end }}
       </ul>

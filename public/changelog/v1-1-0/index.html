@@ -172,6 +172,9 @@
 
 
 
+  
+
+
 
 
 
@@ -331,7 +334,7 @@
     
     <div class="order-0">
       
-      <a class="navbar-brand block" href="/">
+      <a class="navbar-brand block max-h-7" href="/">
         
 
 
@@ -397,8 +400,8 @@
       fetchpriority="high"
       decoding="async"
       class="img img-light"
-      width="300"
-      height=""
+      width="256"
+      height="23"
       src="/images/beanconqueror-logo.svg"
       alt="BEANCONQUEROR"
       onerror="this.onerror=null;this.src='';" />
@@ -407,8 +410,8 @@
       fetchpriority="high"
       decoding="async"
       class="img img-dark"
-      width="300"
-      height=""
+      width="256"
+      height="23"
       src="/images/beanconqueror-logo.svg"
       alt="BEANCONQUEROR"
       onerror="this.onerror=null;this.src='';" />
@@ -452,34 +455,6 @@
               
               href="/"
               >The App</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
-              href="/about"
-              >Roastery</a
-            >
-          </li>
-        
-      
-        
-        
-        
-        
-          <li class="nav-item">
-            <a
-              class="nav-link "
-              
-              href="/elements"
-              >Device manufacturers</a
             >
           </li>
         
@@ -1139,8 +1114,8 @@
       fetchpriority="high"
       decoding="async"
       class="img img-light"
-      width="300"
-      height=""
+      width="256"
+      height="23"
       src="/images/beanconqueror-logo.svg"
       alt="BEANCONQUEROR"
       onerror="this.onerror=null;this.src='';" />
@@ -1149,8 +1124,8 @@
       fetchpriority="high"
       decoding="async"
       class="img img-dark"
-      width="300"
-      height=""
+      width="256"
+      height="23"
       src="/images/beanconqueror-logo.svg"
       alt="BEANCONQUEROR"
       onerror="this.onerror=null;this.src='';" />
@@ -1355,6 +1330,57 @@
 
 
 
+  
+    <div id="cookie-box" class="cookie-box cookie-box-hide">
+      This site uses cookies. By continuing to use this website, you agree to their use.
+      <button
+        id="cookie-button"
+        class="cookie-box-button btn btn-sm btn-outline-primary">
+        I Accept
+      </button>
+    </div>
+
+    
+    <script type="application/javascript">
+      const cookieBox = document.getElementById('cookie-box');
+      const cookieButton = document.getElementById('cookie-button');
+      if (!Cookies.get('cookie-consent')) {
+        cookieBox.classList.remove('cookie-box-hide');
+        cookieButton.onclick = function () {
+          Cookies.set('cookie-consent', true, {
+            expires:  60 
+          });
+          cookieBox.classList.add('cookie-box-hide');
+        };
+      }
+    </script>
+
+    
+    <style>
+      .cookie-box {
+        position: fixed;
+        left: 2rem;
+        bottom: 2rem;
+        z-index: 9999;
+        padding: 1.5rem;
+        background-color: #fff;
+        max-width: calc(100% - 4rem);
+        width: 25rem;
+        box-shadow: 1px 0px 10px 7px rgba(154, 154, 154, 0.11);
+        border-radius: inherit;
+      }
+      .cookie-box-hide {
+        display: none;
+      }
+      .cookie-box-button {
+        display: block;
+        margin-top: 1rem;
+      }
+
+      .dark .cookie-box {
+        background-color: #222;
+      }
+    </style>
   
 
 

@@ -7,16 +7,6 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "Roastery"
-url = "/about"
-weight = 2
-
-[[main]]
-name = "Device manufacturers"
-url = "/elements"
-weight = 3
-
-[[main]]
 name = "Supporters"
 url = "/authors"
 weight = 4

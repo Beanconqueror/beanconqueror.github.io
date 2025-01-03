@@ -20,6 +20,7 @@ require (
 	github.com/gethugothemes/hugo-modules/search v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/basic-seo v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager v0.0.0-20241203025515-30ad48e108af // indirect
+	github.com/gethugothemes/hugo-modules/seo-tools/matomo-analytics v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/seo-tools/site-verifications v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/shortcodes/button v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/shortcodes/notice v0.0.0-20241203025515-30ad48e108af // indirect
@@ -29,4 +30,3 @@ require (
 	github.com/hugomods/mermaid v0.1.4 // indirect
 	github.com/zeon-studio/hugoplate v0.0.0-20241203091903-bf5613de8b39 // indirect
 )
- 

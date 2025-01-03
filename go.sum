@@ -32,6 +32,8 @@ github.com/gethugothemes/hugo-modules/seo-tools/basic-seo v0.0.0-20241203025515-
 github.com/gethugothemes/hugo-modules/seo-tools/basic-seo v0.0.0-20241203025515-30ad48e108af/go.mod h1:Q8dPgjamV7pxwKSQyWV21Xwh5CGi23/k+M8HPTphYbs=
 github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager v0.0.0-20241203025515-30ad48e108af h1:s1S3dV9+Or5Nxyzbnnj76HjiTSanjTuBZCoIRcsmA7c=
 github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager v0.0.0-20241203025515-30ad48e108af/go.mod h1:cCq50yd55eFTrpqOfeyOK5X0hU5E7qxsqOD7IzTsgLA=
+github.com/gethugothemes/hugo-modules/seo-tools/matomo-analytics v0.0.0-20241203025515-30ad48e108af h1:dcHLqN67+KkMV0i3E0iyBY3xGDujoJCxDyldaLfxNh0=
+github.com/gethugothemes/hugo-modules/seo-tools/matomo-analytics v0.0.0-20241203025515-30ad48e108af/go.mod h1:P2GLltWjXFBJlatFKh4l6WOBszW7+f09myLkZoBBgEs=
 github.com/gethugothemes/hugo-modules/seo-tools/site-verifications v0.0.0-20241203025515-30ad48e108af h1:387cVhn1rRFcPOF08PhwEMkcVX+ejVtYiGqIb2T2yO0=
 github.com/gethugothemes/hugo-modules/seo-tools/site-verifications v0.0.0-20241203025515-30ad48e108af/go.mod h1:iXielaya126qJscz7Bc2G2WB91moloQOoWru6UoBUyE=
 github.com/gethugothemes/hugo-modules/shortcodes/button v0.0.0-20241203025515-30ad48e108af h1:zODP9FSDW5glAEqa7fqlHoLEuYEl92Gve9l/AS/PAxw=
