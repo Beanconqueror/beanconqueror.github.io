@@ -3,6 +3,6 @@ enable: true
 connectsmartscales:
   - title: "Connect Smart Scales"
     discription: "Lorem Ipsum"
-    image: ""
+    image: "{{/* w-272px h-572px */}}"
 
 ---

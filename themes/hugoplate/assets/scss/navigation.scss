@@ -12,7 +12,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply bg-body dark:bg-darkmode-body py-6 drop-shadow-md;
+  @apply bg-theme-light dark:bg-darkmode-theme-light py-6 drop-shadow-md;
 }
 
 // navbar items
@@ -36,9 +36,9 @@ input#nav-toggle:checked ~ #nav-menu {
 // }
 
 .nav-link {
-  @apply text-dark hover:text-primary dark:text-darkmode-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3 no-underline hover:underline underline-offset-8 decoration-from-font decoration-darkmode-theme-dark;
+  @apply text-dark hover:text-primary dark:text-darkmode-dark dark:hover:text-darkmode-primary block p-3 cursor-pointer font-semibold transition lg:px-2 lg:py-3 no-underline hover:underline underline-offset-8 decoration-from-font decoration-darkmode-border;
   &.active {
-    @apply underline underline-offset-8 decoration-from-font decoration-darkmode-theme-dark
+    @apply underline underline-offset-8 decoration-from-font decoration-darkmode-border
   }
 }
 
@@ -79,7 +79,7 @@ input#nav-toggle:checked ~ #nav-menu {
   }
 
   span {
-    @apply bg-dark absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 dark:bg-white;
+    @apply bg-dark absolute -top-1 left-0 flex h-6 w-6 items-center justify-center rounded-full transition-all duration-300 dark:bg-theme-light;
   }
 
   input:checked + label {

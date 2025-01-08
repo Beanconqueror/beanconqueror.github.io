@@ -3,7 +3,7 @@
 favicon = "images/favicon.png"
 # logo module: https://github.com/gethugothemes/hugo-modules/tree/master/images#logo-implementation
 logo = "images/beanconqueror-logo.svg"
-logo_darkmode = "images/beanconqueror-logo.svg"
+logo_darkmode = "images/beanconqueror-logo-dark.svg"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_height is not work with .svg file
 logo_width = "256"
@@ -15,7 +15,7 @@ logo_text = "BEANCONQUEROR"
 # navbar fixed to top
 navbar_fixed = true
 # theme-mode
-theme_switcher = false
+theme_switcher = true
 theme_default = "system" # available options [light/dark/system]
 # Main Sections
 mainSections = ["blog"]
