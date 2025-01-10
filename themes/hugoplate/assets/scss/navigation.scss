@@ -12,7 +12,7 @@ input#nav-toggle:checked ~ #nav-menu {
 }
 
 .header {
-  @apply bg-theme-light dark:bg-darkmode-theme-light py-6 drop-shadow-md;
+  @apply bg-theme-light dark:bg-darkmode-theme-dark py-6 drop-shadow-md;
 }
 
 // navbar items

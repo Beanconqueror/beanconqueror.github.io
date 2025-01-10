@@ -6,10 +6,10 @@ logo = "images/beanconqueror-logo.svg"
 logo_darkmode = "images/beanconqueror-logo-dark.svg"
 # use `px` or `x` with logo_width, example: "100px".
 # Note: logo_height is not work with .svg file
-logo_width = "256"
-logo_height = "23"
+logo_width = "235vh"
+logo_height = "100%"
 # if logo_webp set false, will not generate WEBP version of logo | default is true
-logo_webp = true
+logo_webp = false
 # logo text will only show when logo is missing.
 logo_text = "BEANCONQUEROR"
 # navbar fixed to top

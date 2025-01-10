@@ -4,7 +4,7 @@
     <!-- logo -->
     <div class="order-0">
       <!-- navbar brand/logo -->
-      <a class="navbar-brand block max-h-7" href="{{ site.Home.RelPermalink }}">
+      <a class="navbar-brand block" href="{{ site.Home.RelPermalink }}">
         {{ partial "logo" }}
       </a>
     </div>
@@ -122,7 +122,7 @@
         {{ end }}
       {{ end }}
 
-      {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 dark:bg-darkmode-theme-light rounded") }}
+      {{ partial "components/language-switcher" (dict "Context" . "Class" "mr-5 pl-2 py-1 dark:bg-darkmode-theme-dark rounded") }}
       {{ partial "components/theme-switcher" (dict "Class" "mr-5") }}
 
 

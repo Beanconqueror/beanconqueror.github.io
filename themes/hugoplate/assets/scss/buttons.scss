@@ -7,10 +7,9 @@
 }
 
 .btn-primary {
-  @apply border-primary bg-primary dark:border-darkmode-primary dark:text-dark text-white dark:bg-darkmode-primary;
-  &:hover {transform: scale(1.035); background: #9F8C6F; color: #504027;}
+  @apply hover:scale-110 bg-primary dark:text-darkmode-primary text-theme-light dark:bg-darkmode-border;
 }
 
 .btn-outline-primary {
-  @apply border-dark text-dark hover:bg-dark dark:hover:text-dark bg-transparent hover:text-white dark:border-darkmode-primary dark:text-white dark:hover:bg-darkmode-primary;
+  @apply border-dark text-dark hover:bg-dark dark:hover:text-darkmode-primary bg-transparent hover:text-white dark:border-darkmode-border dark:text-darkmode-primary dark:hover:bg-darkmode-border;
 }
