@@ -13,7 +13,7 @@
             </p>
             <div class="flex items-center space-x-12">
               <!-- https://developer.apple.com/app-store/marketing/guidelines/#section-badges -->
-                <div class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
+                <div class="flex mt-3 w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
                   <div class="mr-3">
                   <a href="{{ .linkAppleAppStore | safeURL }}">
                       <svg viewBox="0 0 384 512" width="30" >
@@ -27,7 +27,7 @@
                   </a>
                 </div>
               <!-- https://play.google.com/intl/en_us/badges/ -->
-              <div class="flex mt-3 w-48 h-14 bg-black text-white rounded-lg items-center justify-center">
+              <div class="flex mt-3 w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
                 <div class="mr-3">
                 <a href="{{ .linkGooglePlayStore | safeURL }}">
                     <svg viewBox="30 336.7 120.9 129.2" width="30">
@@ -66,7 +66,7 @@
   <div class="container mx-auto">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {{ range .Params.stats }}
-        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border-border border rounded-lg lg:rounded-[2rem] p-4">
+        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-2 rounded-lg lg:rounded-[2rem] p-4">
           <h2 class="leading-tight text-center text-dark dark:text-white">
             <span class="attribute">{{ .attribute }}</span>
             <span class="countTo" data-count="{{ .number }}">0</span>
@@ -97,7 +97,7 @@
         <div class="container">
           <div class="grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
             {{ range $index, $topfeatures := .Params.topfeatures }}
-            <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem]">
+            <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 shadow-border rounded-lg lg:rounded-[2rem]">
               <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                 <div class="px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
                   <h4 class="mb-1">
@@ -130,8 +130,8 @@
         <div class="relative lg:col-span-2">
           {{ with site.GetPage "sections/connectsmartscales" }}
           {{ if .Params.enable }}
-          <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border lg:rounded-tl-[2rem]"></div>
-          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
+          <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-tl-[2rem]"></div>
+          <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)] -top-0.5 dark:-top-1">
             <div class="flex flex-row items-start px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
               {{ range $index, $connectsmartscales := .Params.connectsmartscales }}
               <div class="flex-1 pr-4">
@@ -156,7 +156,7 @@
         <div class="relative lg:col-span-2 lg:row-span-2">
           {{ with site.GetPage "sections/automaticallystopbrew" }}
           {{ if .Params.enable }}
-          <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border lg:rounded-r-[2rem]"></div>
+          <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-r-[2rem]"></div>
           <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
             <div class="flex flex-row items-start px-8 pb-3 pt-8 sm:px-10 sm:pb-0 sm:pt-10">
               {{ range $index, $automaticallystopbrew := .Params.automaticallystopbrew }}
@@ -187,32 +187,30 @@
           {{ end }}
           {{ end }}
         </div>
-        <div class="relative max-lg:row-start-2">
+        <div class="relative max-lg:row-start-2 overflow-hidden">
           {{ with site.GetPage "sections/starttimer" }}
           {{ if .Params.enable }}
           {{ with .Params.image }}
             {{ $image := resources.Get . }}
             {{ if $image }}
               {{ $imageURL := $image.Permalink }}
-              <div 
-                class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border lg:rounded-bl-[2rem] bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none"
-                style="background-image: url('{{ $imageURL }}');"
-              ></div>
-            {{ else }}
-              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light lg:rounded-bl-[2rem]"></div>
-            {{ end }}
-          {{ else }}
-            <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light lg:rounded-bl-[2rem]"></div>
-          {{ end }}
-          <div class="relative flex h-full flex-col overflow-hidden rounded-lg lg:rounded-bl-[2rem] to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/50 via-black/25">
-            {{ range $index, $starttimer := .Params.starttimer }}
-            <div class="absolute bottom-0 z-20 m-0 p-8">
-              <span><h4 class="mb-2 block tracking-normal text-white antialiased">{{ .title | markdownify }}</h4></span>
-              <span><p class="block text-lg leading-snug tracking-normal text-gray-200 antialiased">{{ .discription | markdownify }}</p></span>
+              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-bl-[2rem] bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
+                {{ else }}
+                  <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light lg:rounded-bl-[2rem]"></div>
+                {{ end }}
+              {{ else }}
+                <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light lg:rounded-bl-[2rem]"></div>
+              {{ end }}
+              <div class="relative flex h-full flex-col overflow-hidden to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/50 via-black/25">
+                {{ range $index, $starttimer := .Params.starttimer }}
+                <div class="absolute bottom-0 z-20 m-0 p-8">
+                  <span><h4 class="mb-2 block tracking-normal text-white antialiased">{{ .title | markdownify }}</h4></span>
+                  <span><p class="block text-lg leading-snug tracking-normal text-gray-200 antialiased">{{ .discription | markdownify }}</p></span>
+                </div>
+                {{ end }}
+              </div>
             </div>
-            {{ end }}
-          </div>
-          <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
+          <div class="pointer-events-none absolute inset-0 rounded-lg shadow ring-1 ring-black/5 max-lg:rounded-t-[2rem]"></div>
           {{ end }}{{ end }}
         </div>
         <div class="relative max-lg:row-start-3 lg:col-start-2 lg:row-start-2">
@@ -222,24 +220,22 @@
             {{ $image := resources.Get . }}
             {{ if $image }}
               {{ $imageURL := $image.Permalink }}
-              <div 
-                class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none"
-                style="background-image: url('{{ $imageURL }}');"
-              ></div>
-            {{ else }}
-              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light"></div>
-            {{ end }}
-          {{ else }}
-            <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light"></div>
-          {{ end }}
-          <div class="relative flex h-full flex-col overflow-hidden rounded-lg to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/50 via-black/25">
-            {{ range $index, $ignoretheweight := .Params.ignoretheweight }}
-            <div class="absolute bottom-0 z-20 m-0 p-8">
-              <span><h4 class="mb-2 block tracking-normal text-white antialiased">{{ .title | markdownify }}</h4></span>
-              <span><p class="block text-lg leading-snug tracking-normal text-gray-200 antialiased">{{ .discription | markdownify }}</p></span>
+              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
+                {{ else }}
+                  <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light"></div>
+                {{ end }}
+              {{ else }}
+                <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light"></div>
+              {{ end }}
+              <div class="relative flex h-full flex-col overflow-hidden to-bg-black-10 absolute inset-0 h-full w-full bg-gradient-to-t from-black/50 via-black/25">
+                {{ range $index, $ignoretheweight := .Params.ignoretheweight }}
+                <div class="absolute bottom-0 z-20 m-0 p-8">
+                  <span><h4 class="mb-2 block tracking-normal text-white antialiased">{{ .title | markdownify }}</h4></span>
+                  <span><p class="block text-lg leading-snug tracking-normal text-gray-200 antialiased">{{ .discription | markdownify }}</p></span>
+                </div>
+                {{ end }}
+              </div>
             </div>
-            {{ end }}
-          </div>
           <div class="pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5"></div>
           {{ end }}{{ end }}
         </div>
@@ -269,7 +265,7 @@
         <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
           {{ range $index, $supportedscales := .Params.supportedscales }}
           <div class="lg:col-span-2 flex">
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem]">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem]">
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="p-8">
                     <h4 class="mb-1">
@@ -293,7 +289,7 @@
             {{ end }}
             <div class="lg:col-start-3 flex flex-col gap-4">
               {{ range $index, $scalediscount := .Params.scalediscount }}
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem]">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem]">
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="p-8">
                     <h4 class="mb-1">
@@ -315,7 +311,7 @@
               </div>
               {{ end }}
               {{ range $index, $DIYScales := .Params.DIYScales }}
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem]">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem]">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="p-8">
                       <h4 class="mb-1">
@@ -337,7 +333,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $pressuredevices := .Params.pressuredevices }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem]">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem]">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="p-8">
                       <h4 class="mb-1">
@@ -360,7 +356,7 @@
                 {{ end }}
             </div>
             {{ range $index, $portafilters := .Params.portafilters }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem] flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="p-8">
                       <h4 class="mb-1">
@@ -382,7 +378,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $temperaturedevices := .Params.temperaturedevices }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem] flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="p-8">
                       <h4 class="mb-1">
@@ -404,7 +400,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $refractometers := .Params.refractometers }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem] flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="p-8">
                       <h4 class="mb-1">
@@ -452,7 +448,7 @@
         </div>
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
           {{ range $index, $features := .Params.features }}
-          <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border rounded-lg lg:rounded-[2rem] flex flex-row items-stretch overflow-hidden">
+          <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] flex flex-row items-stretch overflow-hidden">
             <div class="w-2/3 p-8">
               <h5 class="">{{ .title | markdownify }}</h5>
               <p class="">{{ .content | markdownify }}</p>
@@ -595,7 +591,7 @@
             <div id="testimonials-container" class="mt-4 grid gap-4 sm:mt-8 lg:grid-cols-1">
               {{ range $index, $testimonial := .Params.testimonials }}
                 <div class="testimonial {{ if ge $index 3 }}hidden{{ end }}">
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border p-6 rounded-lg lg:rounded-[2rem]">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 p-6 rounded-lg lg:rounded-[2rem]">
                   <blockquote class="p-0">
                      "{{ $testimonial.content | markdownify }}"
                     <div class="mt-4 flex items-center">
