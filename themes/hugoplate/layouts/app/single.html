@@ -8,7 +8,7 @@
           <div class="content">{{ .Content }}</div>
           {{ if .Params.button }}
           <div class="text-center mt-8">
-            <button id="importButton" class="btn btn-primary">{{ .Params.button }}</button>
+            <a id="importButton" class="btn btn-primary">{{ .Params.button }}</a>
           </div>
           {{ end }}
           <p class="mb-2 mt-16">{{ .Params.getapp }}</p>
@@ -28,7 +28,7 @@
                 </div>
               </a>
             </div>
-            
+
             <!-- Google Play Store Button -->
             <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
               <a href="{{ .Params.linkGooglePlayStore | safeURL }}" class="flex items-center">
