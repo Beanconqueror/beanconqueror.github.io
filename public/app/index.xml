@@ -12,7 +12,21 @@
       <link>//localhost:1313/app/bean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/app/bean/</guid>
-      <description>&lt;p&gt;Sick of typing bean information manually? We too&amp;hellip;&lt;/p&gt;</description>
+      <description>&lt;p&gt;Let&amp;rsquo;s get all bean information directly imported into the app - no typing, just with one click.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Bean Import - easy &amp; fast</title>
+      <link>//localhost:1313/app/userbean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/app/userbean/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s get all bean information directly imported into the app - no typing, just with one click.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Visualizer Import - easy &amp; fast</title>
+      <link>//localhost:1313/app/importvisualizer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/app/importvisualizer/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s get all bean information directly imported into the app - no typing, just with one click.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

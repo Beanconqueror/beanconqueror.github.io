@@ -13,9 +13,9 @@
           {{ end }}
           <p class="mb-2 mt-16">{{ .Params.getapp }}</p>
           <!-- App Store Buttons -->
-          <div class="flex items-center justify-center space-x-4 mt-8">
+          <div class="flex items-center justify-center space-x-24 mt-8">
             <!-- Apple App Store Button -->
-            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
+            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center text-left">
               <a href="{{ .Params.linkAppleAppStore | safeURL }}" class="flex items-center">
                 <div class="mr-3">
                   <svg viewBox="0 0 384 512" width="30">
@@ -30,7 +30,7 @@
             </div>
 
             <!-- Google Play Store Button -->
-            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
+            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center text-left">
               <a href="{{ .Params.linkGooglePlayStore | safeURL }}" class="flex items-center">
                 <div class="mr-3">
                   <svg viewBox="30 336.7 120.9 129.2" width="30">

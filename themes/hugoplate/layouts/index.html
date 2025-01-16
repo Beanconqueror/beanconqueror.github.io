@@ -262,7 +262,7 @@
             </p>
           </div>
         </div>
-        <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+        <div class="grid gap-4 grid-cols-1 lg:grid-cols-3 content">
           {{ range $index, $supportedscales := .Params.supportedscales }}
           <div class="lg:col-span-2 flex">
               <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem]">
@@ -276,7 +276,7 @@
                     </p>
                     <ul>
                       {{ range .bulletpoints }}
-                        <li class="relative my-4 pl-6">
+                        <li class="relative my-4 pl-6 list-none">
                           <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                           {{ . | markdownify }}
                         </li>
@@ -300,7 +300,7 @@
                     </p>
                     <ul>
                       {{ range .bulletpoints }}
-                        <li class="relative mt-4 pl-6">
+                        <li class="relative mt-4 pl-6 list-none">
                           <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                           {{ . | markdownify }}
                         </li>
@@ -322,7 +322,7 @@
                       </p>
                       <ul>
                         {{ range .bulletpoints }}
-                          <li class="relative mt-4 pl-6">
+                          <li class="relative mt-4 pl-6 list-none">
                             <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                             {{ . | markdownify }}
                           </li>
@@ -344,7 +344,7 @@
                       </p>
                       <ul>
                         {{ range .bulletpoints }}
-                          <li class="relative mt-4 pl-6">
+                          <li class="relative mt-4 pl-6 list-none">
                             <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                             {{ . | markdownify }}
                           </li>
@@ -367,7 +367,7 @@
                       </p>
                       <ul>
                         {{ range .bulletpoints }}
-                          <li class="relative mt-4 pl-6">
+                          <li class="relative mt-4 pl-6 list-none">
                             <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                             {{ . | markdownify }}
                           </li>
@@ -389,7 +389,7 @@
                       </p>
                       <ul>
                         {{ range .bulletpoints }}
-                          <li class="relative mt-4 pl-6">
+                          <li class="relative mt-4 pl-6 list-none">
                             <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                             {{ . | markdownify }}
                           </li>
@@ -411,7 +411,7 @@
                       </p>
                       <ul>
                         {{ range .bulletpoints }}
-                          <li class="relative mt-4 pl-6">
+                          <li class="relative mt-4 pl-6 list-none">
                             <i class="fa fa-check-circle absolute left-0 top-1.5"></i>
                             {{ . | markdownify }}
                           </li>
@@ -543,33 +543,35 @@
   <!-- /Top Reasons -->
 
   <!-- FAQ -->
-  {{ with site.GetPage "sections/faq" }}
-  {{ if .Params.enable }}
-  <section class="section rounded-t-3xl bg-theme-light dark:bg-darkmode-theme-dark">
-    <div class="container">
+  {{ $faqPages := where .Site.RegularPages "Section" "faq" }}
+    {{ if gt (len $faqPages) 0 }}
+    <section class="section rounded-t-3xl bg-theme-light dark:bg-darkmode-theme-dark">
+      <div class="container">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
           <h2 class="mb-4">
-            {{ .Title | markdownify }}
+            {{ .Site.Params.faq.title | default "FAQ – Frequently Asked Questions" | markdownify }}
           </h2>
         </div>
-    </div>
-    <div class="container grid divide-y-2 divide-solid divide-border mx-auto mt-8">
-      {{ range $index, $faqs := .Params.faqs }}
-            <div class="py-5">
-              <details class="group">
-                <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
-                  <h5>{{ .question | markdownify }}</h5>
-                  <span class="transition group-open:rotate-180">
-                    <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
-                  </span>
-                </summary>
-                <p class="text-dark dark:text-white mt-3 group-open:animate-fadeIn">{{ .answer | markdownify }}</p>
-              </details>
-            </div>
+      </div>
+      <div class="container grid divide-y-2 divide-solid divide-border mx-auto mt-8">
+        {{ range $faqPages }}
+          <div class="py-5">
+            <details class="group">
+              <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                <h5>{{ .Params.question | markdownify }}</h5>
+                <span class="transition group-open:rotate-180">
+                  <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                </span>
+              </summary>
+              <div class="content mt-3 group-open:animate-fadeIn">
+                {{ .Content }}
+              </div>
+            </details>
+          </div>
         {{ end }}
-     </div>
-  </section>
-  {{ end }}{{ end }}
+      </div>
+    </section>
+    {{ end }}
   <!-- /FAQ -->
 
   <!-- Testimonials -->

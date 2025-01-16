@@ -771,14 +771,14 @@
 </div>
           
           <div class="text-center mt-8">
-            <button id="importButton" class="btn btn-primary">Import now!</button>
+            <a id="importButton" class="btn btn-primary">Import now!</a>
           </div>
           
           <p class="mb-2 mt-16">You don&#39;t have the app installed yet? Then please go ahead, we will wait here...</p>
           
-          <div class="flex items-center justify-center space-x-4 mt-8">
+          <div class="flex items-center justify-center space-x-24 mt-8">
             
-            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
+            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center text-left">
               <a href="https://apps.apple.com/de/app/beanconqueror/id1445297158" class="flex items-center">
                 <div class="mr-3">
                   <svg viewBox="0 0 384 512" width="30">
@@ -791,9 +791,9 @@
                 </div>
               </a>
             </div>
+
             
-            
-            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center">
+            <div class="flex w-48 h-14 bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg items-center justify-center text-left">
               <a href="https://play.google.com/store/apps/details?id=com.beanconqueror.app" class="flex items-center">
                 <div class="mr-3">
                   <svg viewBox="30 336.7 120.9 129.2" width="30">
@@ -1177,48 +1177,58 @@
 
 
 <script>document.addEventListener('DOMContentLoaded', function() {
-  const loadMoreButton = document.getElementById('load-more');
-  const testimonials = document.querySelectorAll('.testimonial');
-  const increment = 3;
-  let currentlyVisible = 3;
-  const totalTestimonials = parseInt(loadMoreButton.dataset.totalTestimonials, 10);
+  try {
+    const loadMoreButton = document.getElementById('load-more');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const increment = 3;
+    let currentlyVisible = 3;
+    const totalTestimonials = parseInt(loadMoreButton.dataset.totalTestimonials, 10);
 
-  loadMoreButton.addEventListener('click', function() {
-    for (let i = currentlyVisible; i < currentlyVisible + increment && i < totalTestimonials; i++) {
-      testimonials[i].classList.remove('hidden');
-    }
-    currentlyVisible += increment;
-    if (currentlyVisible >= totalTestimonials) {
-      loadMoreButton.style.display = 'none';
-    }
-  });
+    loadMoreButton.addEventListener('click', function() {
+      for (let i = currentlyVisible; i < currentlyVisible + increment && i < totalTestimonials; i++) {
+        testimonials[i].classList.remove('hidden');
+      }
+      currentlyVisible += increment;
+      if (currentlyVisible >= totalTestimonials) {
+        loadMoreButton.style.display = 'none';
+      }
+    });
+  }catch(ex) {
+
+  }
+
 });
 </script>
 
 <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const countElements = document.querySelectorAll('.countTo');
-    
-    countElements.forEach(element => {
-      const target = parseInt(element.getAttribute('data-count'), 10);
-      let count = 0;
-      const duration = 2000; 
-      const steps = 50;
-      const increment = target / steps;
-  
-      const timer = setInterval(() => {
-        count += increment;
-        if (count >= target) {
-          clearInterval(timer);
-          element.textContent = target;
-        } else {
-          element.textContent = Math.round(count);
-        }
-      }, duration / steps);
-    });
+    try {
+      const countElements = document.querySelectorAll('.countTo');
+
+      countElements.forEach(element => {
+        const target = parseInt(element.getAttribute('data-count'), 10);
+        let count = 0;
+        const duration = 2000; 
+        const steps = 50;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+            clearInterval(timer);
+            element.textContent = target;
+          } else {
+            element.textContent = Math.round(count);
+          }
+        }, duration / steps);
+      });
+    }catch(ex) {
+
+    }
+
   });
   </script>
-  
+
   </body>
 </html>

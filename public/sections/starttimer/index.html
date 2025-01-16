@@ -1184,48 +1184,58 @@
 
 
 <script>document.addEventListener('DOMContentLoaded', function() {
-  const loadMoreButton = document.getElementById('load-more');
-  const testimonials = document.querySelectorAll('.testimonial');
-  const increment = 3;
-  let currentlyVisible = 3;
-  const totalTestimonials = parseInt(loadMoreButton.dataset.totalTestimonials, 10);
+  try {
+    const loadMoreButton = document.getElementById('load-more');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const increment = 3;
+    let currentlyVisible = 3;
+    const totalTestimonials = parseInt(loadMoreButton.dataset.totalTestimonials, 10);
 
-  loadMoreButton.addEventListener('click', function() {
-    for (let i = currentlyVisible; i < currentlyVisible + increment && i < totalTestimonials; i++) {
-      testimonials[i].classList.remove('hidden');
-    }
-    currentlyVisible += increment;
-    if (currentlyVisible >= totalTestimonials) {
-      loadMoreButton.style.display = 'none';
-    }
-  });
+    loadMoreButton.addEventListener('click', function() {
+      for (let i = currentlyVisible; i < currentlyVisible + increment && i < totalTestimonials; i++) {
+        testimonials[i].classList.remove('hidden');
+      }
+      currentlyVisible += increment;
+      if (currentlyVisible >= totalTestimonials) {
+        loadMoreButton.style.display = 'none';
+      }
+    });
+  }catch(ex) {
+
+  }
+
 });
 </script>
 
 <script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
 <script>
   document.addEventListener('DOMContentLoaded', function() {
-    const countElements = document.querySelectorAll('.countTo');
-    
-    countElements.forEach(element => {
-      const target = parseInt(element.getAttribute('data-count'), 10);
-      let count = 0;
-      const duration = 2000; 
-      const steps = 50;
-      const increment = target / steps;
-  
-      const timer = setInterval(() => {
-        count += increment;
-        if (count >= target) {
-          clearInterval(timer);
-          element.textContent = target;
-        } else {
-          element.textContent = Math.round(count);
-        }
-      }, duration / steps);
-    });
+    try {
+      const countElements = document.querySelectorAll('.countTo');
+
+      countElements.forEach(element => {
+        const target = parseInt(element.getAttribute('data-count'), 10);
+        let count = 0;
+        const duration = 2000; 
+        const steps = 50;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+            clearInterval(timer);
+            element.textContent = target;
+          } else {
+            element.textContent = Math.round(count);
+          }
+        }, duration / steps);
+      });
+    }catch(ex) {
+
+    }
+
   });
   </script>
-  
+
   </body>
 </html>

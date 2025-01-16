@@ -21,7 +21,7 @@ supportedscales:
 
 scalediscount:
   - title: "Scale with discount"
-    content: "Discount code: beanconqueror"
+    content: "Discount code: `beanconqueror`"
     bulletpoints:
         - "[Bookoo Mini Scale](https://bookoocoffee.com/)"
 
