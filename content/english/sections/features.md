@@ -8,7 +8,7 @@ features:
     content: "Beanconqueror is designed for coffee enthusiasts, providing tools to optimize brewing and track coffee beans."
     image: "/images/avatar.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -16,7 +16,7 @@ features:
     content: "Supports various preparation techniques, including V60, Aeropress, Espresso, and more, with customizable parameters for each method."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -24,7 +24,7 @@ features:
     content: "Users can scan or import detailed information about roasted coffee, keeping a running total to monitor bean inventory."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -32,7 +32,7 @@ features:
     content: "Allows tracking of roasting details for green beans, ensuring consistency across batches."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -40,7 +40,7 @@ features:
     content: "Users can input water quality parameters (e.g., hardness, mineral content) to enhance brew quality."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -48,7 +48,7 @@ features:
     content: "Record and adjust over 30 brewing parameters like grind size, brew time, and water amount for precision."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -56,7 +56,7 @@ features:
     content: "Provides insights into coffee consumption and spending, helping users refine their brewing techniques."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -64,7 +64,7 @@ features:
     content: "Compatible with various Bluetooth scales, pressure devices and refractometer for real-time tracking and pressure profiling during brewing."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -72,7 +72,7 @@ features:
     content: "Beanconqueror is an open-source application that is free to use, promoting community-driven improvements."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
@@ -80,7 +80,7 @@ features:
     content: "Designed for both beginners and experienced baristas, making it accessible for all coffee lovers."
     image: "/images/service-1.png"
     button:
-      enable: true
+      enable: false
       label: "Read more"
       link: "#"
 
