@@ -1,36 +1,55 @@
 <footer class="bg-theme-light dark:bg-darkmode-theme-dark">
   <div class="container">
-    <div class="row items-center py-10">
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:text-left">
+    <div class="flex flex-col items-start lg:flex-row lg:justify-between py-10 space-y-8 lg:space-y-0">
+      <div class="lg:w-1/4">
         <!-- navbar brand/logo -->
-        <a
-          class="navbar-brand inline-block"
-          href="{{ site.Home.RelPermalink }}">
+        <a class="footer-brand inline-block" href="{{ site.Home.RelPermalink }}">
           {{ partial "logo" }}
         </a>
       </div>
-      <div class="lg:col-6 mb-8 text-center lg:mb-0">
-        <ul>
+      <div class="lg:w-1/2 items-center">
+        <div class="inline-grid grid-cols-2 md:grid-cols-3 gap-8">
           {{ range site.Menus.footer }}
-            <li class="m-3 inline-block">
-              <a
-                {{ if findRE `^http` .URL }}
-                  target="_blank" rel="noopener"
+            {{ if .HasChildren }}
+            <div>
+              <h6 class="mb-2">
+                <a
+                  {{ if findRE `^http` .URL }}
+                    target="_blank" rel="noopener"
+                  {{ end }}
+                  href="{{ if findRE `^#` .URL }}
+                    {{ if not $.IsHome }}
+                      {{ site.Home.RelPermalink }}
+                    {{ end }}{{ .URL }}
+                  {{ else }}
+                    {{ .URL | relLangURL }}
+                  {{ end }}"
+                  >{{ .Name }}</a>
+              </h6>
+              <ul class="space-y-0.5">
+                {{ range .Children }}
+                  <li>
+                    <a
+                  {{ if findRE `^http` .URL }}
+                    target="_blank" rel="noopener"
+                  {{ end }}
+                  href="{{ if findRE `^#` .URL }}
+                    {{ if not $.IsHome }}
+                      {{ site.Home.RelPermalink }}
+                    {{ end }}{{ .URL }}
+                  {{ else }}
+                    {{ .URL | relLangURL }}
+                  {{ end }}"
+                  >{{ .Name }}</a>
+                </li>
                 {{ end }}
-                href="{{ if findRE `^#` .URL }}
-                  {{ if not $.IsHome }}
-                    {{ site.Home.RelPermalink }}
-                  {{ end }}{{ .URL }}
-                {{ else }}
-                  {{ .URL | relLangURL }}
-                {{ end }}"
-                >{{ .Name }}</a
-              >
-            </li>
+              </ul>
+            </div>
           {{ end }}
-        </ul>
+        {{ end }}
+        </div>
       </div>
-      <div class="lg:col-3 mb-8 text-center lg:mb-0 lg:mt-0 lg:text-right">
+      <div class="lg:w-1/4 justify-items-end">
         <ul class="social-icons">
           {{ range site.Data.social.main }}
             <li>

@@ -23,16 +23,61 @@ weight = 6
 
 # footer menu
 [[footer]]
-name = "About"
-url = "/about"
+name = "The App"
+url = ""
 weight = 1
 
-[[footer]]
-name = "Changelog"
-url = "/changelog"
-weight = 2
+    [[footer]]
+     parent = "The App"
+     name = "Changelog"
+     url = "/changelog"
+
+    [[footer]]
+     parent = "The App"
+     name = "Roadmap"
+     url = "/roadmap"
+
+    [[footer]]
+     parent = "The App"
+     name = "Data & Tracking"
+     url = ""
+
+    [[footer]]
+     parent = "The App"
+     name = "Running Costs"
+     url = ""
 
 [[footer]]
-name = "Privacy Policy"
-url = "/privacy-policy"
+name = "Help Center"
+url = "/blog"
+weight = 2
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Get startet"
+     url = "/blog/post-1"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Space for more Quick Links"
+     url = ""
+
+[[footer]]
+name = "Legal"
+url = "/legal"
 weight = 3
+
+    [[footer]]
+     parent = "Legal"
+     name = "Privacy Policy"
+     url = "/privacy-policy"
+
+    [[footer]]
+     parent = "Legal"
+     name = "Cookie Policy"
+     url = "/cookie-policy"
+
+    [[footer]]
+     parent = "Legal"
+     name = "Terms"
+     url = "/terms"

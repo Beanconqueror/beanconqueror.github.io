@@ -26,7 +26,7 @@ main {
 
 // social icons
 .social-icons {
-  @apply space-x-4;
+  @apply space-x-4 ml-0;
   li {
     @apply inline-block;
     a {
