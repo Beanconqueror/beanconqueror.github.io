@@ -43,7 +43,14 @@
 
 
 <!-- matomo analytics -->
-{{ partialCached "matomo-analytics.html" . }}
+{{/* {{ partialCached "matomo-analytics.html" . }} */}}
+{{ partial "matomo.html" . }}
+<script>
+    var cookieExpireDays = {{ site.Params.cookies.expire_days }};
+</script>
+{{ $cookie := resources.Get "js/cookie-consent.js" | js.Build (dict "minify" true) }}
+<script src="{{ $cookie.RelPermalink }}"></script>
+
 
 <!--  Baidu analytics -->
 {{/* {{ partialCached "baidu-analytics.html" . }} */}}

@@ -218,26 +218,27 @@
 
 
 
-  
-    <script type="text/javascript">
-      var _paq = window._paq = window._paq || [];
-      _paq.push(['trackPageView']);
-      _paq.push(['enableLinkTracking']);
-      (function () {
-        var u = "";
-        _paq.push(['setTrackerUrl', u + 'matomo.php']);
-        _paq.push(['setSiteId', '']);
-        var d = document,
-          g = d.createElement('script'),
-          s = d.getElementsByTagName('script')[0];
-        g.type = 'text/javascript';
-        g.async = true;
-        g.src = u + 'matomo.js';
-        s.parentNode.insertBefore(g, s);
-      })();
-    </script>
-  
 
+<script type="text/javascript">
+  var _paq = window._paq = window._paq || [];
+  _paq.push(['requireCookieConsent']);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="https:\/\/analytics-beanconqueror.com\//";
+    _paq.push(['setTrackerUrl', u+'matomo.php']);
+    _paq.push(['setSiteId', '1']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+
+
+<script>
+    var cookieExpireDays =  365 ;
+</script>
+
+<script src="/js/cookie-consent.js"></script>
 
 
 
@@ -1099,9 +1100,9 @@ Loving coffee and ultimate Beanconqueror user</p>
     <footer class="bg-theme-light dark:bg-darkmode-theme-dark">
   <div class="container">
     <div class="flex flex-col items-start lg:flex-row lg:justify-between py-10 space-y-8 lg:space-y-0">
-      <div class="lg:w-1/4 flex justify-center lg:justify-start">
+      <div class="lg:w-1/4">
         
-        <a class="navbar-brand block" href="/">
+        <a class="footer-brand inline-block" href="/">
           
 
 
@@ -1322,7 +1323,7 @@ Loving coffee and ultimate Beanconqueror user</p>
         
         </div>
       </div>
-      <div class="lg:w-1/4 flex justify-center lg:justify-end">
+      <div class="lg:w-1/4 justify-items-end">
         <ul class="social-icons">
           
             <li>
@@ -1481,10 +1482,29 @@ Loving coffee and ultimate Beanconqueror user</p>
 
 
 
+<section id="cookieConsentBanner" class="fixed max-w-md p-4 mx-auto bg-white border border-gray-200 dark:bg-gray-800 left-12 bottom-16 dark:border-gray-700 rounded-2xl" style="display: none;">
+    <h2 class="font-semibold text-gray-800 dark:text-white">🍪 We use cookies!</h2>
 
+    <p class="mt-4 text-sm text-gray-600 dark:text-gray-300">This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. <a href="#" class="font-medium text-gray-700 underline transition-colors duration-300 dark:hover:text-blue-400 dark:text-white hover:text-blue-500" id="cookieChoose">More information</a></p>
+    
+    <div class="grid grid-cols-2 gap-4 mt-4 shrink-0">
+        <button id="cookieAcceptAll" class="text-xs bg-gray-900 font-medium rounded-lg hover:bg-gray-700 text-white px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+            Accept all
+        </button>
 
-  
+        <button id="cookieRejectAll" class="text-xs border text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 font-medium rounded-lg px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+            Reject all
+        </button>
 
+        <button id="cookiePreferences" class="text-xs border text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 font-medium rounded-lg px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+            Preferences
+        </button>
+
+        <button id="cookieClose" class="text-xs border text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 font-medium rounded-lg px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+            Close
+        </button>
+    </div>
+</section>
 
 
 
