@@ -108,8 +108,9 @@ Users may also manage certain categories of Trackers used on mobile apps by opti
 
 #### Owner and Data Controller
 Lars Saalbach
-Wallensteinstraße 5
-90522 Oberasbach
+c/o Impressumservice Dein-Impressum
+Stettiner Straße 41
+35410 Hungen
 
 **Owner contact email:** info@beanconqueror.com
 

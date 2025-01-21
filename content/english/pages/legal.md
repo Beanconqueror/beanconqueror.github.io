@@ -27,8 +27,9 @@ https://www.beanconqueror.com
 
 ### Lars Saalbach
 lars@beanconqueror.com<br>
-Wallensteinstraße 5<br>
-90522 Oberasbach<br>
+c/o Impressumservice Dein-Impressum<br>
+Stettiner Straße 41<br>
+35410 Hungen<br>
 
 <br>
 
