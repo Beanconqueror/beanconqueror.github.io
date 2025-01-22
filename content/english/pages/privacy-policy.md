@@ -77,8 +77,9 @@ Personal Data collected for the following purposes and using the following servi
 ### Contact information
 #### Owner and Data Controller
 Lars Saalbach
-Wallensteinstraße 5
-90522 Oberasbach
+c/o Impressumservice Dein-Impressum
+Stettiner Straße 41
+35410 Hungen
 
 <br>
 
