@@ -7,7 +7,7 @@ url = "/"
 weight = 1
 
 [[main]]
-name = "Supporters"
+name = "Conquerors"
 url = "/authors"
 weight = 4
 

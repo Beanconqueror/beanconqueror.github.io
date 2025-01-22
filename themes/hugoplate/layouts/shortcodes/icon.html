@@ -1,0 +1,4 @@
+{{ $name := .Get "name" }}
+{{ $pack := .Get "pack" | default "fas" }}
+{{ $color := .Get "color" | default "currentColor" }}
+<i class="{{ $pack }} fa-{{ $name }}" style="color: {{ $color }};"></i>

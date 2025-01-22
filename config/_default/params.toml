@@ -26,6 +26,12 @@ google_tag_manager = "" # example: G-XXXXXXXXXX
 google_adsense = ""     # example: ca-pub-xxxxxxxxxxxxxxxx
 # custom script on header, example: custom_script= "<script>console.log(\"Hello World\")</script>"
 custom_script = ""
+
+# Footer
+logo_footer = ""
+paypal_link = "https://www.paypal.com/your-paypal-link"
+kofi_link = "https://ko-fi.com/your-kofi-link"
+buymeacoffee_link = "https://www.buymeacoffee.com/your-buymeacoffee-link"
 # copyright
 copyright = "[BEANCONQUEROR](https://github.com/graphefruit/Beanconqueror) © Created with ❤ & lots of coffee | Designed & Developed in Germany under the influence of the the Weißwurstequator "
 
