@@ -13,7 +13,7 @@ discription: "Beanconqueror is the ultimate coffee companion for coffee enthusia
 
 topreason:
   - title: "James Hoffmann approved"
-    video: "ResipmZmpDU"
+    video: "PhdxP9lId6A"
     content: "Video from James Hoffmann (YouTube)"
     bulletpoints:
       - "**James Hoffmann approved**"
@@ -29,7 +29,7 @@ topreason:
       link: ""
 
   - title: "Kaffeemacher:innen approved"
-    video: "ResipmZmpDU"
+    video: "AltqEuVAzlI"
     content: "Bbla to the video"
     bulletpoints:
       - "**James Hoffmann approved**"
