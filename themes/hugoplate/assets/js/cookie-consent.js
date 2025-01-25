@@ -28,8 +28,11 @@ function setCookie(name, value, days) {
     if (type === 'all' || type === 'analytics') {
       _paq.push(['rememberCookieConsentGiven']);
       _paq.push(['setCookieConsentGiven']);
+      _paq.push(['rememberConsentGiven']);
+      _paq.push(['setConsentGiven']);
     } else {
       _paq.push(['forgetCookieConsentGiven']);
+      _paq.push(['forgetConsentGiven']);
     }
     document.getElementById('cookieConsentBanner').style.display = 'none';
   }
