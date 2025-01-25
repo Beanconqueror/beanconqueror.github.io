@@ -26,6 +26,7 @@ function setCookie(name, value, days) {
   function setCookieConsent(type) {
     setCookie('cookie-consent', type, cookieExpireDays);
     if (type === 'all' || type === 'analytics') {
+      _paq.push(['rememberCookieConsentGiven']);
       _paq.push(['setCookieConsentGiven']);
     } else {
       _paq.push(['forgetCookieConsentGiven']);
@@ -61,4 +62,3 @@ function setCookie(name, value, days) {
       console.log('More information clicked');
     });
   });
-  
