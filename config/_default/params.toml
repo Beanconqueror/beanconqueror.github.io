@@ -33,7 +33,7 @@ paypal_link = "https://www.paypal.com/your-paypal-link"
 kofi_link = "https://ko-fi.com/your-kofi-link"
 buymeacoffee_link = "https://www.buymeacoffee.com/your-buymeacoffee-link"
 # copyright
-copyright = "[BEANCONQUEROR](https://github.com/graphefruit/Beanconqueror) © Created with ❤ & lots of coffee | Designed & Developed in Germany under the influence of the the Weißwurstequator "
+copyright = "[BEANCONQUEROR](https://github.com/graphefruit/Beanconqueror) © Created with ❤ & lots of coffee | Designed & Developed in Germany"
 
 # Preloader
 # preloader module: https://github.com/gethugothemes/hugo-modules/tree/master/components/preloader

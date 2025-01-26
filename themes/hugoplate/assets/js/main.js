@@ -34,7 +34,10 @@
     },
   });
 
-  const hostURL= location.origin;
+  var hostURL= location.origin;
+  if (hostURL.endsWith("/") === false) {
+    hostURL = hostURL + "/";
+  }
   var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),
         sURLVariables = sPageURL.split('&'),
@@ -51,7 +54,7 @@
     return false;
   };
   window.addEventListener('load', (event) => {
-    console.log("blaa");
+
     var beanId = getUrlParameter('qr');
     if (beanId !== null && beanId !== undefined && beanId !== "" && beanId !== false) {
 
