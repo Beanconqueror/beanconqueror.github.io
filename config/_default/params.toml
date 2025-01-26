@@ -119,7 +119,7 @@ mailchimp_form_name = "b_463ee871f45d2d93748e77cad_a0a2c6d074"
 # matomo tracking: see https://matomo.org/
 [matomo]
 enable = true
-url = "https://analytics-beanconqueror.com/"       # your matomo url
+url = "https://analytics-beanconqueror.com"       # your matomo url
 id = "1"        # your matomo id
 
 
