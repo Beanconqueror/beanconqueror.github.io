@@ -10,8 +10,6 @@ tags: ["get started"]
 draft: false
 ---
 
-## Getting Started with Beanconqueror: Your Ultimate Coffee Companion
-
 Beanconqueror is a powerful, free, and open-source coffee tracking app designed for coffee enthusiasts of all levels. Here's how to begin your coffee tracking journey:
 
 ### 1. Download the App
