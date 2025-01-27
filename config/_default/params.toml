@@ -29,9 +29,9 @@ custom_script = ""
 
 # Footer
 logo_footer = ""
-paypal_link = "https://www.paypal.com/your-paypal-link"
-kofi_link = "https://ko-fi.com/your-kofi-link"
-buymeacoffee_link = "https://www.buymeacoffee.com/your-buymeacoffee-link"
+paypal_link = "https://www.paypal.com/paypalme/LarsSaalbach"
+kofi_link = "https://ko-fi.com/beanconqueror"
+buymeacoffee_link = "https://buymeacoffee.com/beanconqueror"
 # copyright
 copyright = "[BEANCONQUEROR](https://github.com/graphefruit/Beanconqueror) © Created with ❤ & lots of coffee | Designed & Developed in Germany"
 
