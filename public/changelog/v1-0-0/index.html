@@ -30,6 +30,16 @@
 
 
 
+<link rel="shortcut icon" href="/images/favicon_hu8831127674165426175.png" type="image/x-icon">
+<link rel="icon" href="/images/favicon_hu8831127674165426175.png" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="48x48" href="/images/favicon_hu17793281192454165991.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon_hu8831127674165426175.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon_hu6071639540029358797.png">
+
+
+
+
+
 
 
 
@@ -175,13 +185,16 @@
 
 <script type="text/javascript">
   var _paq = window._paq = window._paq || [];
+  _paq.push(['requireConsent']);
   _paq.push(['requireCookieConsent']);
   _paq.push(['trackPageView']);
   _paq.push(['enableLinkTracking']);
   (function() {
-    var u="https:\/\/analytics-beanconqueror.com\//";
+    var u="https:\/\/analytics-beanconqueror.com/";
     _paq.push(['setTrackerUrl', u+'matomo.php']);
     _paq.push(['setSiteId', '1']);
+    _paq.push(['setReferrerUrl','https://beanconqueror.com']);
+    _paq.push(['setCustomUrl','https://beanconqueror.com']);
     var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
     g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
   })();
@@ -1363,10 +1376,10 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
       
       <div class="lg:w-1/4 flex flex-col items-start lg:items-end">
         <h6 class="mb-4 text-left lg:text-right w-full">Support Us</h6>
-        <div class="space-y-4 w-full flex flex-col sm:flex-row items-start lg:items-end">
+        <div class="flex flex-row flex-wrap justify-center gap-4 max-w-sm mx-auto items-start sm:space-y-0 sm:flex-col lg:items-end sm:mx-0">
           
-            <a href="https://www.paypal.com/your-paypal-link" class="inline-flex items-center px-3 py-1.5 bg-neutral-50 rounded-lg hover:bg-yellow-500 transition duration-300">
-              <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" class="w-32 h-8" viewBox="0 0 124 33" enable-background="new 0 0 124 33" xml:space="preserve">
+            <a href="https://www.paypal.com/your-paypal-link" class="inline-flex items-center px-2 py-2.5 sm:px-2 sm:py-1.5 bg-neutral-50 rounded-lg hover:bg-yellow-500 transition duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" class="w-32 h-7 sm:w-32 sm:h-8" viewBox="0 0 124 33">
                 <path fill="#253B80" d="M46.211,6.749h-6.839c-0.468,0-0.866,0.34-0.939,0.802l-2.766,17.537c-0.055,0.346,0.213,0.658,0.564,0.658
                   h3.265c0.468,0,0.866-0.34,0.939-0.803l0.746-4.73c0.072-0.463,0.471-0.803,0.938-0.803h2.165c4.505,0,7.105-2.18,7.784-6.5
                   c0.306-1.89,0.013-3.375-0.872-4.415C50.224,7.353,48.5,6.749,46.211,6.749z M47,13.154c-0.374,2.454-2.249,2.454-4.062,2.454
@@ -1567,7 +1580,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
  
 
 
->BEANCONQUEROR</a> © Created with ❤ &amp; lots of coffee | Designed &amp; Developed in Germany under the influence of the the Weißwurstequator
+>BEANCONQUEROR</a> © Created with ❤ &amp; lots of coffee | Designed &amp; Developed in Germany
       </p>
     </div>
   </div>
@@ -1681,7 +1694,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam nihil enim maxime 
             Reject all
         </button>
 
-        <button id="cookiePreferences" class="text-xs border text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 font-medium rounded-lg px-4 py-2.5 duration-300 transition-colors focus:outline-none">
+        <button style="display:none" id="cookiePreferences" class="text-xs border text-gray-800 hover:bg-gray-100 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 font-medium rounded-lg px-4 py-2.5 duration-300 transition-colors focus:outline-none">
             Preferences
         </button>
 
