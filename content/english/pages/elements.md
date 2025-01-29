@@ -114,6 +114,10 @@ This is a simple info.
 This is a simple warning.
 {{< /notice >}}
 
+{{< notice "caution" >}}
+This is a simple caution.
+{{< /notice >}}
+
 <hr>
 
 ### Tab

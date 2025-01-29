@@ -4,7 +4,7 @@ baseURL = "/"
 # Title of your website (required).
 title = "BEANCONQUEROR"
 # Your theme name
-theme = "hugoplate"
+theme = ["hugoplate", "hugo-chart"] 
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
 timeZone = "Europe/Berlin"
 # post excerpt
@@ -47,6 +47,9 @@ target = "assets"
 [[module.mounts]]
 source = "hugo_stats.json"
 target = "assets/watching/hugo_stats.json"
+
+[[module.imports]]
+    path = "hugo-chart"
 
 ############################# Build ##############################
 [build]

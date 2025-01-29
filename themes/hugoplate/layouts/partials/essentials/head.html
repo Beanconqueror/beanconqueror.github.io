@@ -74,3 +74,8 @@
 {{ range .Site.Params.beanimport_js -}}
 <script src="{{ . | absURL }}"></script>
 {{- end }}
+
+{{ if .HasShortcode "chart" }}
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-tailwindcss-colors@1.0.0/dist/plugin.umd.min.js"></script>
+{{ end }}

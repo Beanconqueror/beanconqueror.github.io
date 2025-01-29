@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ partial "page-header" . }}
+
+<section class="section">
+  <div class="container">
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <div class="mt-8">
+      {{ range .Pages }}
+        {{ partial "data-tracking-item.html" . }}
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
