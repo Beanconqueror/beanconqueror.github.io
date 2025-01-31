@@ -26,7 +26,7 @@
       <link>//localhost:1313/data-tracking/personal-data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>//localhost:1313/data-tracking/personal-data/</guid>
-      <description>&lt;p&gt;We &lt;strong&gt;NEVER&lt;/strong&gt; track your personal data, or any information which can lead to an identification of you as person.&#xA;&lt;br&gt;&lt;br&gt;&#xA;As of now, we don&amp;rsquo;t use User-ID to identify and anonymize a unique user of the app.&lt;/p&gt;</description>
+      <description>&lt;ul class=&#34;space-y-2&#34;&gt;&#xA;    &#xA;    &#xA;    &#xA;    &#xA;      &lt;li class=&#34;flex items-start -mt-4&#34;&gt;&#xA;        &lt;i class=&#34;fas fa-circle-xmark text-red-500 mt-1 mr-2 -ml-4&#34;&gt;&lt;/i&gt;&#xA;        &lt;span&gt;We &lt;strong&gt;NEVER&lt;/strong&gt; track your personal data, or any information which can lead to an identification of you as person.&lt;/li&gt;&#xA;&lt;/span&gt;&#xA;      &lt;/li&gt;&#xA;    &#xA;      &lt;li class=&#34;flex items-start -mt-4&#34;&gt;&#xA;        &lt;i class=&#34;fas fa-circle-xmark text-red-500 mt-1 mr-2 -ml-4&#34;&gt;&lt;/i&gt;&#xA;        &lt;span&gt;As of now, we don&amp;rsquo;t use User-ID to identify and anonymize a unique user of the app.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;/span&gt;&#xA;      &lt;/li&gt;&#xA;    &#xA;  &lt;/ul&gt;</description>
     </item>
   </channel>
 </rss>

@@ -8,7 +8,7 @@
     
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {{ range .Pages }}
-        <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 ounded-lg lg:rounded-[2rem] p-6">
+        <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border ounded-lg lg:rounded-[2rem] p-6">
           <div class="flex items-center mb-4">
             <div class="w-full h-2 bg-theme-dark dark:bg-darkmode-theme-dark rounded-full mr-4">
               <div class="h-full bg-border rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-progress="{{ .Params.progress }}"></div>

@@ -1,17 +1,15 @@
 <div class="mx-auto mb-8">
-    <div class="rounded-lg lg:rounded-[2rem] {{ .Params.bgColor | default "bg-red-50" }} border-l-8 {{ .Params.borderColor | default "border-red-900" }}">
-      <div class="flex items-start p-8">
-        <div class="flex-shrink-0 mt-1">
-          <i class="{{ .Params.icon | default "fas fa-exclamation-circle" }} h-8 w-8 {{ .Params.iconColor | default "text-red-900" }}"></i>
-        </div>
-        <div class="ml-1 flex flex-col">
-          <p class="{{ .Params.titleColor | default "text-red-900" }} font-semibold text-lg">{{ .Params.title }}</p>
-          <div class="contentsdata {{ .Params.textColor | default "text-red-900" }} mt-2">
-            {{ .Content }}
-          </div>
+  <div class="rounded-lg lg:rounded-[2rem] {{ .Params.bgColor | default "bg-red-50" }} border-l-8 {{ .Params.borderColor | default "border-red-900" }}">
+    <div class="flex items-start p-8">
+      <div class="flex-shrink-0 mt-1">
+        <i class="{{ .Params.icon | default "fas fa-exclamation-circle" }} h-8 w-8 {{ .Params.iconColor | default "text-red-900" }}"></i>
+      </div>
+      <div class="ml-1 flex flex-col">
+        <p class="{{ .Params.titleColor | default "text-red-900" }} font-semibold text-lg">{{ .Params.title }}</p>
+        <div class="contentsdata {{ .Params.textColor | default "text-red-900" }} ">
+          {{ .Content | replaceRE "(?s){{<\\s*customlist([^>]*)>}}(.*?){{<\\s*/customlist\\s*>}}" "<ul$1>$2</ul>" | safeHTML }}
         </div>
       </div>
     </div>
   </div>
-  
-  
+</div>

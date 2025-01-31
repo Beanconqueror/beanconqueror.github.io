@@ -36,7 +36,7 @@
                       <!-- Google Play Store Button -->
                       <div class="flex bg-neutral-950 text-neutral-50 dark:bg-neutral-50 dark:text-neutral-950 rounded-lg transition-all duration-300 hover:scale-105">
                         <a href="{{ i18n "google_play_store_link" }}" class="w-full">
-                          <div class="flex items-center h-full px-2.5 py-1 sm:py-1.5">
+                          <div class="flex items-center h-full px-2.5 py-1.5">
                             <div class="flex-shrink-0 mr-3">
                               <svg viewBox="30 336.7 120.9 129.2" class="w-5 sm:w-6 md:w-7">
                                 <path fill="#FFD400" d="M119.2,421.2c15.3-8.4,27-14.8,28-15.3c3.2-1.7,6.5-6.2,0-9.7  c-2.1-1.1-13.4-7.3-28-15.3l-20.1,20.2L119.2,421.2z"/>
@@ -55,12 +55,12 @@
                 </div>
               </div>
         </div>
-          <div class="relative mx-auto border-slate-900 bg-slate-900 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
-            <div class="h-[32px] w-[3px] bg-slate-900 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-            <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-            <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-            <div class="h-[64px] w-[3px] bg-slate-900 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-            <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+          <div class="relative mx-auto border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+            <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+            <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+            <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+            <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+            <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
                 {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto" ) }}
             </div>
           </div>
@@ -76,7 +76,7 @@
   <div class="container mx-auto">
     <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
       {{ range .Params.stats }}
-        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] p-4">
+        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] p-4">
           <h2 class="leading-tight text-center text-dark dark:text-white">
             <span class="attribute">{{ .attribute }}</span>
             <span class="countTo" data-count="{{ .number }}">0</span>
@@ -107,7 +107,7 @@
           <div class="container">
             <div class="grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
               {{ range $index, $topfeatures := .Params.topfeatures }}
-              <div class="relative h-full overflow-hidden bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 shadow-border rounded-lg lg:rounded-[2rem]">
+              <div class="relative h-full overflow-hidden bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border shadow-border rounded-lg lg:rounded-[2rem]">
                 <div class="relative flex h-full flex-col justify-between overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="mb-8 px-8 pb-1 pt-4 sm:px-10 sm:pb-0 sm:pt-6">
                     <h4 class="mb-1">
@@ -119,12 +119,12 @@
                   </div>
                   <div class="flex-grow"></div>
                   <div class="relative h-[20rem] overflow-hidden flex justify-center items-start -mt-4">
-                    <div class="relative mx-auto border-slate-900 bg-slate-900 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] max-w-full transform translate-y-1/6">
-                      <div class="h-[32px] w-[3px] bg-slate-900 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-                      <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                      <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-                      <div class="h-[64px] w-[3px] bg-slate-900 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                      <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800 mx-auto">
+                    <div class="relative mx-auto border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] max-w-full transform translate-y-1/6">
+                      <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                      <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                      <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                      <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                      <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900 mx-auto">
                         {{ partial "image" (dict "Src" .image "Alt" "topfeature image") }}
                       </div>
                     </div>
@@ -143,7 +143,7 @@
         <div class="relative col-span-2 h-full">
           {{ with site.GetPage "sections/connectsmartscales" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-tl-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start">
               {{ range $index, $connectsmartscales := .Params.connectsmartscales }}
               <div class="w-full lg:w-2/5 px-8 pt-8 lg:pr-4">
@@ -152,12 +152,12 @@
               </div>
               <div class="w-full lg:w-3/5 pt-8">
                 <div class="relative h-[19rem] overflow-hidden flex justify-center items-start mx-auto">
-                  <div class="relative border-slate-900 bg-slate-900 border-[14px] rounded-[2.5rem] h-[600px]">
-                    <div class="h-[32px] w-[3px] bg-slate-900 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-                    <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                    <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-                    <div class="h-[64px] w-[3px] bg-slate-900 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                  <div class="relative border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px]">
+                    <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                    <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
                     {{ partial "image" (dict "Src" .image "Alt" "Connect Smart Scales image") }}
                   </div>
                 </div>
@@ -175,7 +175,7 @@
         <div class="relative col-span-2 lg:row-span-2 h-auto">
           {{ with site.GetPage "sections/automaticallystopbrew" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-r-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-r-[2rem] overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start p-8 sm:p-10">
               {{ range $index, $automaticallystopbrew := .Params.automaticallystopbrew }}
               <div class="w-full lg:w-2/5 lg:pr-4">
@@ -192,12 +192,12 @@
               </div>
               <div class="w-full lg:w-3/5 mt-8 lg:mt-0">
                 <div class="relative mx-auto lg:mr-0 w-[300px]">
-                  <div class="relative border-slate-900 bg-slate-900 border-[14px] rounded-[2.5rem] h-[600px]">
-                    <div class="h-[32px] w-[3px] bg-slate-900 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
-                    <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
-                    <div class="h-[46px] w-[3px] bg-slate-900 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
-                    <div class="h-[64px] w-[3px] bg-slate-900 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
-                    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+                  <div class="relative border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px]">
+                    <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                    <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                    <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
                       {{ partial "image" (dict "Src" .image "Alt" "Connect Smart Scales image") }}
                     </div>
                   </div>
@@ -219,7 +219,7 @@
             {{ $image := resources.Get . }}
             {{ if $image }}
               {{ $imageURL := $image.Permalink }}
-              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 lg:rounded-bl-[2rem] bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
+              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-bl-[2rem] bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
                 {{ else }}
                   <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light lg:rounded-bl-[2rem]"></div>
                 {{ end }}
@@ -248,7 +248,7 @@
             {{ $image := resources.Get . }}
             {{ if $image }}
               {{ $imageURL := $image.Permalink }}
-              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
+              <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border bg-transparent bg-cover bg-clip-border bg-center text-gray-700 shadow-none overflow-hidden" style="background-image: url('{{ $imageURL }}');">
                 {{ else }}
                   <div class="absolute inset-px rounded-lg bg-theme-light dark:bg-darkmode-theme-light"></div>
                 {{ end }}
@@ -294,7 +294,7 @@
         <div class="grid gap-4 grid-cols-1 lg:grid-cols-3 content">
           {{ range $index, $supportedscales := .Params.supportedscales }}
           <div class="lg:col-span-2 flex">
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-tl-[2rem]">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-tl-[2rem]">
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="px-8 pt-3 pb-8">
                     <h4 class="mb-1">
@@ -318,7 +318,7 @@
             {{ end }}
             <div class="lg:col-start-3 flex flex-col gap-4">
               {{ range $index, $scalediscount := .Params.scalediscount }}
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-tr-[2rem]">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-tr-[2rem]">
                 <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="px-8 pt-3 pb-8">
                     <h4 class="mb-1">
@@ -340,7 +340,7 @@
               </div>
               {{ end }}
               {{ range $index, $DIYScales := .Params.DIYScales }}
-              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg">
+              <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pt-3 pb-8">
                       <h4 class="mb-1">
@@ -362,7 +362,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $pressuredevices := .Params.pressuredevices }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pt-3 pb-8">
                       <h4 class="mb-1">
@@ -385,7 +385,7 @@
                 {{ end }}
             </div>
             {{ range $index, $portafilters := .Params.portafilters }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-bl-[2rem] flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-bl-[2rem] flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pt-3 pb-8">
                       <h4 class="mb-1">
@@ -407,7 +407,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $temperaturedevices := .Params.temperaturedevices }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pt-3 pb-8">
                       <h4 class="mb-1">
@@ -429,7 +429,7 @@
                 </div>
                 {{ end }}
                 {{ range $index, $refractometers := .Params.refractometers }}
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-br-[2rem] flex">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-br-[2rem] flex">
                   <div class="relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                     <div class="px-8 pt-3 pb-8">
                       <h4 class="mb-1">
@@ -477,7 +477,7 @@
         </div>
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
           {{ range $index, $features := .Params.features }}
-          <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 rounded-lg lg:rounded-[2rem] flex flex-row items-stretch overflow-hidden">
+          <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] flex flex-row items-stretch overflow-hidden">
             <div class="w-2/3 p-8">
               <h5 class="">{{ .title | markdownify }}</h5>
               <p class="">{{ .content | markdownify }}</p>
@@ -582,7 +582,7 @@
           </h2>
         </div>
       </div>
-      <div class="container grid divide-y-2 divide-solid divide-border mx-auto mt-8">
+      <div class="container grid divide-y-2 divide-solid divide-border dark:divide-darkmode-border mx-auto mt-8">
         {{ range $faqPages }}
           <div class="py-5">
             <details class="group">
@@ -622,7 +622,7 @@
             <div id="testimonials-container" class="mt-4 grid gap-4 sm:mt-8 lg:grid-cols-1">
               {{ range $index, $testimonial := .Params.testimonials }}
                 <div class="testimonial {{ if ge $index 3 }}hidden{{ end }}">
-                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 p-6 rounded-lg lg:rounded-[2rem]">
+                <div class="relative bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border p-6 rounded-lg lg:rounded-[2rem]">
                   <blockquote class="p-0">
                      "{{ $testimonial.content | markdownify }}"
                     <div class="mt-4 flex items-center">

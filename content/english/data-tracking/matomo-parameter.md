@@ -11,6 +11,7 @@ textColor: "text-yellow-700"
 
 We track the following basic parameters to understand the interaction with our website, the app and the pages that are used. Besides these parameters, we collect statistical information - most importantly, all these are anonymized. See all the details below:
 
+{{< customlist icon="fa fa-check text-yellow-700" >}}
 - User IP address (anonymized via 2-bytes-masked)
 - Date and time of the tracking request
 - Title of the page being viewed (Page Title)
@@ -27,3 +28,4 @@ We track the following basic parameters to understand the interaction with our w
 - Time of the first visit for this user
 - Time of the previous visit for this user
 - Number of visits for this user
+{{< /customlist >}}
