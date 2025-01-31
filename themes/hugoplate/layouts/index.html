@@ -105,7 +105,7 @@
             </p>
           </div>
           <div class="container">
-            <div class="grid gap-4 sm:mt-16 lg:grid-cols-3 lg:grid-rows-1">
+            <div class="grid gap-4 lg:grid-cols-3 lg:grid-rows-1">
               {{ range $index, $topfeatures := .Params.topfeatures }}
               <div class="relative h-full overflow-hidden bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border shadow-border rounded-lg lg:rounded-[2rem]">
                 <div class="relative flex h-full flex-col justify-between overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
@@ -143,7 +143,7 @@
         <div class="relative col-span-2 h-full">
           {{ with site.GetPage "sections/connectsmartscales" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2Hu dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start">
               {{ range $index, $connectsmartscales := .Params.connectsmartscales }}
               <div class="w-full lg:w-2/5 px-8 pt-8 lg:pr-4">
@@ -506,11 +506,75 @@
   {{ end }}
   <!-- /Features -->
 
+  <!-- Vision -->
+  {{ with site.GetPage "vision" }}
+  {{ if .Params.enable }}
+    <section class="vision">
+      <div class="container">
+        <div class="row">
+          <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
+            <p>{{ .Params.preline | markdownify }}</p>
+            <h2 class="mb-4">{{ .Params.headline | markdownify }}</h2>
+            <p>{{ .Params.discription | markdownify }}</p>
+          </div>
+        </div>
+        <div class="mx-auto w-full max-w-7xl px-5">
+          <div class="grid gap-16 md:grid-cols-2 md:gap-4 lg:grid-cols-[1fr_340px_1fr] items-start justify-center lg:gap-x-24">
+            <!-- left elements -->
+            <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-1 md:order-1">
+              {{ range first 3 (where .Pages "Type" "vision") }}
+              <div class="flex flex-col gap-4 w-full max-w-xs">
+                <div class="flex items-center gap-4">
+                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border w-10 h-10 flex items-center justify-center">
+                    <i class="{{ .Params.icon }}"></i>
+                  </div>
+                  <p class="max-w-xs md:max-w-[256px]">{{ .Params.description }}</p>
+                </div>
+                <h3 class="text-2xl md:text-3xl">{{ .Title }}</h3>
+              </div>
+              {{ end }}
+            </div>
+
+            <!-- Smartphone-area -->
+            <div class="flex justify-center items-start order-2 md:order-2 sticky">
+              <div class="relative mx-auto border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+                <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+                <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+                <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+                <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+                <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
+                  {{ partial "image" (dict "Src" .Params.image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto" ) }}
+                </div>
+              </div>
+            </div>
+
+            <!-- right elements -->
+            <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-3 md:order-3">
+              {{ range last 3 (where .Pages "Type" "vision") }}
+              <div class="flex flex-col gap-4 w-full max-w-xs md:items-end">
+                <div class="flex items-center gap-4 md:flex-row-reverse">
+                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border w-10 h-10 flex items-center justify-center">
+                    <i class="{{ .Params.icon }}"></i>
+                  </div>
+                  <p class="max-w-xs md:max-w-[256px] md:text-right">{{ .Params.description }}</p>
+                </div>
+                <h3 class="text-2xl md:text-right md:text-3xl">{{ .Title }}</h3>
+              </div>
+              {{ end }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {{ end }}
+  {{ end }}
+  <!-- /Vision -->
+
   <!-- not convinced -->
   <section class="section">
     <div class="container">
       <div class="row">
-        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
+        <div class="md:col-10 lg:col-8 xl:col-6 mx-auto my-6 text-center">
           <h2 class="mb-4">
             {{ .Params.headline | markdownify }}
           </h2>
