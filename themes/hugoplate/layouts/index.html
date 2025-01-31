@@ -518,15 +518,15 @@
             <p>{{ .Params.discription | markdownify }}</p>
           </div>
         </div>
-        <div class="mx-auto w-full max-w-7xl px-5">
+        <div class="mx-auto w-full max-w-7xl px-5 py-16 md:py-20">
           <div class="grid gap-16 md:grid-cols-2 md:gap-4 lg:grid-cols-[1fr_340px_1fr] items-start justify-center lg:gap-x-24">
-            <!-- left elements -->
+            <!-- Linke Elemente -->
             <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-1 md:order-1">
               {{ range first 3 (where .Pages "Type" "vision") }}
               <div class="flex flex-col gap-4 w-full max-w-xs">
                 <div class="flex items-center gap-4">
-                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border w-10 h-10 flex items-center justify-center">
-                    <i class="{{ .Params.icon }}"></i>
+                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border dark:border-2 border-border dark:border-darkmode-border w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <i class="{{ .Params.icon }} text-xl"></i>
                   </div>
                   <p class="max-w-xs md:max-w-[256px]">{{ .Params.description }}</p>
                 </div>
@@ -535,7 +535,7 @@
               {{ end }}
             </div>
 
-            <!-- Smartphone-area -->
+            <!-- Smartphone-Bereich -->
             <div class="flex justify-center items-start order-2 md:order-2 sticky">
               <div class="relative mx-auto border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
                 <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
@@ -548,13 +548,13 @@
               </div>
             </div>
 
-            <!-- right elements -->
+            <!-- Rechte Elemente -->
             <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-3 md:order-3">
               {{ range last 3 (where .Pages "Type" "vision") }}
               <div class="flex flex-col gap-4 w-full max-w-xs md:items-end">
                 <div class="flex items-center gap-4 md:flex-row-reverse">
-                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border w-10 h-10 flex items-center justify-center">
-                    <i class="{{ .Params.icon }}"></i>
+                  <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border dark:border-2 border-border dark:border-darkmode-border w-12 h-12 flex items-center justify-center flex-shrink-0">
+                    <i class="{{ .Params.icon }} text-xl"></i>
                   </div>
                   <p class="max-w-xs md:max-w-[256px] md:text-right">{{ .Params.description }}</p>
                 </div>
