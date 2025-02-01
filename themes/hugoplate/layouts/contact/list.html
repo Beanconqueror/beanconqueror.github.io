@@ -1,22 +1,17 @@
 {{ define "main" }}
   {{ partial "page-header" . }}
-
+  </section>
   <section class="section-sm">
     <div class="container">
-      <div class="row">
+      <div class="row justify-center">
         <div class="md:col-10 lg:col-6 mx-auto" style="margin-bottom:20px;">
-          We are not perfect - we know that - so if you have any question, feature request, angry or
-          happy messages, kudos etc. just drop us a line
-          and we will answer you asap.<br/>
-
-          We are looking forward hearing from you - until then, we will sip on our coffee and wait for your message :)
+          <div class="content">{{ .Content }}</div>
         </div>
       </div>
       <div class="row">
-
         <div class="md:col-10 lg:col-6 mx-auto" style="text-align:center;">
-          <a href="mailto:info@beanconqueror.com" class="w-inline-block"><img src="/static_images/send-email.png" style="margin: 0 auto;" alt="Send us an email" class="img-fluid"></a>
           <div>
+            {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" ) }}
             <a href="mailto:info@beanconqueror.com" class="paragraph link">info@beanconqueror.com</a>
           </div>
         </div>
