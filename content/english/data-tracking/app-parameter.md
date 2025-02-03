@@ -133,7 +133,7 @@ We’d like to continuously improve the app, the website and our future services
 - Instagram
 - Facebook
 - Buy-Me-A-Coffee
-- Website‍
+- Website
 {{< /customlist >}}
 
 **QR:**
