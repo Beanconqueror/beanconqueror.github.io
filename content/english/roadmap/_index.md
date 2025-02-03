@@ -1,6 +1,6 @@
 ---
 title: "Roadmap 2025"
-description: "Unsere Entwicklungs-Roadmap"
+description: "Our Development Roadmap"
 ---
 
-Hier können Sie den aktuellen Stand unserer Entwicklung verfolgen. Die Roadmap ist in vier Schritte unterteilt, die unsere wichtigsten Meilensteine darstellen.
+Stay in the loop with our latest progress! Our roadmap is brewed into four key steps, each marking a major milestone on our journey.

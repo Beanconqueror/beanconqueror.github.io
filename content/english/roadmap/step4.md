@@ -1,11 +1,9 @@
 ---
-title: "Schritt 1: Grundlagen"
-progress: 10
+title: "Automations"
+progress: 0
 items:
-  - text: "Basisstruktur erstellen"
+  - text: "Build pipelines"
     completed: false
-  - text: "Design-System implementieren"
-    completed: false
-  - text: "Responsives Layout entwickeln"
+  - text: "Automate deployment"
     completed: false
 ---
