@@ -15,14 +15,6 @@ topreason:
   - title: "James Hoffmann approved"
     video: "PhdxP9lId6A"
     content: "Video from James Hoffmann (YouTube)"
-    bulletpoints:
-      - "**James Hoffmann approved**"
-      - "**Open Source and Free**"
-      - "Developed since 8 years"
-      - "Focuses on bean to cup principle"
-      - "Supports multiple languages"
-      - "Integrates with smart devices"
-      - "Control your portafilters"
     button:
       enable: false
       label: ""
@@ -30,17 +22,19 @@ topreason:
 
   - title: "Kaffeemacher:innen approved"
     video: "AltqEuVAzlI"
-    content: "Bbla to the video"
-    bulletpoints:
-      - "**James Hoffmann approved**"
-      - "**Open Source and Free**"
-      - "Developed since 8 years"
-      - "Focuses on bean to cup principle"
-      - "Supports multiple languages"
-      - "Integrates with smart devices"
-      - "Control your portafilters"
+    content: "German video from Kaffeemacher:innen (YouTube)"
     button:
       enable: false
       label: ""
       link: ""
+      
+  - title: "Kaffeemacher:innen approved"
+    video: "_sFEhMHIE6A"
+    content: "Spanish video about Beanconqueror"
+    button:
+      enable: false
+      label: ""
+      link: ""
+
+  
 ---
