@@ -9,7 +9,7 @@ titleColor: "text-green-900"
 textColor: "text-green-600"
 ---
 
-We’d like to continuously improve the app, the website and our future services for you. To do so, we need to track some data how you use the app and its features. You can check the Github Repository to see the actual code.
+We’d like to continuously improve the app, the website and our future services for you. To do so, we need to track some data how you use the app and its features. You can check the [Github Repository](https://github.com/graphefruit/Beanconqueror/tree/develop/src/data/tracking) to see the actual code.
 
 **Bean:**
 {{< customlist icon="fa fa-check text-green-600" >}}

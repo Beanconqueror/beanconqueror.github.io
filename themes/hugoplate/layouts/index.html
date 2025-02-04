@@ -2,7 +2,7 @@
   <!-- Banner -->
   {{ with .Params.banner }}
     <section class="section pt-14">
-      <div class="container">
+      <div class="container" id="start">
         <div class="grid lg:grid-cols-3 sm:grid-cols-2 gap-4 sm:gap-8 xl:gap-20 sm:items-center place-content-center justify-center">
           <div class="lg:col-12 md:col-9 mb-8 text-start lg:col-span-2">
             <h1 class="mb-4 text-h3 lg:text-h1">
@@ -70,30 +70,34 @@
   {{ end }}
   <!-- /Banner -->
 
- <!-- Stats -->
- {{ with site.GetPage "sections/stats" }}
-  {{ if .Params.enable }}
-  <div class="container mx-auto">
-    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-      {{ range .Params.stats }}
-        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] p-4">
-          <h2 class="leading-tight text-center text-dark dark:text-white">
-            <span class="attribute">{{ .attribute }}</span>
-            <span class="countTo" data-count="{{ .number }}">0</span>
-          </h2>
-          <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
-        </div>
-      {{ end }}
+  <!-- Stats -->
+  {{ with site.GetPage "sections/stats" }}
+    {{ if .Params.enable }}
+    <div class="container mx-auto" id="stats">
+      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {{ range .Params.stats }}
+          <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] p-4">
+            <div class="leading-tight text-center flex items-center">
+              {{ if .icon }}
+                <h3></h4><i class="{{ .icon }} mr-2"></i></h3>
+              {{ end }}
+              <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
+              <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span></h1>
+            </div>
+            <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
+          </div>
+        {{ end }}
+      </div>
     </div>
-  </div>
+    {{ end }}
   {{ end }}
-  {{ end }}
- <!-- /Stats -->
+  <!-- /Stats -->
+
 
   <!-- Top-Features -->
   {{ with site.GetPage "sections/topfeatures" }}
     {{ if .Params.enable }}
-    <section class="section">
+    <section class="section" id="top-features">
       <div class="container">
         <div class="row">
           <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
@@ -143,7 +147,7 @@
         <div class="relative col-span-2 h-full">
           {{ with site.GetPage "sections/connectsmartscales" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2Hu dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start">
               {{ range $index, $connectsmartscales := .Params.connectsmartscales }}
               <div class="w-full lg:w-2/5 px-8 pt-8 lg:pr-4">
@@ -276,7 +280,7 @@
   <!-- Compatible Devices -->
   {{ with site.GetPage "sections/compatibledevices" }}
     {{ if .Params.enable }}
-    <section class="section">
+    <section class="section" id="compatible-devices">
       <div class="container">
         <div class="row">
           <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
@@ -460,7 +464,7 @@
   <!-- Features -->
   {{ with site.GetPage "sections/features" }}
     {{ if .Params.enable }}
-    <section class="section">
+    <section class="section" id="features">
       <div class="container">
         <div class="row">
           <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
@@ -509,13 +513,13 @@
   <!-- Vision -->
   {{ with site.GetPage "vision" }}
   {{ if .Params.enable }}
-    <section class="vision">
+    <section class="vision" id="vision">
       <div class="container">
         <div class="row">
           <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
             <p>{{ .Params.preline | markdownify }}</p>
             <h2 class="mb-4">{{ .Params.headline | markdownify }}</h2>
-            <p>{{ .Params.discription | markdownify }}</p>
+            <p>{{ .Content | markdownify }}</p>
           </div>
         </div>
         <div class="mx-auto w-full max-w-7xl px-5 py-16 md:py-20">
@@ -571,7 +575,7 @@
   <!-- /Vision -->
 
   <!-- not convinced -->
-  <section class="section">
+  <section class="section" id="not-convinced">
     <div class="container">
       <div class="row">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto my-6 text-center">
@@ -589,7 +593,7 @@
 
   <!-- Top Reasons -->
   {{ range $i, $e:= .Params.topreason }}
-  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}">
+  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}" id="top-reasons">
     <div class="container">
       <div class="row items-center justify-between">
         <div class=" {{ if not (modBool $i 2) }} md:order-2 {{ end }} md:col-5 mb-6">
@@ -638,7 +642,7 @@
   <!-- FAQ -->
   {{ $faqPages := where .Site.RegularPages "Section" "faq" }}
     {{ if gt (len $faqPages) 0 }}
-    <section class="section rounded-t-3xl bg-theme-light dark:bg-darkmode-theme-dark">
+    <section class="section rounded-t-3xl bg-theme-light dark:bg-darkmode-theme-dark" id="faq">
       <div class="container">
         <div class="md:col-10 lg:col-8 xl:col-6 mx-auto mb-6 text-center">
           <h2 class="mb-4">

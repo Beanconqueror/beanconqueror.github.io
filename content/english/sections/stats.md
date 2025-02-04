@@ -2,15 +2,23 @@
 enable: true
 stats:
   - attribute: "+"
+    icon: ""
     number: "50000"
-    content: "Installation"
+    decimals: 0
+    content: "Installations"
   - attribute: "+"
+    icon: ""
     number: "13"
+    decimals: 0
     content: "Supported languages"
-  - attribute: "ø"
+  - attribute: ""
+    icon: "fas fa-star"
     number: "4.9"
+    decimals: 1
     content: "Rating reviews"
-  - attribute: "&"
+  - attribute: "over"
+    icon: ""
     number: "8"
+    decimals: 0
     content: "years product development"
 ---

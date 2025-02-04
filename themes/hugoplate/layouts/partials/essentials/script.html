@@ -89,7 +89,8 @@
       const countElements = document.querySelectorAll('.countTo');
 
       countElements.forEach(element => {
-        const target = parseInt(element.getAttribute('data-count'), 10);
+        const target = parseFloat(element.getAttribute('data-count'));
+        const decimals = parseInt(element.getAttribute('data-decimals') || '0', 10);
         let count = 0;
         const duration = 2000; // 2 seconds
         const steps = 50;
@@ -99,15 +100,15 @@
           count += increment;
           if (count >= target) {
             clearInterval(timer);
-            element.textContent = target;
+            element.textContent = target.toFixed(decimals);
           } else {
-            element.textContent = Math.round(count);
+            element.textContent = count.toFixed(decimals);
           }
         }, duration / steps);
       });
-    }catch(ex) {
-
+    } catch(ex) {
+      console.error('Error in count animation:', ex);
     }
-
   });
-  </script>
+</script>
+
