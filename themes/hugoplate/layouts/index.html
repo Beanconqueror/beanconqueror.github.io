@@ -72,26 +72,30 @@
 
   <!-- Stats -->
   {{ with site.GetPage "sections/stats" }}
-    {{ if .Params.enable }}
-    <div class="container mx-auto" id="stats">
-      <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {{ range .Params.stats }}
-          <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] p-4">
-            <div class="leading-tight text-center flex items-center">
-              {{ if .icon }}
-                <h3></h4><i class="{{ .icon }} mr-2"></i></h3>
-              {{ end }}
-              <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
-              <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span></h1>
-            </div>
-            <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
+  {{ if .Params.enable }}
+  <div class="container mx-auto" id="stats">
+    <div class="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      {{ range $index, $stat := .Params.stats }}
+        <div class="flex flex-col items-center bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg 
+          {{ if eq $index 0 }} lg:rounded-tl-[2rem] lg:rounded-bl-[2rem] {{ end }}
+          {{ if eq $index 3 }} lg:rounded-tr-[2rem] lg:rounded-br-[2rem] {{ end }}
+          p-4">
+          <div class="leading-tight text-center flex items-center">
+            {{ if .icon }}
+              <h3><i class="{{ .icon }} mr-2"></i></h3>
+            {{ end }}
+            <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
+            <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span></h1>
           </div>
-        {{ end }}
-      </div>
+          <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
+        </div>
+      {{ end }}
     </div>
-    {{ end }}
+  </div>
+  {{ end }}
   {{ end }}
   <!-- /Stats -->
+
 
 
   <!-- Top-Features -->
@@ -111,7 +115,9 @@
           <div class="container">
             <div class="grid gap-4 lg:grid-cols-3 lg:grid-rows-1">
               {{ range $index, $topfeatures := .Params.topfeatures }}
-              <div class="relative h-full overflow-hidden bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border shadow-border rounded-lg lg:rounded-[2rem]">
+              <div class="relative h-full overflow-hidden bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border shadow-border rounded-lg 
+              {{ if eq $index 0 }} lg:rounded-tl-[2rem] {{ end }}
+              {{ if eq $index 2 }} lg:rounded-tr-[2rem] {{ end }}">
                 <div class="relative flex h-full flex-col justify-between overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] lg:rounded-l-[calc(2rem+1px)]">
                   <div class="mb-8 px-8 pb-1 pt-4 sm:px-10 sm:pb-0 sm:pt-6">
                     <h4 class="mb-1">
@@ -147,7 +153,7 @@
         <div class="relative col-span-2 h-full">
           {{ with site.GetPage "sections/connectsmartscales" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-tl-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start">
               {{ range $index, $connectsmartscales := .Params.connectsmartscales }}
               <div class="w-full lg:w-2/5 px-8 pt-8 lg:pr-4">
@@ -179,7 +185,7 @@
         <div class="relative col-span-2 lg:row-span-2 h-auto">
           {{ with site.GetPage "sections/automaticallystopbrew" }}
           {{ if .Params.enable }}
-          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-r-[2rem] overflow-hidden">
+          <div class="h-full rounded-lg bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border lg:rounded-br-[2rem] overflow-hidden">
             <div class="relative flex flex-col lg:flex-row items-start p-8 sm:p-10">
               {{ range $index, $automaticallystopbrew := .Params.automaticallystopbrew }}
               <div class="w-full lg:w-2/5 lg:pr-4">
@@ -481,7 +487,16 @@
         </div>
         <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
           {{ range $index, $features := .Params.features }}
-          <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] flex flex-row items-stretch overflow-hidden">
+          <div class="
+            bg-theme-light dark:bg-darkmode-theme-light 
+            border border-border dark:border-2 dark:border-darkmode-border 
+            rounded-lg 
+            {{ if eq $index 0 }} md:rounded-tl-[2rem] {{ end }}
+            {{ if eq $index 1 }} md:rounded-tr-[2rem] {{ end }}
+            {{ if eq $index 8 }} md:rounded-bl-[2rem] {{ end }}
+            {{ if eq $index 9 }} md:rounded-br-[2rem] {{ end }}
+            flex flex-row items-stretch overflow-hidden
+          ">
             <div class="w-2/3 p-8">
               <h5 class="">{{ .title | markdownify }}</h5>
               <p class="">{{ .content | markdownify }}</p>
@@ -527,7 +542,7 @@
             <!-- Linke Elemente -->
             <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-1 md:order-1">
               {{ range first 3 (where .Pages "Type" "vision") }}
-              <div class="flex flex-col gap-4 w-full max-w-xs">
+              <div class="flex flex-col gap-4 w-full">
                 <div class="flex items-center gap-4">
                   <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border dark:border-2 border-border dark:border-darkmode-border w-12 h-12 flex items-center justify-center flex-shrink-0">
                     <i class="{{ .Params.icon }} text-xl"></i>
@@ -555,7 +570,7 @@
             <!-- Rechte Elemente -->
             <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-3 md:order-3">
               {{ range last 3 (where .Pages "Type" "vision") }}
-              <div class="flex flex-col gap-4 w-full max-w-xs md:items-end">
+              <div class="flex flex-col gap-4 w-full md:items-end">
                 <div class="flex items-center gap-4 md:flex-row-reverse">
                   <div class="rounded-full bg-theme-light dark:bg-darkmode-theme-light border dark:border-2 border-border dark:border-darkmode-border w-12 h-12 flex items-center justify-center flex-shrink-0">
                     <i class="{{ .Params.icon }} text-xl"></i>
