@@ -51,6 +51,10 @@ target = "assets/watching/hugo_stats.json"
 [[module.imports]]
     path = "hugo-chart"
 
+[[module.imports]]
+source = "build/player/lottie.js"
+target = "assets/js/modules/lottie/lottie.js"
+
 ############################# Build ##############################
 [build]
 noJSConfigInAssets = false
@@ -149,6 +153,9 @@ link = "plugins/font-awesome/v6/solid.css"
 lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/icons.css"
+lazy = true
+[[params.plugins.css]]
+link = "plugins/font-awesome/v6/regular.css"
 lazy = true
 
 # JS Plugins

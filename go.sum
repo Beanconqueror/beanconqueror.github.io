@@ -1,3 +1,5 @@
+github.com/gethinode/mod-lottie v1.5.13 h1:Vth/OZDjfBZ9Kz5ew3tXGj9tU6w4StIta6qgfa1daZo=
+github.com/gethinode/mod-lottie v1.5.13/go.mod h1:tMFSUW9z3kC8IvDfs1ph9MGjuZFRBrpCnpodrwY+L4w=
 github.com/gethugothemes/hugo-modules/accordion v0.0.0-20241203025515-30ad48e108af h1:BKOdMWtcCh5Y2JHFSP+dro2UF+XVF0nabPs6BbW2PVA=
 github.com/gethugothemes/hugo-modules/accordion v0.0.0-20241203025515-30ad48e108af/go.mod h1:D4DpauKPDcUHI9CVKYmJeO6bkSJIhUN864TyXZ2o0VI=
 github.com/gethugothemes/hugo-modules/adsense v0.0.0-20241203025515-30ad48e108af h1:uOQnQxbGsdk+9qv82ywBOjFM7tNqpRJ5q/zwPoKa47g=
@@ -48,5 +50,7 @@ github.com/gethugothemes/hugo-modules/videos v0.0.0-20241203025515-30ad48e108af 
 github.com/gethugothemes/hugo-modules/videos v0.0.0-20241203025515-30ad48e108af/go.mod h1:P722lLWdnNhdZVq6gvMrOLqECUwrAYQWaOWlChta5H0=
 github.com/hugomods/mermaid v0.1.4 h1:/u0FZRSBMpqTbDh4XPBL7c6p0DUjvIkoo9cC89GASSI=
 github.com/hugomods/mermaid v0.1.4/go.mod h1:GOID2Ko1vdrX03ZMaFNQL/vdTU1tZmGcVjOgBN8O42Y=
+github.com/rodrigoalcarazdelaosa/wowchemy-shortcode-lottie v0.0.0-20210722201729-df3b5beba043 h1:LZJnQi2aDRW7hNhAK/VnOjkiFI1vOreDBCmJmSSTxao=
+github.com/rodrigoalcarazdelaosa/wowchemy-shortcode-lottie v0.0.0-20210722201729-df3b5beba043/go.mod h1:CarLWRKy1Z29AF826pc7/n53hkGcplo2oi1eYZCFhVU=
 github.com/zeon-studio/hugoplate v0.0.0-20241203091903-bf5613de8b39 h1:lOdY3wufyj4q+MBFtZj6XqGAxmaSxH9C065AexHFUn0=
 github.com/zeon-studio/hugoplate v0.0.0-20241203091903-bf5613de8b39/go.mod h1:YlRIwdTWidquf1dhtx+mDfu0I3KVrVQB4wi4UmHlK3E=

@@ -10,10 +10,10 @@ The following page lists our tracking concept, including the parameters we track
 
 <br>
 
-#### {{< icon name="circle-exclamation" pack="fas" color="violet" >}}&ensp;Parameters tracked
-#### {{< icon name="circle-xmark" pack="fas" color="green" >}}&ensp;Parameters we **NEVER** track
-#### {{< icon name="circle-question" pack="fas" color="yellow" >}}&ensp;Reasons for tracking
-#### {{< icon name="heart" pack="fas" color="red" >}}&ensp;100% transparency via Source Code
+#### {{< icon name="circle-exclamation" pack="fas" color="text-fuchsia-700" >}}&ensp;Parameters tracked
+#### {{< icon name="circle-xmark" pack="fas" color="text-green-600" >}}&ensp;Parameters we **NEVER** track
+#### {{< icon name="circle-question" pack="fas" color="text-yellow-400" >}}&ensp;Reasons for tracking
+#### {{< icon name="heart" pack="fas" color="text-red-600" >}}&ensp;100% transparency via Source Code
 
 <br>
 <br>

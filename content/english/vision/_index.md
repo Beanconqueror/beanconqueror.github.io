@@ -2,7 +2,10 @@
 enable: true
 preline: "Our vision for Beanconqueror"
 headline: "One app - a comprehensive coffee-ecosystem"
-image: "{{/* w-272px h-572px */}}"
+animation: ""
+video: "/video/en/main/vision/BQ-brew_methods.webm"
+image: "/images/en/main/vision/brew-methods.png"
+image_alt: "Beschreibung des Bildinhalts"
 ---
 
 We thrive to build a comprehensive, transparent & open ecosystem with ‍all information of the beans as core - we call it the BEAN-DNA.

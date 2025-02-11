@@ -1,4 +1,5 @@
 {{ $name := .Get "name" }}
 {{ $pack := .Get "pack" | default "fas" }}
-{{ $color := .Get "color" | default "currentColor" }}
-<i class="{{ $pack }} fa-{{ $name }}" style="color: {{ $color }};"></i>
+{{ $color := .Get "color" | default "text-current" }}
+
+<i class="{{ $pack }} fa-{{ $name }} {{ $color }}"></i>

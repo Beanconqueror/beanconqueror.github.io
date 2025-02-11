@@ -36,5 +36,8 @@
       "tailwindcss": {},
       "autoprefixer": {}
     }
+  },
+  "dependencies": {
+    "tailwind-clip-path": "^1.0.0"
   }
 }

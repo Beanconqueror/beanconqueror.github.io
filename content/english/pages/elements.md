@@ -114,9 +114,6 @@ This is a simple info.
 This is a simple warning.
 {{< /notice >}}
 
-{{< notice "caution" >}}
-This is a simple caution.
-{{< /notice >}}
 
 <hr>
 
@@ -250,3 +247,18 @@ flowchart TD
 ### Custom video
 
 {{< video src="https://www.w3schools.com/html/mov_bbb.mp4" width="100%" height="auto" autoplay="false" loop="false" muted="false" controls="true" class="rounded-lg" >}}
+
+<hr>
+
+### Side-by-Side Image
+
+{{< image-comparison 
+before="images/gallery/01.jpg" 
+after="images/gallery/06.jpg" 
+alt="Bildvergleich" >}}
+
+<hr>
+
+### Phone frame
+
+{{< phone-frame video="/video/en/main/vision/BQ-brew_methods.webm" >}}

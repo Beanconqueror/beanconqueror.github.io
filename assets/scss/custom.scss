@@ -40,4 +40,16 @@
     height: auto;
     margin-right: 2rem;
   }
-  
+
+/* Sicherstellen, dass der Container sichtbar ist */
+.diff-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9; /* Erzwingt ein Seitenverhältnis */
+  overflow: hidden;
+}
+
+/* Clip für das zweite Bild */
+.diff-after {
+  clip-path: inset(0 calc(50%) 0 0); /* Startet bei der Hälfte */
+}

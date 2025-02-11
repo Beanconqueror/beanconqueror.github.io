@@ -73,6 +73,15 @@ module.exports = {
       padding: "2rem",
     },
     extend: {
+      clipPath: {
+        'right': 'inset(0 calc(50%) 0 0)', // Startet bei der Hälfte
+        'left': 'inset(0 calc(50%) calc(50%) calc(50%))',
+      },
+      height: {
+        '[300px]': '300px',
+        '[400px]': '400px',
+        '[500px]': '500px',
+      },
       colors: {
         text: theme.colors.default.text_color.default,
         light: theme.colors.default.text_color.light,
@@ -132,5 +141,6 @@ module.exports = {
         5: "3rem",
       },
     }),
+    require('tailwind-clip-path'), // Clip path support
   ],
 };

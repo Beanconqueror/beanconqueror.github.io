@@ -61,7 +61,25 @@
             <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
             <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
             <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
-                {{ partial "image" (dict "Src" .image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto" ) }}
+              {{- if .Params.animation }}
+              <lottie-player 
+                src="{{ .Params.animation | relURL }}" 
+                style="width: 100%; height: 100%;"
+                loop
+                autoplay>
+              </lottie-player>
+              {{- else if .Params.video }}
+              {{ partial "video.html" (dict 
+                  "Src" (.Params.video | relURL)
+                  "Autoplay" "true"
+                  "Loop" "true"
+                  "Muted" "true"
+                  "Controls" "false"
+                  "Class" "w-full h-full object-cover"
+              ) }}                  
+            {{- else if .Params.image }}
+              {{ partial "image" (dict "Src" .Params.image "Alt" "Ihre_Bildbeschreibung" "Class" "w-full h-full object-cover") }}
+            {{- end }}
             </div>
           </div>
         </div>
@@ -135,7 +153,25 @@
                       <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                       <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
                       <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900 mx-auto">
-                        {{ partial "image" (dict "Src" .image "Alt" "topfeature image") }}
+                        {{- if .Params.animation }}
+                    <lottie-player 
+                      src="{{ .Params.animation | relURL }}" 
+                      style="width: 100%; height: 100%;"
+                      loop
+                      autoplay>
+                    </lottie-player>
+                    {{- else if .Params.video }}
+                    {{ partial "video.html" (dict 
+                        "Src" (.Params.video | relURL)
+                        "Autoplay" "true"
+                        "Loop" "true"
+                        "Muted" "true"
+                        "Controls" "false"
+                        "Class" "w-full h-full object-cover"
+                    ) }}                  
+                  {{- else if .Params.image }}
+                    {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                  {{- end }}
                       </div>
                     </div>
                   </div>
@@ -168,7 +204,25 @@
                     <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                     <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
                     <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
-                    {{ partial "image" (dict "Src" .image "Alt" "Connect Smart Scales image") }}
+                      {{- if .Params.animation }}
+                      <lottie-player 
+                        src="{{ .Params.animation | relURL }}" 
+                        style="width: 100%; height: 100%;"
+                        loop
+                        autoplay>
+                      </lottie-player>
+                      {{- else if .Params.video }}
+                      {{ partial "video.html" (dict 
+                          "Src" (.Params.video | relURL)
+                          "Autoplay" "true"
+                          "Loop" "true"
+                          "Muted" "true"
+                          "Controls" "false"
+                          "Class" "w-full h-full object-cover"
+                      ) }}                  
+                    {{- else if .Params.image }}
+                      {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                    {{- end }}
                   </div>
                 </div>
               </div>
@@ -208,7 +262,25 @@
                     <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                     <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
                     <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
-                      {{ partial "image" (dict "Src" .image "Alt" "Connect Smart Scales image") }}
+                      {{- if .Params.animation }}
+                    <lottie-player 
+                      src="{{ .Params.animation | relURL }}" 
+                      style="width: 100%; height: 100%;"
+                      loop
+                      autoplay>
+                    </lottie-player>
+                    {{- else if .Params.video }}
+                    {{ partial "video.html" (dict 
+                        "Src" (.Params.video | relURL)
+                        "Autoplay" "true"
+                        "Loop" "true"
+                        "Muted" "true"
+                        "Controls" "false"
+                        "Class" "w-full h-full object-cover"
+                    ) }}                  
+                  {{- else if .Params.image }}
+                    {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                  {{- end }}
                     </div>
                   </div>
                 </div>
@@ -562,10 +634,29 @@
                 <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
                 <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
                 <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900">
-                  {{ partial "image" (dict "Src" .Params.image "Alt" "Banner image" "Loading" "eager" "Class" "mx-auto" ) }}
+                  {{- if .Params.animation }}
+                    <lottie-player 
+                      src="{{ .Params.animation | relURL }}" 
+                      style="width: 100%; height: 100%;"
+                      loop
+                      autoplay>
+                    </lottie-player>
+                    {{- else if .Params.video }}
+                    {{ partial "video.html" (dict 
+                        "Src" (.Params.video | relURL)
+                        "Autoplay" "true"
+                        "Loop" "true"
+                        "Muted" "true"
+                        "Controls" "false"
+                        "Class" "w-full h-full object-cover"
+                    ) }}                  
+                  {{- else if .Params.image }}
+                    {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                  {{- end }}
                 </div>
               </div>
-            </div>
+            </div>          
+
 
             <!-- Rechte Elemente -->
             <div class="flex flex-col items-start justify-start gap-20 lg:gap-32 order-3 md:order-3">

@@ -1,0 +1,69 @@
+{{ $before := resources.Get (printf "%s" (.Get "before")) }}
+{{ $after := resources.Get (printf "%s" (.Get "after")) }}
+{{ $alt := .Get "alt" | default "Bildvergleich" }}
+
+{{ if not $before }}
+  {{ errorf "Bild nicht gefunden: %s" (.Get "before") }}
+{{ end }}
+{{ if not $after }}
+  {{ errorf "Bild nicht gefunden: %s" (.Get "after") }}
+{{ end }}
+
+<div class="relative w-full aspect-video overflow-hidden diff-container">
+  <!-- Erstes Bild (Vorher) -->
+  <div class="absolute inset-0 diff-before">
+    <img src="{{ $before.RelPermalink }}" alt="{{ $alt }} (Vorher)" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Zweites Bild (Nachher) -->
+  <div class="absolute inset-0 diff-after clip-right">
+    <img src="{{ $after.RelPermalink }}" alt="{{ $alt }} (Nachher)" class="w-full h-full object-cover">
+  </div>
+
+  <!-- Divider (Resizer) -->
+  <div class="absolute inset-y-0 left-1/2 transform -translate-x-1/2 flex items-center justify-center cursor-ew-resize diff-resizer">
+    <div class="h-full w-[2px] bg-white"></div>
+    <div class="absolute w-10 h-10 bg-white rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform">
+      <i class="fas fa-chevron-left text-black"></i>
+      <i class="fas fa-chevron-right text-black"></i>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const containers = document.querySelectorAll('.diff-container');
+  
+  containers.forEach(container => {
+    const resizer = container.querySelector('.diff-resizer');
+    const after = container.querySelector('.clip-right');
+    let isDragging = false;
+
+    const updateClipPath = (x) => {
+      const rect = container.getBoundingClientRect();
+      const percentage = ((x - rect.left) / rect.width) * 100;
+      const clampedPercentage = Math.min(Math.max(percentage, 0), 100);
+      after.style.clipPath = `inset(0 ${100 - clampedPercentage}% 0 0)`;
+      resizer.style.left = `${clampedPercentage}%`;
+    };
+
+    const onMouseMove = (e) => {
+      if (!isDragging) return;
+      updateClipPath(e.clientX);
+    };
+
+    const onMouseUp = () => {
+      isDragging = false;
+      window.removeEventListener('mousemove', onMouseMove);
+      window.removeEventListener('mouseup', onMouseUp);
+    };
+
+    resizer.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      window.addEventListener('mousemove', onMouseMove);
+      window.addEventListener('mouseup', onMouseUp);
+      e.preventDefault();
+    });
+  });
+});
+</script>

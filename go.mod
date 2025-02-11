@@ -3,6 +3,7 @@ module hugoplate.netlify.app
 go 1.21
 
 require (
+	github.com/gethinode/mod-lottie v1.5.13 // indirect
 	github.com/gethugothemes/hugo-modules/accordion v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/adsense v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/components/announcement v0.0.0-20241203025515-30ad48e108af // indirect
@@ -28,5 +29,6 @@ require (
 	github.com/gethugothemes/hugo-modules/table-of-contents v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/gethugothemes/hugo-modules/videos v0.0.0-20241203025515-30ad48e108af // indirect
 	github.com/hugomods/mermaid v0.1.4 // indirect
+	github.com/rodrigoalcarazdelaosa/wowchemy-shortcode-lottie v0.0.0-20210722201729-df3b5beba043 // indirect
 	github.com/zeon-studio/hugoplate v0.0.0-20241203091903-bf5613de8b39 // indirect
 )

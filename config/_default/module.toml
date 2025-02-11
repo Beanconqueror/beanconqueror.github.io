@@ -97,3 +97,9 @@ path = "github.com/gethugothemes/hugo-modules/seo-tools/google-tag-manager"
 
 [[imports]]
 path = "github.com/hugomods/mermaid"
+
+[[imports]]
+path = "github.com/gethinode/mod-lottie"
+
+[[imports]]
+path = "github.com/rodrigoalcarazdelaosa/wowchemy-shortcode-lottie"
