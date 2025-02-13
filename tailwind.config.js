@@ -144,3 +144,4 @@ module.exports = {
     require('tailwind-clip-path'), // Clip path support
   ],
 };
+module.exports.tailwindConfig = module.exports;

@@ -53,3 +53,14 @@
 .diff-after {
   clip-path: inset(0 calc(50%) 0 0); /* Startet bei der Hälfte */
 }
+
+/* Light-Mode */
+.chart canvas {
+  --chart-grid-color: rgba(160, 160, 160, 0.2);
+}
+
+/* Dark-Mode */
+.dark .chart canvas {
+  --chart-grid-color: rgba(255, 255, 255, 0.2);
+}
+
