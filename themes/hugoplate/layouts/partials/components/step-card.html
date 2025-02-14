@@ -1,0 +1,16 @@
+<li class="flex items-center space-x-4">
+    <!-- Jahr -->
+    <div class="text-base font-medium">{{ .Params.year }}</div>
+    
+    <!-- Icon -->
+    <div class="flex items-center justify-center w-12 h-12 rounded-full border border-primary">
+      <i class="fa {{ if eq .Params.icon "check" }}fa-check{{ else }}fa-bullseye{{ end }} text-white w-8 h-8"></i>
+    </div>
+    
+    <!-- Beschreibung -->
+    <div class="timeline-box">
+      <h3 class="font-bold">{{ .Title }}</h3>
+      <p>{{ .Params.description }}</p>
+    </div>
+  </li>
+  

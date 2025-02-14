@@ -8,7 +8,7 @@ weight = 1
 
 [[main]]
 name = "Conquerors"
-url = "/authors"
+url = "/conquerors"
 weight = 4
 
 [[main]]

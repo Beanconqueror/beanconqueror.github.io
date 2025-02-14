@@ -1,8 +1,8 @@
 ---
-title: Lars Saalbach
-email: lars.saalbach@beanconqueror.com
+name: Lars Saalbach
+title: "Founder and Developer"
 image: "/images/avatar.png"
-description: Coffee lover since ever, started his nerdy career in 2017
+weight: 1
 
 social:
   - name: github
@@ -14,5 +14,5 @@ social:
     link: https://www.linkedin.com/in/lars-saalbach-a73910194
 ---
 
-Founder and developer of Beanconqueror!
+Coffee lover since ever, started his nerdy career in 2017
 Loving coffee and ultimate Beanconqueror user

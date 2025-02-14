@@ -1,0 +1,81 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7 text-center">
+          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
+          <h1 class="mb-6">{{ .Title }}</h1>
+          <div class="content">{{ .Content }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range (site.GetPage "taxonomyTerm" "authors").Pages.ByWeight }}
+          <div class="md:col-6 lg:col-4 mb-14">
+            {{ partial "components/author-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>  
+  <section class="section">
+    <div class="container max-w-7xl mx-auto px-4 overflow-x-auto">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">{{ (site.GetPage "how-it-started").Title }}</h2>
+        <p class="text-lg">{{ (site.GetPage "how-it-started").Description }}</p>
+      </div>
+      <ul class="flex items-center space-x-8 lg:space-x-16 overflow-x-auto relative">
+        {{ range $index, $page := where site.RegularPages.ByWeight "Section" "how-it-started" }}
+          <li class="flex flex-col items-center text-center relative">
+            <!-- Jahr -->
+            <div class="text-base font-medium mb-2">{{ $page.Params.year }}</div>
+            
+            <!-- Icon -->
+            <div class="w-6 h-6 flex items-center justify-center rounded-full border border-purple-500 bg-purple-900 mb-4 relative z-10">
+              <i class="fas fa-circle text-purple-200 text-sm"></i>
+              <!-- Verbindungslinie -->
+              {{ if lt $index (sub (len (where site.RegularPages.ByWeight "Section" "how-it-started")) 1) }}
+                <div class="absolute top-1/2 transform -translate-y-1/2 left-full w-screen h-1 bg-purple-500"></div>
+              {{ end }}
+            </div>
+            
+            <!-- Beschreibung -->
+            <div class="max-w-xs">
+              <h6 class="mb-2">{{ $page.Title }}</h6>
+              <p>{{ $page.Params.description }}</p>
+            </div>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="mb-4">{{ (site.GetPage "special-thanks").Title }}</h2>
+        <p class="text-lg">{{ (site.GetPage "special-thanks").Description }}</p>
+      </div>
+      <div class="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {{ $contributors := where .Site.RegularPages "Section" "special-thanks" }}
+        {{ $icons := slice "hand-holding-dollar" "heart" "hand-holding-heart" "piggy-bank" "parachute-box" "handshake-angle" }}
+        {{ $colors := slice "yellow-500" "green-500" "fuchsia-500" "cyan-500" "pink-500" "blue-500" "red-500" }}
+        {{ range $contributors }}
+          <div class="flex items-start rounded-lg md:rounded-[2rem] border border-border dark:border-2 dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark p-4">
+            {{ $randomIcon := index (shuffle $icons) 0 }}
+            {{ $randomColor := index (shuffle $colors) 0 }}
+            <div class="flex h-12 w-12 items-center justify-center rounded-full border border-{{ $randomColor }} bg-{{ $randomColor }} bg-opacity-20">
+              <i class="fas fa-{{ $randomIcon }} text-{{ $randomColor }}"></i>
+            </div>
+            <div class="ml-4">
+              <h4>{{ .Title }}</h4>
+              <p class="mt-2 text-sm">{{ .Params.message }}</p>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>  
+{{ end }}
