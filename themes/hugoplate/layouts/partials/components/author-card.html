@@ -1,9 +1,7 @@
 <div class="relative rounded-lg md:rounded-[2rem] border border-border dark:border-2 dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark overflow-visible pt-16">
   <div class="absolute -top-16 w-full flex justify-center">
     {{ $image := .Params.image }}
-    {{ if $image }}
-      <img src="{{ $image | absURL }}" alt="{{ .Title }}" role="img" class="rounded-full object-cover h-32 w-32 shadow-md overflow-hidden bg-theme-light dark:bg-darkmode-theme-dark p-1" />
-    {{ end }}
+    {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "rounded-full object-cover h-32 w-32 shadow-md overflow-hidden bg-theme-light dark:bg-darkmode-theme-dark p-1") }}
   </div>
   <div class="px-6 mt-8">
     <h2 class="text-center mb-2">{{ .Params.name }}</h2>
