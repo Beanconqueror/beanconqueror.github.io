@@ -54,13 +54,8 @@ weight = 2
 
     [[footer]]
      parent = "Help Center"
-     name = "Get startet"
+     name = "Get started"
      url = "/blog/post-1"
-
-    [[footer]]
-     parent = "Help Center"
-     name = "Space for more Quick Links"
-     url = ""
 
 [[footer]]
 name = "Legal"
