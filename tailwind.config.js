@@ -63,11 +63,6 @@ module.exports = {
       15: '15',
       16: '16',
     },
-    borderRadius: {
-      'lg': '2rem',
-      '3xl': '4rem',
-      
-    },
     container: {
       center: true,
       padding: "2rem",

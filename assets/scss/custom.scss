@@ -64,3 +64,30 @@
   --chart-grid-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Timeline Basis */
+.timeline {
+  @apply flex relative justify-between items-center min-w-max; /* Scrollbarkeit */
+}
+
+.timeline > li {
+  @apply relative flex-shrink-0 items-center w-80 text-center;
+}
+
+.connection-line {
+  @apply absolute;
+  top: 40%; /* Exakt in der Mitte des Icons */
+  transform: translateY(-50%);
+}
+
+/* Verbindungslinie für das letzte Element ausblenden */
+.timeline > li:last-child .connection-line {
+  @apply hidden;
+}
+
+.timeline-middle {
+  @apply flex items-center justify-center rounded-full mt-[0.5rem];
+}
+
+.timeline-end {
+  @apply mt-[1rem];
+}

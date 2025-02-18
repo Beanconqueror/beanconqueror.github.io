@@ -1,4 +1,31 @@
 ---
 title: Special Thanks to formal contributors
-description: Hier fehlt noch Text!
+description: Our heartfelt appreciation to these amazing supporters
+contributors:
+  - name: "Nikola"
+    message: "for giving the app a whole new design"
+  - name: "Frank"
+    message: "for translating the app into spanish"
+  - name: "Joan"
+    message: "for Spanish translation"
+  - name: "Halil Portakal"
+    message: "for Turkish translation"
+  - name: "Jiageng Ding"
+    message: "for Chinese translation"
+  - name: "Silas"
+    message: "for supporting Hiroia Jimmy Scale"
+  - name: "Mihalter"
+    message: "for supporting Acaia Scales"
+  - name: "Mike"
+    message: "for supporting Acaia Scales & DIY Pressure Sensor"
+  - name: "Myles"
+    message: "for supporting Thermo Bluetooth devices"
+  - name: "Herman"
+    message: "for supporting Fecilita Arc"
+  - name: "Mimoja"
+    message: "for supporting on Decent Scale integration & Eureka Scale support & making Combustions.inc bytes"
+  - name: "Yannick"
+    message: "for supporting DiFluid Microbalance, Smar Chef Scale & Blackcoffee.IO. Also adding Localise"
+  - name: "Marius"
+    message: "for porting Cordova to Capacitor & implementing export & import routine back to Android"
 ---
