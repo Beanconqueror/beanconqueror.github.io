@@ -10,8 +10,8 @@
       {{ range .Pages }}
         <div class="bg-theme-light dark:bg-darkmode-theme-light border border-border dark:border-2 dark:border-darkmode-border rounded-lg lg:rounded-[2rem] p-6">
           <div class="flex items-center mb-4">
-            <div class="w-full h-2 bg-theme-dark dark:bg-darkmode-theme-dark rounded-full mr-4">
-              <div class="h-full bg-border rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-progress="{{ .Params.progress }}"></div>
+            <div class="w-full h-2 bg-border dark:bg-darkmode-border rounded-full mr-4">
+              <div class="h-full bg-darkmode-border dark:bg-border rounded-full transition-all duration-1000 ease-out" style="width: 0%" data-progress="{{ .Params.progress }}"></div>
             </div>
             <span class="text-3xl font-semibold">{{ .Params.progress }}%</span>
           </div>
@@ -21,9 +21,9 @@
             {{ range .Params.items }}
               <li class="flex items-center">
                 {{ if .completed }}
-                  <i class="fas fa-check-circle text-green-500 dark:text-lime-500 mr-2"></i>
+                  <i class="fas fa-check-circle text-green-700 dark:text-emerald-500 mr-2"></i>
                 {{ else }}
-                <i class="far fa-circle-xmark mr-2"></i>
+                <i class="far fa-circle-xmark text-red-600 dark:text-red-500 mr-2"></i>
                 {{ end }}
                 {{ .text }}
               </li>

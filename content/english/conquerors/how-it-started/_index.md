@@ -21,9 +21,13 @@ milestones:
   - year: 2022
     title: Pressure sensors
     description: Support of pressure sensors
-    status: inactive
+    status: active
   - year: 2023
     title: Portafilter
     description: First portafilter integration
+    status: active
+  - year: 03/2024
+    title: New Website
+    description: New design, new styles and new everything
     status: inactive
 ---

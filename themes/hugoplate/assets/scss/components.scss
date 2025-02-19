@@ -65,11 +65,27 @@ main {
   @apply prose-strong:text-dark prose-strong:dark:text-darkmode-text;
   @apply prose-a:text-text prose-a:underline hover:prose-a:text-primary prose-a:dark:text-darkmode-text hover:prose-a:dark:text-darkmode-primary;
   @apply prose-li:text-text prose-li:dark:text-darkmode-text prose-li:-left-4;
-  @apply prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:content-[""] prose-table:before:dark:border-darkmode-border;
-  @apply prose-thead:border-border prose-thead:bg-theme-light prose-thead:dark:border-darkmode-border prose-thead:dark:bg-darkmode-theme-dark;
-  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-dark prose-th:dark:text-darkmode-text;
-  @apply prose-tr:border-border prose-tr:dark:border-darkmode-border;
+
+  @apply prose-table:border-collapse prose-table:relative prose-table:overflow-hidden prose-table:rounded-lg prose-table:before:absolute prose-table:before:left-0 prose-table:before:top-0 prose-table:before:h-full prose-table:before:w-full prose-table:before:rounded-[inherit] prose-table:before:border prose-table:before:content-[""] prose-table:before:border-border prose-table:before:dark:border-darkmode-border;
+  @apply prose-thead:border-border prose-thead:bg-theme-dark prose-thead:dark:border-darkmode-border prose-thead:dark:bg-darkmode-border;
+  @apply prose-th:relative prose-th:z-10 prose-th:px-4 prose-th:py-[18px] prose-th:text-dark prose-th:dark:text-darkmode-body prose-th:font-black prose-th:text-base;
+  @apply prose-tr:border-border prose-tr:dark:border-darkmode-border prose-tr:divide-x prose-tr:divide-border prose-tr:dark:divide-darkmode-border;
   @apply prose-td:relative prose-td:z-10 prose-td:px-3 prose-td:py-[18px] prose-td:dark:text-darkmode-text;
+
+    // Abwechselnde Zeilenfarben
+    tbody tr:nth-child(even) {
+    @apply bg-theme-light dark:bg-darkmode-theme-dark; // Gerade Zeilen
+    }
+    
+    tbody tr:nth-child(odd) {
+    @apply bg-body dark:bg-darkmode-theme-light; // Ungerade Zeilen
+    }
+  
+    // Hover-Effekt für Zeilen (optional)
+    tbody tr:hover {
+    @apply bg-gray-200 dark:bg-gray-700;
+    }
+
   .btn {
     @apply dark:hover:text-dark no-underline hover:text-white #{!important};
   }

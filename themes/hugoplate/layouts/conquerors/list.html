@@ -27,12 +27,12 @@
     <div class="container max-w-7xl mx-auto px-4">
       <!-- Feste Überschrift und Beschreibung -->
       <div class="text-center mb-12">
-        <h2 class="mb-4 text-3xl font-bold text-white">{{ .Title }}</h2>
-        <p class="text-lg text-gray-400">{{ .Description }}</p>
+        <h2 class="mb-4">{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
       </div>
 
       <!-- Scrollbare Timeline -->
-      <div class="overflow-x-auto">
+      <div class="overflow-x-auto border dark:border-2 border-border dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark rounded-lg md:rounded-[2rem] p-14">
         <ul class="timeline flex items-center relative">
           {{ range $index, $milestone := .Params.milestones }}
           <li class="relative flex flex-col items-center w-[calc(100%/6)] text-center">

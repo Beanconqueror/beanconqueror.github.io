@@ -8,18 +8,18 @@ weight = 1
 
 [[main]]
 name = "Conquerors"
-url = "/conquerors"
-weight = 4
+url = "/conquerors/"
+weight = 2
 
 [[main]]
 name = "Help center"
-url = "/blog"
-weight = 5
+url = "/blog/"
+weight = 3
 
 [[main]]
 name = "Contact"
-url = "/contact"
-weight = 6
+url = "/contact/"
+weight = 4
 
 # footer menu
 [[footer]]
