@@ -23,7 +23,7 @@ contributors:
   - name: "Herman"
     message: "for supporting Felicita Arc"
   - name: "Mimoja"
-    message: "for supporting on Decent Scale integration & Eureka Scale support & making Combustions.inc bytes. Aswell as making the Meticulous integrateable! Thank you for every bit & byte help along the way"
+    message: "for supporting on Decent Scale integration (the very first scale integration) & Eureka Scale support & Making Combustions.inc Bits & Bytes. Aswell as making the Meticulous integrateable! Thank you for every bit & byte help, aswell as every discussion along the way"
   - name: "Yannick"
     message: "for supporting DiFluid Microbalance, Smart Chef Scale & Blackcoffee.io, Timemore Scale, DiFluid R2 Refractometer. Also adding Lokalise, and Gitbook, and much more things!"
   - name: "Marius"
