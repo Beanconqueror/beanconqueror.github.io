@@ -2,7 +2,7 @@
 title: Special Thanks to formal contributors
 description: Our heartfelt appreciation to these amazing supporters
 contributors:
-  - name: "Nikola"
+  - name: "Nicola"
     message: "for giving the app a whole new design"
   - name: "Frank"
     message: "for translating the app into spanish"
@@ -21,11 +21,24 @@ contributors:
   - name: "Myles"
     message: "for supporting Thermo Bluetooth devices"
   - name: "Herman"
-    message: "for supporting Fecilita Arc"
+    message: "for supporting Felicita Arc"
   - name: "Mimoja"
-    message: "for supporting on Decent Scale integration & Eureka Scale support & making Combustions.inc bytes"
+    message: "for supporting on Decent Scale integration & Eureka Scale support & making Combustions.inc bytes. Aswell as making the Meticulous integrateable! Thank you for every bit & byte help along the way"
   - name: "Yannick"
-    message: "for supporting DiFluid Microbalance, Smar Chef Scale & Blackcoffee.IO. Also adding Localise"
+    message: "for supporting DiFluid Microbalance, Smart Chef Scale & Blackcoffee.io, Timemore Scale, DiFluid R2 Refractometer. Also adding Lokalise, and Gitbook, and much more things!"
   - name: "Marius"
     message: "for porting Cordova to Capacitor & implementing export & import routine back to Android"
+  - name: "Cancercookie"
+    message: "for Italian translation"
+  - name: "MarcinSachs"
+    message: "for Polish translation"
+  - name: "Bondan"
+    message: "for Indonesian translation"
+  - name: "Ganjar"
+    message: "for Indonesian translation"
+  - name: "All translators"
+    message: "who are putting in tremendous effort to make the app available in multiple languages"
+  - name: "All contributors"
+    message: "who are supporting the app in any way"
+        
 ---
