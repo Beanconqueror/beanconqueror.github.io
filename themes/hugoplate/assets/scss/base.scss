@@ -1,5 +1,5 @@
 html {
-  @apply text-base-sm md:text-base;
+  @apply text-base-sm md:text-base; /* Tailwind Utility für Basisgröße */
 }
 
 body {
@@ -17,7 +17,7 @@ h6 {
 
 h1,
 .h1 {
-  @apply text-h1-sm md:text-h1;
+  @apply text-h1-sm md:text-h1; /* Nutzt dynamische Größen aus Tailwind */
 }
 
 h2,
@@ -51,9 +51,21 @@ strong {
 }
 
 code {
-  @apply after:border-none;
+  @apply after:border-none; /* Entfernt Rahmen nach Code-Blöcken */
+  font-family: 'Fira Code', monospace; /* Monospace-Schrift für Code */
 }
 
 blockquote > p {
-  @apply my-0 #{!important};
+  @apply my-0; /* Blockquote-Anpassung */
+}
+
+/* Fallback-Fonts */
+body {
+  font-family: var(--primary-font-family-fallbacks), sans-serif;
+}
+
+/* Stile für kondensierte Headlines */
+.condensed-headline {
+  font-family: 'Lexend Deca', sans-serif;
+  font-variation-settings: 'wdth' 85; /* Schmalere Schriftbreite */
 }
