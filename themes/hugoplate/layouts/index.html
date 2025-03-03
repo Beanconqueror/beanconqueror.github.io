@@ -68,9 +68,9 @@
                 loop
                 autoplay>
               </lottie-player>
-              {{- else if .Params.video }}
+              {{- else if .video }}
               {{ partial "video.html" (dict 
-                  "Src" (.Params.video | relURL)
+                  "Src" (.video | relURL)
                   "Autoplay" "true"
                   "Loop" "true"
                   "Muted" "true"
