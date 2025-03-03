@@ -77,8 +77,8 @@
                   "Controls" "false"
                   "Class" "w-full h-full object-cover"
               ) }}                  
-            {{- else if .Params.image }}
-              {{ partial "image" (dict "Src" .Params.image "Alt" "Ihre_Bildbeschreibung" "Class" "w-full h-full object-cover") }}
+              {{- else if .image }}
+              {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}            
             {{- end }}
             </div>
           </div>
@@ -169,8 +169,8 @@
                         "Controls" "false"
                         "Class" "w-full h-full object-cover"
                     ) }}                  
-                  {{- else if .Params.image }}
-                    {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                    {{- else if .image }}
+                    {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}                  
                   {{- end }}
                       </div>
                     </div>
@@ -220,8 +220,8 @@
                           "Controls" "false"
                           "Class" "w-full h-full object-cover"
                       ) }}                  
-                    {{- else if .Params.image }}
-                      {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                      {{- else if .image }}
+                      {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}                    
                     {{- end }}
                   </div>
                 </div>
@@ -278,8 +278,8 @@
                         "Controls" "false"
                         "Class" "w-full h-full object-cover"
                     ) }}                  
-                  {{- else if .Params.image }}
-                    {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                    {{- else if .image }}
+                    {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}                  
                   {{- end }}
                     </div>
                   </div>

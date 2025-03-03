@@ -6,15 +6,15 @@ description: "Experience powerful brew monitoring that helps you change your lif
 # Top-Features
 topfeatures:
   - name: "Brew Overview"
-    content: "This app is awesome!"
-    image: "{{/* w-272px h-572px */}}"
+    content: "A complete overview of your brewings"
+    image: "/images/en/main/brew-overview.png"
 
   - name: "Brew details"
-    content: "This app is awesome!"
-    image: "{{/* w-272px h-572px */}}"
+    content: "Get any detail you want from your brews"
+    image: "/images/en/main/brew-details.png"
 
   - name: "Statistics"
-    content: "This app is awesome! "
-    image: "{{/* w-272px h-572px */}}"
+    content: "Analyze all your brews from all time"
+    image: "/images/en/main/statistics.png"
 
 ---

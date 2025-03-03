@@ -2,7 +2,7 @@
 title: "Meet the Conquerors of Beanconqueror"
 meta_title: "Meet the Conquerors of Beanconqueror"
 description: "this is meta description"
-image: "/images/avatar.png"
+image: "/images/authors/icon-only.png"
 draft: false
 ---
 

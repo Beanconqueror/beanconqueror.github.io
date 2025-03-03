@@ -1,8 +1,8 @@
 --- 
 enable: true
 connectsmartscales:
-  - title: "Connect Smart Scales"
-    discription: "Lorem Ipsum"
-    image: "{{/* w-272px h-572px */}}"
+  - title: "Connect Smart Devices"
+    discription: "Connect different Bluetooth devices to take your brewing to the next level. Multiple devices can be connected at the same time for different purposes."
+    image: "/images/en/main/connect-smart-scales.png"
 
 ---

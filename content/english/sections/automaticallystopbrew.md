@@ -1,13 +1,13 @@
 --- 
 enable: true
 automaticallystopbrew:
-  - title: "Automatically stop brew"
-    discription: "Lorem Ipsum"
-    image: "{{/* w-272px h-572px */}}"
+  - title: "Visualize your brews"
+    discription: "If you have a connected smart scale, you have this option. In addition, automatic functions have been incorporated here:"
+    image: "/images/en/main/visualized-graph-section.png"
     bulletpoints:
-      - "**James Hoffmann approved**"
-      - "**Open Source and Free**"
-      - "Developed since 8 years"
-      - "Focuses on bean to cup principle"
+      - "**Start time automatically**"
+      - "**Espresso – Automatically stop brew**"
+      - "Ignore the current transfer weight"
+      - "Tare scale when starting timer"
 
 ---

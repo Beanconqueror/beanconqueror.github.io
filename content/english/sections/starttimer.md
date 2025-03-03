@@ -1,7 +1,7 @@
 ---
 enable: true
-image: "/images/service-3.png"
+image: "/images/en/main/freeze-your-beans.png"
 starttimer:
-  - title: "Start timer automatically?"
-    discription: "Ihre Beschreibung"
+  - title: "Freeze function"
+    discription: 
 ---

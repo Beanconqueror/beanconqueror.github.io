@@ -3,7 +3,7 @@
     <div class="container">
       <div class="row justify-center">
         <div class="md:col-10 lg:col-7 text-center">
-          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6" "Size" "200x200") }}
+          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6 rounded-[2rem]" "Size" "200x200") }}
           <h1 class="mb-6">{{ .Title }}</h1>
           <div class="content">{{ .Content }}</div>
         </div>
@@ -14,7 +14,7 @@
     <div class="container">
       <div class="row">
         {{ range (site.GetPage "taxonomyTerm" "authors").Pages.ByWeight }}
-          <div class="md:col-6 lg:col-4 mb-14">
+          <div class="md:col-6 lg:col-4 mb-16">
             {{ partial "components/author-card" . }}
           </div>
         {{ end }}

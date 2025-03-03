@@ -1,7 +1,7 @@
 ---
 enable: true
-image: "/images/service-3.png"
+image: "/images/en/main/bean-parameter-customiezable.png"
 ignoretheweight:
-  - title: "Ignore the current transfer weight."
-    discription: "Ihre Beschreibung"
+  - title: "Bean parameter customiezable"
+    discription: 
 ---

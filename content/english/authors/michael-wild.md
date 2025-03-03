@@ -1,7 +1,7 @@
 ---
 name: Michael Wild
 title: "Customer Journey Expert, Design generalist"
-image: "/images/avatar.png"
+image: "/images/authors/Michael-Wild.png"
 weight: 2
 
 social:
