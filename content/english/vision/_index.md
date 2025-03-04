@@ -3,7 +3,7 @@ enable: true
 preline: "Our vision for Beanconqueror"
 headline: "One app - a comprehensive coffee-ecosystem"
 animation: ""
-video: "/video/en/main/beanconqueror-demo.webm"
+video: "/video/en/main/beanconqueror-demo.mp4"
 image: "/images/en/main/brew-overview.png"
 image_alt: "Picture of Beanconqueror start page"
 ---
