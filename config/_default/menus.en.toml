@@ -55,7 +55,22 @@ weight = 2
     [[footer]]
      parent = "Help Center"
      name = "Get started"
-     url = "/blog/post-1"
+     url = "/blog/getting-started-with-bq"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Backup & Import"
+     url = "/blog/backup-and-import"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Bluetooth Device Features"
+     url = "/blog/bluetooth-device-features"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Support languages"
+     url = "/blog/support-languages"
 
 [[footer]]
 name = "Legal"
