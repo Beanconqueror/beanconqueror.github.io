@@ -1,9 +1,9 @@
 ---
 title: "Getting Started with Beanconqueror: Your Ultimate Coffee Companion"
-meta_title: ""
+meta_title: "Getting Started with Beanconqueror"
 description: "this is meta description"
 date: 2024-12-21T05:00:00Z
-image: "/images/image-placeholder.png"
+image: ""
 categories: ["Application", "Data"]
 author: "Lars Saalbach"
 tags: ["get started"]
