@@ -78,7 +78,9 @@
                   "Class" "w-full h-full object-cover"
               ) }}                  
               {{- else if .image }}
-              {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}            
+              {{ partial "image" (dict "Src" .image "Alt" .image_alt "Class" "w-full") }}
+              {{- else if .webp }}
+                      <img src="{{ .webp | relURL }}" alt="{{ .webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">        
             {{- end }}
             </div>
           </div>
@@ -569,31 +571,38 @@
             {{ if eq $index 9 }} md:rounded-br-[2rem] {{ end }}
             flex flex-row items-stretch overflow-hidden
           ">
-            <div class="w-2/3 p-8">
-              <h5 class="mb-2">{{ .title | markdownify }}</h5>
-              <p class="">{{ .content | markdownify }}</p>
-              {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
+              <div class="w-2/3 p-8">
+                <h5 class="mb-2">{{ .title | markdownify }}</h5>
+                <p class="">{{ .content | markdownify }}</p>
+                {{ with .button }}
+                {{ if .enable }}
+                  <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                    {{ .label }}
+                    <i class="fa fa-arrow-right pl-2"></i>
+                  </a>
+                {{ end }}
               {{ end }}
-            {{ end }}
+              </div>
+              {{ $defaultImage := "/images/default-image.jpg" }}
+              <div class="w-full md:w-1/3 h-[200px] md:h-auto bg-cover bg-top" 
+                {{ with .image }}
+                  {{ $image := resources.Get . }}
+                  {{ if $image }}
+                    style="background-image: url('{{ $image.Permalink | safeCSS }}');"
+                  {{ else }}
+                    style="background-image: url('{{ $defaultImage | absURL | safeCSS }}');"
+                  {{ end }}
+                {{ else }}
+                  style="background-image: url('{{ $defaultImage | absURL | safeCSS }}');"
+                {{ end }}>
+              </div>           
             </div>
-            <div 
-              class="w-full md:w-1/3 h-[200px] md:h-auto bg-cover bg-top"
-              style="
-                background-image: url('{{ with .image }}{{ . | absURL }}{{ else }}/path/to/default-image.jpg{{ end }}');
-              ">
-            </div>           
+            {{ end }}
           </div>
-          {{ end }}
         </div>
-      </div>
-    </section>
-   {{ end }}
-  {{ end }}
+      </section>
+    {{ end }}
+    {{ end }}
   <!-- /Features -->
 
   <!-- Vision -->
@@ -651,6 +660,8 @@
                     ) }}                  
                   {{- else if .Params.image }}
                     {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
+                    {{- else if .Params.webp }}
+                      <img src="{{ .Params.webp | relURL }}" alt="{{ .Params.webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
                   {{- end }}
                 </div>
               </div>
