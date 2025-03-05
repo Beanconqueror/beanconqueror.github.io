@@ -1,7 +1,7 @@
 ---
 name: Lars Saalbach
 title: "Founder and Developer"
-image: "/images/avatar.png"
+image: "/images/authors/lars_bq.jpeg"
 weight: 1
 
 social:
