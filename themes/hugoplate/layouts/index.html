@@ -588,7 +588,7 @@
               {{ end }}
               </div>
               {{ $defaultImage := "/images/default-image.jpg" }}
-              <div class="w-full md:w-1/3 h-[200px] md:h-auto bg-cover bg-top" 
+              <div class="w-1/3 h-auto bg-cover bg-top"
                 {{ with .image }}
                   {{ $image := resources.Get . }}
                   {{ if $image }}
