@@ -80,10 +80,11 @@
               {{- else if .Params.image }}
                 {{ partial "image" (dict "Src" .Params.image "Alt" .Params.image_alt "Class" "w-full") }}
               {{- else if .webp }}
-                <picture>
-                  <source srcset="{{ .webp | relURL }}" type="image/webp">
-                  <source srcset="{{ replace .webp ".webp" ".jpg" | relURL }}" type="image/jpeg">
-                  <img src="{{ replace .webp ".webp" ".jpg" | relURL }}" alt="{{ .webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
+
+                {{- $videoUrl := partial "GrabWebPFile.html" (dict "ImageSrc" .webp) -}}
+              {{$imageUrl}}
+              <picture>
+                  <source srcset="{{ $videoUrl }}" type="image/webp">
                 </picture>
               {{- end }}
             </div>            
