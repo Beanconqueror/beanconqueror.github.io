@@ -551,7 +551,7 @@
           <p>{{ .Params.discription | markdownify }}</p>
         </div>
       </div>
-      
+
       <!-- Grid bleibt bei 1 Spalte mobil / 2 Spalten desktop -->
       <div class="grid gap-4 grid-cols-1 md:grid-cols-2">
         {{ range $index, $features := .Params.features }}
@@ -578,12 +578,9 @@
             {{ end }}
           </div>
 
-            <!-- Bildbereich bleibt bei 1/3 Breite -->
+            <!-- Bildbereich als Hintergrundbild über Partial -->
             <div 
-              class="w-1/3 h-full bg-cover bg-top"
-              style="
-                background-image: url('{{ with .image }}{{ . | absURL }}{{ else }}/path/to/default-image.jpg{{ end }}');
-              ">
+              class="w-1/3 h-full bg-cover bg-top" style="background-image: url('{{ .image }}');">
               <!-- Leerer Div für das Background-Bild -->
             </div>
           </div>
