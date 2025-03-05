@@ -82,7 +82,6 @@
               {{- else if .webp }}
 
                 {{- $videoUrl := partial "GrabWebPFile.html" (dict "ImageSrc" .webp) -}}
-              {{$imageUrl}}
               <picture>
                   <source srcset="{{ $videoUrl }}" type="image/webp">
                 </picture>
