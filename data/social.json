@@ -1,6 +1,11 @@
 {
   "main": [
     {
+      "name": "podcast",
+      "icon": "fa fa-podcast",
+      "link": "https://zwcvdl.podcaster.de/kp024-season2/"
+    },
+    {
       "name": "facebook",
       "icon": "fab fa-facebook",
       "link": "https://www.facebook.com/Beanconqueror/"
