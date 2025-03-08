@@ -4,7 +4,7 @@ search_include: true
 search_tags: ["FAQ", "faq"]
 ---
 
-Creating and running the app is expensive (more infos on https://beanconqueror.com/running-costs.html). 
+Creating and running the app is expensive (more infos on https://beanconqueror.com/running-costs/). 
       <br>
       So financial support is always appreciated.
       <br>
