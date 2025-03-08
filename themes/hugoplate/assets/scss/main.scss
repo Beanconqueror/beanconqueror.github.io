@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @import "base";
+}
+
+@layer components {
+  @import "components";
+  @import "navigation";
+  @import "buttons";
+}
+
+@layer utilities {
+  @import "utilities";
+}
+
+@import "search";
+@import "social-share";
+@import "gallery-slider";
+@import "images";
+@import "toc";
+@import "tab";
+@import "accordion";
+@import "modal";
+@import "notice";
+
+@import "module-overrides";
+@import "custom";
+
+@layer utilities {
+  .animate-wave {
+    animation: wave 1.5s ease-in-out infinite;
+  }
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@import "hugo-chart/assets/css/chart.min.css";
+
+/* Tailwind-Override */
+.chart-container {
+  @apply dark:bg-gray-800 p-4 rounded-lg shadow-sm;
+}

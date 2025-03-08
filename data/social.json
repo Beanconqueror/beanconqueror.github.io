@@ -1,0 +1,29 @@
+{
+  "main": [
+    {
+      "name": "podcast",
+      "icon": "fa fa-podcast",
+      "link": "https://zwcvdl.podcaster.de/kp024-season2/"
+    },
+    {
+      "name": "facebook",
+      "icon": "fab fa-facebook",
+      "link": "https://www.facebook.com/Beanconqueror/"
+    },
+    {
+      "name": "Instagram",
+      "icon": "fab fa-instagram",
+      "link": "https://instagram.com/Beanconqueror"
+    },
+    {
+      "name": "github",
+      "icon": "fab fa-github",
+      "link": "https://github.com/graphefruit/Beanconqueror"
+    },
+    {
+      "name": "Discord",
+      "icon": "fab fa-discord",
+      "link": "https://discord.com/invite/vDzA5dZjG8"
+    }
+  ]
+}

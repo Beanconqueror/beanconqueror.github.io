@@ -1,0 +1,3 @@
+[submodule "themes/hugo-chart"]
+	path = themes/hugo-chart
+	url = https://github.com/shen-yu/hugo-chart.git

@@ -1,0 +1,12 @@
+---
+preline: "Import user shared bean"
+Title: "Bean Import - easy & fast"
+button: "Import now!"
+getapp: "You don't have the app installed yet? Then please go ahead, we will wait here..."
+---
+
+Let's get all bean information directly imported into the app - no typing, just with one click.
+
+{{< notice "warning" >}}
+! Beans are shared directly from one user to another, without any database, or checks by Beanconqueror. Beanconqueror doesn't take any warranty here. Please just import this bean if you're realy sure where the link comes from and if you trust the user !
+{{< /notice >}}

@@ -1,0 +1,12 @@
+{{/* Step 1: A default image as fallback */}}
+{{ $image := "/images/placeholder.png" }}
+
+{{/* Step 2: now check if passed image exists with same as title */}}
+{{ $image_url := resources.Get .ImageSrc }}
+
+
+{{ if $image_url }}
+{{ $image = $image_url.RelPermalink }}
+{{end}}
+
+{{return $image}}

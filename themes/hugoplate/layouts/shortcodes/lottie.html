@@ -1,0 +1,8 @@
+{{ with .Page.Params.animation }}
+  <lottie-player 
+    src="{{ . }}" 
+    style="width: 100%; height: auto;"
+    loop 
+    autoplay>
+  </lottie-player>
+{{ end }}

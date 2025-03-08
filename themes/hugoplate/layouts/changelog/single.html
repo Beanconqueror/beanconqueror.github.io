@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="max-w-xl p-8 mx-auto dark:bg-gray-100 dark:text-gray-800">
+  <h1 class="text-3xl font-bold mb-4">{{ .Params.version }}</h1>
+  <div class="flex items-center space-x-4 mb-6 dark:text-gray-600">
+    <span class="inline-flex items-center px-3 py-1 space-x-2 text-sm border rounded-full dark:border-gray-300">
+      <span aria-hidden="true" class="h-1.5 w-1.5 rounded-full dark:bg-violet-600"></span>
+      <span class="dark:text-gray-800">{{ .Params.type }}</span>
+    </span>
+    <span class="text-sm">{{ .Date.Format "Jan 2, 2006" }}</span>
+  </div>
+  <div class="prose dark:prose-dark">
+    {{ .Content }}
+  </div>
+  <a href="/changelog/" class="inline-block mt-8 text-blue-600 hover:underline">← Back to Changelog</a>
+</div>
+{{ end }}
