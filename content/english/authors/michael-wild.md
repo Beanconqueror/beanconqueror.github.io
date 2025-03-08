@@ -11,7 +11,7 @@ social:
 
 ---
 
-Loving coffee conoseur and startet to conquer his beans in 2024 
+Loving coffee connoisseur and startet to conquer his beans in 2024 
 Beanconqueror expert level user
 
 
