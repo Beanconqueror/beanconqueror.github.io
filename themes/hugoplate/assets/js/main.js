@@ -83,8 +83,8 @@
 
 
       if (window.location.pathname === '/') {
-        window.location.replace(hostURL + 'app/userBean' + userBeanJSON);
-      } else if (window.location.pathname.indexOf('app/userBean')) {
+        window.location.replace(hostURL + 'app/userbean' + userBeanJSON);
+      } else if (window.location.pathname.indexOf('app/userbean')) {
         if (userBeanJSON !== '') {
           document.getElementById('importButton').href = "beanconqueror://ADD_USER_BEAN" + userBeanJSON;
         } else {
@@ -110,8 +110,8 @@
       }
 
       if (window.location.pathname === '/') {
-        window.location.replace(hostURL + 'app/importVisualizer' + visualizerCode);
-      } else if (window.location.pathname.indexOf('app/importVisualizer')) {
+        window.location.replace(hostURL + 'app/importvisualizer' + visualizerCode);
+      } else if (window.location.pathname.indexOf('app/importvisualizer')) {
         var visualizerImportCode = getUrlParameter('visualizerShare');
         document.getElementById('importButton').href = "beanconqueror://VISUALIZER_SHARE?code=" + visualizerImportCode;
       }
