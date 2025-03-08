@@ -38,26 +38,28 @@
           <li class="relative flex flex-col items-center w-[calc(100%/6)] text-center">
             <!-- Jahr -->
             <div class="text-base font-medium mb-2">{{ $milestone.year }}</div>
-
+      
             <!-- Icon -->
-            <div class="timeline-middle relative z-10 w-8 h-8 flex items-center justify-center rounded-full
+            <div
+              class="timeline-middle relative z-10 w-8 h-8 flex items-center justify-center rounded-full -top-1
               {{ if eq $milestone.status "active" }}bg-purple-500 border border-purple-700{{ else }}bg-gray-500 border border-gray-400{{ end }}">
               <i class="fas fa-{{ if eq $milestone.status "active" }}check{{ else }}bullseye{{ end }} text-purple-200"></i>
             </div>
-
+      
             <!-- Verbindungslinie -->
-            <div class="connection-line left-1/2 w-[calc(100%+1rem)] h-1
+            <div
+              class="connection-line absolute left-1/2 transform -translate-x-1/2 w-full h-1 top-auto
               {{ if eq $milestone.status "active" }}bg-purple-500{{ else }}bg-gray-500{{ end }}"></div>
-
+      
             <!-- Beschreibung -->
-            <div class="timeline-end mt-4">
-              <h6 class="font-semibold">{{ $milestone.title }}</h6>
-              <p>{{ $milestone.description }}</p>
+            <div class="timeline-end mt-4 flex flex-col items-center justify-start h-auto">
+              <h6 class="font-semibold leading-tight">{{ $milestone.title }}</h6>
+              <p class="leading-snug text-sm">{{ $milestone.description }}</p>
             </div>
           </li>
           {{ end }}
         </ul>
-      </div>
+      </div>                  
     </div>
   </section>
   {{ end }}
