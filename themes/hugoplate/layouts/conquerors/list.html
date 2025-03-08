@@ -1,0 +1,149 @@
+{{ define "main" }}
+  <section class="section-sm">
+    <div class="container">
+      <div class="row justify-center">
+        <div class="md:col-10 lg:col-7 text-center">
+          {{ partial "image" (dict "Src" .Params.image "Context" .Page "Alt" .Title "Class" "mx-auto mb-6 rounded-[2rem]" "Size" "200x200") }}
+          <h1 class="mb-6">{{ .Title }}</h1>
+          <div class="content">{{ .Content }}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        {{ range (site.GetPage "taxonomyTerm" "authors").Pages.ByWeight }}
+          <div class="md:col-6 lg:col-4 mb-16">
+            {{ partial "components/author-card" . }}
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>
+
+  {{ with site.GetPage "conquerors/how-it-started" }}
+  <section class="section">
+    <div class="container max-w-7xl mx-auto px-4">
+      <!-- Feste Überschrift und Beschreibung -->
+      <div class="text-center mb-12">
+        <h2 class="mb-4">{{ .Title }}</h2>
+        <p>{{ .Description }}</p>
+      </div>
+
+      <!-- Scrollbare Timeline -->
+      <div class="overflow-x-auto border dark:border-2 border-border dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark rounded-lg md:rounded-[2rem] p-14">
+        <ul class="timeline flex items-center relative">
+          {{ range $index, $milestone := .Params.milestones }}
+          <li class="relative flex flex-col items-center w-[calc(100%/6)] text-center">
+            <!-- Jahr -->
+            <div class="text-base font-medium mb-2">{{ $milestone.year }}</div>
+
+            <!-- Icon -->
+            <div class="timeline-middle relative z-10 w-8 h-8 flex items-center justify-center rounded-full
+              {{ if eq $milestone.status "active" }}bg-purple-500 border border-purple-700{{ else }}bg-gray-500 border border-gray-400{{ end }}">
+              <i class="fas fa-{{ if eq $milestone.status "active" }}check{{ else }}bullseye{{ end }} text-purple-200"></i>
+            </div>
+
+            <!-- Verbindungslinie -->
+            <div class="connection-line left-1/2 w-[calc(100%+1rem)] h-1
+              {{ if eq $milestone.status "active" }}bg-purple-500{{ else }}bg-gray-500{{ end }}"></div>
+
+            <!-- Beschreibung -->
+            <div class="timeline-end mt-4">
+              <h6 class="font-semibold">{{ $milestone.title }}</h6>
+              <p>{{ $milestone.description }}</p>
+            </div>
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+
+
+  <section class="section">
+    <div class="container">
+      {{ $section := site.GetPage "special-thanks" }}
+      <div class="text-center mb-12">
+        <h2 class="mb-4">{{ $section.Title }}</h2>
+        <p class="text-lg">{{ $section.Description }}</p>
+      </div>
+  
+      <div class="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+        {{ $icons := slice "hand-holding-dollar" "heart" "hand-holding-heart" "piggy-bank" "parachute-box" "handshake-angle" }}
+        {{ $colors := slice "yellow-500" "green-500" "fuchsia-500" "cyan-500" "pink-500" "blue-500" "red-500" }}
+        
+        {{ range $index, $contributor := $section.Params.contributors }}
+          {{ $col_mobile := mod $index 2 }}
+          {{ $col_desktop := mod $index 4 }}
+          {{ $total := len $section.Params.contributors }}
+          {{ $lastRow_mobile := ge (add $index 2) $total }}
+          {{ $lastRow_desktop := ge (add $index 4) $total }}
+  
+          {{/* Mobile Rundungen (2er Grid) */}}
+          {{ $roundedTL_mobile := "rounded-tl-lg" }}
+          {{ $roundedTR_mobile := "rounded-tr-lg" }}
+          {{ $roundedBL_mobile := "rounded-bl-lg" }}
+          {{ $roundedBR_mobile := "rounded-br-lg" }}
+  
+          {{/* Desktop Rundungen (4er Grid) */}}
+          {{ $roundedTL_desktop := "md:rounded-tl-lg" }}
+          {{ $roundedTR_desktop := "md:rounded-tr-lg" }}
+          {{ $roundedBL_desktop := "md:rounded-bl-lg" }}
+          {{ $roundedBR_desktop := "md:rounded-br-lg" }}
+  
+          {{/* Mobile Ecken */}}
+          {{ if eq $col_mobile 0 }} {{/* Linke Spalte Mobile */}}
+            {{ if $lastRow_mobile }}
+              {{ $roundedBL_mobile = "rounded-b-[2rem]" }}
+            {{ end }}
+            {{ if eq $index 0 }}
+              {{ $roundedTL_mobile = "rounded-tl-[2rem]" }}
+            {{ end }}
+          {{ else }} {{/* Rechte Spalte Mobile */}}
+            {{ if $lastRow_mobile }}
+              {{ $roundedBR_mobile = "rounded-b-[2rem]" }}
+            {{ end }}
+            {{ if eq $index 1 }}
+              {{ $roundedTR_mobile = "rounded-tr-[2rem]" }}
+            {{ end }}
+          {{ end }}
+  
+          {{/* Desktop Ecken */}}
+          {{ if eq $col_desktop 0 }} {{/* Linke Spalte Desktop */}}
+            {{ if eq $index 0 }}
+              {{ $roundedTL_desktop = "md:rounded-tl-[2rem]" }}
+            {{ end }}
+            {{ if $lastRow_desktop }}
+              {{ $roundedBL_desktop = "md:rounded-b-[2rem]" }}
+            {{ end }}
+          {{ end }}
+          {{ if eq $col_desktop 3 }} {{/* Rechte Spalte Desktop */}}
+            {{ if $lastRow_desktop }}
+              {{ $roundedBR_desktop = "md:rounded-b-[2rem]" }}
+            {{ end }}
+            {{ if eq $index 3 }}
+              {{ $roundedTR_desktop = "md:rounded-tr-[2rem]" }}
+            {{ end }}
+          {{ end }}
+  
+          <div class="flex items-start border border-border dark:border-darkmode-border bg-theme-light dark:bg-darkmode-theme-dark p-4
+            {{ $roundedTL_mobile }} {{ $roundedTR_mobile }} {{ $roundedBL_mobile }} {{ $roundedBR_mobile }}
+            {{ $roundedTL_desktop }} {{ $roundedTR_desktop }} {{ $roundedBL_desktop }} {{ $roundedBR_desktop }}">
+            
+            <div class="flex-shrink-0 flex h-12 w-12 items-center justify-center rounded-full border border-{{ index (shuffle $colors) 0 }} bg-{{ index (shuffle $colors) 0 }}/20">
+              <i class="fas fa-{{ index (shuffle $icons) 0 }} text-{{ index (shuffle $colors) 0 }}"></i>
+            </div>
+            
+            <div class="ml-4 flex flex-col justify-center">
+              <h6 class="font-bold break-keep">{{ $contributor.name }}</h6>
+              <p class="mt-2 text-sm">{{ $contributor.message }}</p>
+            </div>
+          </div>
+        {{ end }}
+      </div>
+    </div>
+  </section>  
+{{ end }}

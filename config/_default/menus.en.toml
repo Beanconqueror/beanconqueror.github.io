@@ -1,0 +1,93 @@
+############# English navigation ##############
+
+# main menu
+[[main]]
+name = "The App"
+url = "/"
+weight = 1
+
+[[main]]
+name = "Conquerors"
+url = "/conquerors/"
+weight = 2
+
+[[main]]
+name = "Help center"
+url = "/blog/"
+weight = 3
+
+[[main]]
+name = "Contact"
+url = "/contact/"
+weight = 4
+
+# footer menu
+[[footer]]
+name = "The App"
+url = ""
+weight = 1
+
+    [[footer]]
+     parent = "The App"
+     name = "Changelog"
+     url = "/changelog"
+
+    [[footer]]
+     parent = "The App"
+     name = "Roadmap"
+     url = "/roadmap"
+
+    [[footer]]
+     parent = "The App"
+     name = "Data & Tracking"
+     url = "/data-tracking"
+
+    [[footer]]
+     parent = "The App"
+     name = "Running Costs"
+     url = "running-costs"
+
+[[footer]]
+name = "Help Center"
+url = "/blog"
+weight = 2
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Get started"
+     url = "/blog/getting-started-with-bq"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Backup & Import"
+     url = "/blog/backup-and-import"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Bluetooth Device Features"
+     url = "/blog/bluetooth-device-features"
+
+    [[footer]]
+     parent = "Help Center"
+     name = "Support languages"
+     url = "/blog/support-languages"
+
+[[footer]]
+name = "Legal"
+url = "/legal"
+weight = 3
+
+    [[footer]]
+     parent = "Legal"
+     name = "Privacy Policy"
+     url = "/privacy-policy"
+
+    [[footer]]
+     parent = "Legal"
+     name = "Cookie Policy"
+     url = "/cookie-policy"
+
+    [[footer]]
+     parent = "Legal"
+     name = "Terms"
+     url = "/terms"

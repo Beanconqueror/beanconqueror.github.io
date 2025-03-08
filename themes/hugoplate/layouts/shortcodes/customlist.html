@@ -1,0 +1,12 @@
+<ul class="space-y-2">
+    {{ $icon := .Get "icon" }}
+    {{ $content := .Inner | markdownify }}
+    {{ $items := split $content "<li>" }}
+    {{ range $index, $item := after 1 $items }}
+      <li class="flex items-start -mt-4">
+        <i class="{{ $icon }} mt-1 mr-2 -ml-4"></i>
+        <span>{{ $item | safeHTML }}</span>
+      </li>
+    {{ end }}
+  </ul>
+  

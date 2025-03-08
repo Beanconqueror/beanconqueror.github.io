@@ -1,0 +1,31 @@
+<div class="relative mx-auto border-slate-800 bg-slate-700 border-[14px] rounded-[2.5rem] h-[600px] w-[300px]">
+    <div class="h-[32px] w-[3px] bg-slate-700 absolute -left-[17px] top-[72px] rounded-l-lg"></div>
+    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[124px] rounded-l-lg"></div>
+    <div class="h-[46px] w-[3px] bg-slate-700 absolute -left-[17px] top-[178px] rounded-l-lg"></div>
+    <div class="h-[64px] w-[3px] bg-slate-700 absolute -right-[17px] top-[142px] rounded-r-lg"></div>
+    <div class="rounded-[1.4rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-900 justify-items-start">
+        {{- if .Get "animation" }}
+        <lottie-player 
+            src="{{ .Get "animation" | relURL }}" 
+            style="width: 100%; height: 100%; display: block; margin: 0px;"
+            loop
+            autoplay>
+        </lottie-player>
+        {{- else if .Get "video" }}
+        {{ partial "video.html" (dict 
+            "Src" (.Get "video" | relURL)
+            "Autoplay" "true"
+            "Loop" "true"
+            "Muted" "true"
+            "Controls" "false"
+            "Class" "w-full h-full object-cover block m-0"
+        ) }}
+        {{- else if .Get "image" }}
+        {{ partial "image" (dict 
+            "Src" (.Get "image" | relURL)
+            "Alt" (.Get "alt" | default "")
+            "Class" "w-full block m-0"
+        ) }}
+        {{- end }}
+    </div>
+</div>

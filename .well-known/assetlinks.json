@@ -1,5 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target" : { "namespace": "android_app", "package_name": "com.beanconqueror.app",
-    "sha256_cert_fingerprints": ["07:B8:70:2E:95:C7:CC:56:2D:B0:A4:09:7E:70:F6:28:9E:A8:A9:C5:1D:0B:F9:7A:B6:B6:35:AF:FC:C6:7E:E6"] }
-}]

@@ -1,0 +1,114 @@
+<!-- JS Plugins + Main script -->
+{{ $scripts := slice }}
+{{ $scriptsLazy := slice }}
+{{ range site.Params.plugins.js }}
+  {{ if findRE "^http" .link }}
+    <script
+      src="{{ .link | relURL }}"
+      type="application/javascript"
+      {{ .attributes | safeHTMLAttr }}></script>
+  {{ else }}
+    {{ if not .lazy }}
+      {{ $scripts = $scripts | append (resources.Get .link) }}
+    {{ else }}
+      {{ $scriptsLazy = $scriptsLazy | append (resources.Get .link) }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+
+<!-- main script -->
+{{ $scripts = $scripts | append (resources.Get "js/main.js") }}
+{{ $scripts = $scripts | resources.Concat "js/script.js" }}
+
+{{ $scriptsLazy = $scriptsLazy | resources.Concat "js/script-lazy.js" }}
+
+{{ if hugo.IsProduction }}
+  {{ $scripts = $scripts | minify | fingerprint }}
+  {{ $scriptsLazy = $scriptsLazy | minify | fingerprint }}
+{{ end }}
+
+{{/* scripts */}}
+<script
+  crossorigin="anonymous"
+  integrity="{{ $scripts.Data.Integrity }}"
+  src="{{ $scripts.RelPermalink }}"></script>
+
+{{/* scripts lazy */}}
+<script
+  defer
+  async
+  crossorigin="anonymous"
+  integrity="{{ $scriptsLazy.Data.Integrity }}"
+  src="{{ $scriptsLazy.RelPermalink }}"></script>
+
+<!-- progressive web app -->
+{{ partialCached "pwa.html" . }}
+
+
+<!-- cookie consent -->
+{{ partialCached "cookie-consent.html" . }}
+
+
+<!-- google adsense -->
+{{ partialCached "adsense-script.html" . }}
+
+
+<!-- cookie consent -->
+{{ partialCached "announcement-script.html" . }}
+
+<!-- Load more button -->
+<script>document.addEventListener('DOMContentLoaded', function() {
+  try {
+    const loadMoreButton = document.getElementById('load-more');
+    const testimonials = document.querySelectorAll('.testimonial');
+    const increment = 3;
+    let currentlyVisible = 3;
+    const totalTestimonials = parseInt(loadMoreButton.dataset.totalTestimonials, 10);
+
+    loadMoreButton.addEventListener('click', function() {
+      for (let i = currentlyVisible; i < currentlyVisible + increment && i < totalTestimonials; i++) {
+        testimonials[i].classList.remove('hidden');
+      }
+      currentlyVisible += increment;
+      if (currentlyVisible >= totalTestimonials) {
+        loadMoreButton.style.display = 'none';
+      }
+    });
+  }catch(ex) {
+
+  }
+
+});
+</script>
+
+<script src="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/scripts/plugins/countup.min.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    try {
+      const countElements = document.querySelectorAll('.countTo');
+
+      countElements.forEach(element => {
+        const target = parseFloat(element.getAttribute('data-count'));
+        const decimals = parseInt(element.getAttribute('data-decimals') || '0', 10);
+        let count = 0;
+        const duration = 2000; // 2 seconds
+        const steps = 50;
+        const increment = target / steps;
+
+        const timer = setInterval(() => {
+          count += increment;
+          if (count >= target) {
+            clearInterval(timer);
+            element.textContent = target.toFixed(decimals);
+          } else {
+            element.textContent = count.toFixed(decimals);
+          }
+        }, duration / steps);
+      });
+    } catch(ex) {
+      console.error('Error in count animation:', ex);
+    }
+  });
+</script>
+

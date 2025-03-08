@@ -1,0 +1,15 @@
+{{/* Deaktivieren Sie Width/Height-Checks für Nicht-Bilder */}}
+{{- $src := .Src }}
+{{- with resources.Get $src }}
+  {{- $image := . }}
+  <img src="{{ $image.RelPermalink }}" 
+       alt="{{ .Alt }}"
+       class="{{ .Class }}"
+       loading="{{ .Loading }}">
+{{- else }}
+  {{/* Fallback für Nicht-Bildressourcen */}}
+  <img src="{{ $src | relURL }}" 
+       alt="{{ .Alt }}"
+       class="{{ .Class }}"
+       loading="{{ .Loading }}">
+{{- end }}

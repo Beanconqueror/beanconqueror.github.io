@@ -1,0 +1,49 @@
+{{ $w := default "100" (.Get 0) }}
+{{ $h := default "300" (.Get 1) }}
+{{ $r := ( .Inner | chomp) }}
+{{ $seed := "foo" }}
+{{ $id := "chart-" | printf "%d" .Ordinal }}
+
+{{- if not (.Page.Scratch.Get "hasChartJS") -}}
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+{{- .Page.Scratch.Set "hasChartJS" true -}}
+
+{{- end -}}
+
+<div class="chart" style="width: {{ $w }}%; height: {{ $h }}px; margin: 0 auto">
+  <canvas id="{{ $id }}"></canvas>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    var ctx = document.getElementById('{{ $id }}')
+    var options = {{ .Inner | chomp | safeJS }};
+    
+    // Grid-Farben setzen
+    options.options = options.options || {};
+    options.options.scales = options.options.scales || {};
+    
+    // Y-Achse
+    options.options.scales.y = options.options.scales.y || {};
+    options.options.scales.y.grid = options.options.scales.y.grid || {};
+    options.options.scales.y.grid.color = 'rgba(160, 160, 160, 0.2)'; // Hier Ihre Grid-Farbe
+    
+    // X-Achse
+    options.options.scales.x = options.options.scales.x || {};
+    options.options.scales.x.grid = options.options.scales.x.grid || {};
+    options.options.scales.x.grid.color = 'rgba(160, 160, 160, 0.2)'; // Hier Ihre Grid-Farbe
+    
+    new Chart(ctx, options);
+    
+    // Dark/Light-Mode-Integration
+    document.querySelector('.theme-switcher input').addEventListener('click', () => {
+      setTimeout(() => {
+        Chart.helpers.each(Chart.instances, (instance) => {
+          instance.chart.update();
+        });
+      }, 300); // Warte auf CSS-Transition
+    });
+  });
+</script>
