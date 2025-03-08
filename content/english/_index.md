@@ -2,7 +2,7 @@
 # Banner
 banner:
   title: "The heart of drinking - With every brew"
-  content: "**BEANCONQEROR** is the product of our shared love of the drink in our cups and in our hearts. Whether you’re just starting out, or are an experienced barista, Beanconqueror will help you get the most out of your coffee."
+  content: "**BEANCONQUEROR** is the product of our shared love of the drink in our cups and in our hearts. Whether you’re just starting out, or are an experienced barista, Beanconqueror will help you get the most out of your coffee."
   webp: "/video/en/main/beanconqueror-demo.webp"
   linkAppleAppStore: "https://apps.apple.com/de/app/beanconqueror/id1445297158"
   linkGooglePlayStore: "https://play.google.com/store/apps/details?id=com.beanconqueror.app"
