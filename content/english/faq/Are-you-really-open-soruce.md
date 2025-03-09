@@ -1,5 +1,5 @@
 ---
-question: "Are you really open soruce?"
+question: "Are you really open source?"
 search_include: true
 search_tags: ["FAQ", "faq"]
 ---
