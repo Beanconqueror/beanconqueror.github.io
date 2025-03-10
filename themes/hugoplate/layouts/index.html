@@ -719,53 +719,41 @@
   </section>
     <!-- /not convinced -->
 
-  <!-- Top Reasons -->
-  {{ range $i, $e:= .Params.topreason }}
-  <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}" id="top-reasons">
-    <div class="container">
-      <div class="row items-center justify-between">
-        <div class=" {{ if not (modBool $i 2) }} md:order-2 {{ end }} md:col-5 mb-6">
-          <div class="w-full aspect-w-16 aspect-h-9">
-            <iframe src="https://www.youtube.com/embed/{{ .video }}" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen
-                    class="w-full h-full">
-            </iframe>
-          </div>
-        </div>
-          <div
-            class="{{ if not (modBool $i 2) }}
-              md:order-1
-            {{ end }} md:col-7 lg:col-6">
-            <h2 class="mb-4">
-              {{ .title | markdownify }}
-            </h2>
-            <p class="mb-8 text-lg">
-              {{ .content | markdownify }}
-            </p>
-            <ul>
-              {{ range .bulletpoints }}
-                <li class="relative mb-4 pl-6">
-                  <i class="fa fa-check absolute left-0 top-1.5"></i>
-                  {{ . | markdownify }}
-                </li>
-              {{ end }}
-            </ul>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
-                </a>
-              {{ end }}
-            {{ end }}
-          </div>
-        </div>
-      </div>
-    </section>
-  {{ end }}
-  <!-- /Top Reasons -->
+   <!-- Top Reasons -->
+   {{ range $i, $e := .Params.topreason }}
+   <section class="section-sm {{ if (modBool $i 2) }}bg-gradient{{ end }}" id="top-reasons">
+     <div class="container">
+       <div class="row items-center justify-between">
+         <div class="{{ if not (modBool $i 2) }} md:order-2 {{ end }} md:col-5 mb-6">
+           <div class="w-full aspect-w-16 aspect-h-9">
+             {{ partial "youtube-lite.html" (dict "Id" .video ) }}
+           </div>
+         </div>
+         <div class="{{ if not (modBool $i 2) }} md:order-1 {{ end }} md:col-7 lg:col-6">
+           <h2 class="mb-4">{{ .title | markdownify }}</h2>
+           <p class="mb-8 text-lg">{{ .content | markdownify }}</p>
+           <ul>
+             {{ range .bulletpoints }}
+               <li class="relative mb-4 pl-6">
+                 <i class="fa fa-check absolute left-0 top-1.5"></i>
+                 {{ . | markdownify }}
+               </li>
+             {{ end }}
+           </ul>
+           {{ with .button }}
+             {{ if .enable }}
+               <a class="btn btn-primary mt-6" href="{{ .link | absURL }}">
+                 {{ .label }}
+                 <i class="fa fa-arrow-right pl-2"></i>
+               </a>
+             {{ end }}
+           {{ end }}
+         </div>
+       </div>
+     </div>
+   </section>
+ {{ end }}
+ <!-- /Top Reasons -->
 
   <!-- FAQ -->
   {{ $faqPages := where .Site.RegularPages "Section" "faq" }}
