@@ -86,7 +86,7 @@
               <picture>
                   <source srcset="{{ $videoUrl }}" type="image/webp">
                   <source srcset="{{ replace .webp ".webp" ".jpg" | relURL }}" type="image/jpeg">
-                  <img src="{{ replace .webp ".webp" ".jpg" | relURL }}" alt="{{ .webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
+                  <img loading="lazy" src="{{ replace .webp ".webp" ".jpg" | relURL }}" alt="{{ .webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
                 </picture>
               {{- end }}
             </div>            
@@ -672,7 +672,7 @@
                     <picture>
                       <source srcset="{{ $videoUrlSecond }}" type="image/webp">
                       <source srcset="{{ replace .Params.webp ".webp" ".jpg" | relURL }}" type="image/jpeg">
-                      <img src="{{ replace .Params.webp ".webp" ".jpg" | relURL }}" alt="{{ .Params.webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
+                      <img loading="lazy" src="{{ replace .Params.webp ".webp" ".jpg" | relURL }}" alt="{{ .Params.webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
                     </picture>
                   {{- end }}
                 </div>                
