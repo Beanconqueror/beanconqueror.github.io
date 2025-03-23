@@ -22,6 +22,7 @@ draft: false
 - [DiFluid Microbalance](https://digitizefluid.com/pages/microbalance)
 - [DiFluid Microbalance Ti](https://digitizefluid.com/products/microbalance-ti)
 - [Eureka Precisa](https://www.espressissimo.de/eureka-digitale-espressowaage) – The old one which came with bluetooth, aswell as the new one which was released with bluetooth again
+- [Solobarista Scale](https://e.tb.cn/h.T8XpZgftFC9NUTl?tk=pHsye1Ju0U9)
 - [Felicita Scales](https://www.felicitacoffee.com/PRODUCT/3.html) (Felicita Arc, Felicita Parallel)
 - [Hiroia Jimmy](https://www.hiroia.com/pages/jimmy)
 - [Skale 2](https://skale.cc/en/)
@@ -66,6 +67,7 @@ draft: false
 
 - [Xenia](https://www.xenia-espresso.de/en/)
 - [Meticulous](https://meticuloushome.com/)
+- [Gaggiuino](https://gaggiuino.github.io/) - Shot import
 
 
 Your Bluetooth device is not in the list? Unfortunately each device needs to be integrated individually as there is no standard. Check the Beanconqueror discord to reach out to the contributors.
