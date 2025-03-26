@@ -2,7 +2,7 @@
 title: "App Parameter"
 description: "All the App parameter we track"
 icon: "fas fa-circle-question"
-bgColor: "bg-green-200"
+bgColor: "bg-green-50"
 borderColor: "border-green-900"
 iconColor: "text-green-900"
 titleColor: "text-green-900"
