@@ -89,9 +89,10 @@ Stettiner Straße 41
 
 ### Full policy
 #### Owner and Data Controller
-Lars Saalbach
-Wallensteinstraße 5
-90522 Oberasbach
+Lars Saalbach 
+c/o Impressumservice Dein-Impressum
+Stettiner Straße 41
+35410 Hungen
 
 <br>
 
