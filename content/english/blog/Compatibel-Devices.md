@@ -18,7 +18,8 @@ draft: false
 - [Blackcoffee.io](https://blackcoffee.io/)
 - [Bookoo Mini Scale](https://bookoocoffee.com/)
 - [MyScale](https://de.aliexpress.com/item/1005005916581185.html?gatewayAdapt=glo2deu) (Aliexpress - No Name)
-- [Decent Scale](https://de.decentespresso.com/decentscale) (Half Scale Decent soon)
+- [Decent Scale](https://decentespresso.com/decentscale) (Sold out, but still supported) 
+- [Half Decent Scale](https://decentespresso.com/decentscale) >=BeanConqueror 8.4
 - [DiFluid Microbalance](https://digitizefluid.com/pages/microbalance)
 - [DiFluid Microbalance Ti](https://digitizefluid.com/products/microbalance-ti)
 - [Eureka Precisa](https://www.espressissimo.de/eureka-digitale-espressowaage) – The old one which came with bluetooth, aswell as the new one which was released with bluetooth again
@@ -41,6 +42,8 @@ draft: false
 - [coffee-scale-app](https://github.com/beeb/coffee-scale-app/) (Rust & Python Firmware)
 - [in decent scale](https://github.com/tommy-curl/inDecentScale/) (Decent Scale API)
 - [almost decent scale](https://github.com/tadelv/almost-decent-scale) (Decent Scale API)
+- [EspressiScale](https://www.espressiscale.com/) (EspressiScale Firmware) - >=BeanConqueror 8.4
+- [WeightMyBru](https://github.com/031devstudios/weighmybru2) (WeightMyBru) - >=BeanConqueror 8.4
 
 
 ## Supported Temperature Devices:
