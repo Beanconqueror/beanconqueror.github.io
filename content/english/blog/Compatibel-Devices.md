@@ -13,12 +13,12 @@ draft: false
 
 ## Supported Scales:
 
-(in alphabetical order)
 - [Acaia Scales](https://acaia.co/collections/coffee-scales) (Pearl, Pearl S, Lunar, Lunar 2021, Pyxis)
 - [Blackcoffee.io](https://blackcoffee.io/)
 - [Bookoo Mini Scale](https://bookoocoffee.com/)
 - [MyScale](https://de.aliexpress.com/item/1005005916581185.html?gatewayAdapt=glo2deu) (Aliexpress - No Name)
 - [Decent Scale](https://decentespresso.com/decentscale) (Sold out, but still supported) 
+- [EspressiScale](https://www.espressiscale.com/)
 - [Half Decent Scale](https://decentespresso.com/decentscale) >=BeanConqueror 8.4
 - [DiFluid Microbalance](https://digitizefluid.com/pages/microbalance)
 - [DiFluid Microbalance Ti](https://digitizefluid.com/products/microbalance-ti)
@@ -28,6 +28,7 @@ draft: false
 - [Hiroia Jimmy](https://www.hiroia.com/pages/jimmy)
 - [Skale 2](https://skale.cc/en/)
 - [Varia](https://www.variabrewing.com/collections/aku-new)(AKU Pro, AKU Micro, AKU Mini)
+- [WeighMyBru](https://weighmybru.com/)
 - Smartchef Scale (available on Amazon in the US) V1
 
 ### Scale with discount:
@@ -36,6 +37,10 @@ draft: false
 
 > Discount code: ```beanconqueror```
 
+### Pressure sensor with discount:
+- [Pressensor](https://pressensor.com/)
+
+> Discount code: ```PRS<3BQ```
 
 ## DIY-Scales:
 
