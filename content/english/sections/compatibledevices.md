@@ -5,13 +5,13 @@ headline: "Compatible Devices"
 discription: "You can’t find the right device? Then get in touch with us!"
 supportedscales:
   - title: "Supported Scales"
-    content: "(in alphabetical order)"
+    content: ""
     bulletpoints:
     - "[Acaia Scales](https://acaia.co/collections/coffee-scales) (Pearl, Pearl S, Lunar, Lunar 2021, Pyxis)"
     - "[Blackcoffee.io](https://blackcoffee.io/)"
     - "[Bookoo Mini Scale](https://bookoocoffee.com/)"
     - "[MyScale](https://de.aliexpress.com/item/1005005916581185.html?gatewayAdapt=glo2deu) (Aliexpress - No Name)"
-    - "[Decent Scale](https://de.decentespresso.com/decentscale) (Half Scale Decent soon)"
+    - "[Decent Scale / Half Decent Scale](https://de.decentespresso.com/decentscale)"
     - "[DiFluid Microbalance](https://digitizefluid.com/pages/microbalance)"
     - "[DiFluid Microbalance Ti](https://digitizefluid.com/products/microbalance-ti)"
     - "[Eureka Precisa](https://www.espressissimo.de/eureka-digitale-espressowaage) – The old one which came with bluetooth, aswell as the new one which was released with bluetooth again"
@@ -20,6 +20,8 @@ supportedscales:
     - "[Hiroia Jimmy](https://www.hiroia.com/pages/jimmy)"
     - "[Skale 2](https://skale.cc/en/)"
     - "[Varia](https://www.variabrewing.com/collections/aku-new) (AKU Pro, AKU Micro, AKU Mini)"
+    - "[WeighMyBru] (https://weighmybru.com/)"
+    - "[EspressiScale](https://www.espressiscale.com/)"
     - "Smartchef Scale (available on Amazon in the US) V1"
 
 scalediscount:
