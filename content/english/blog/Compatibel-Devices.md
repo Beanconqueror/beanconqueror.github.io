@@ -48,7 +48,7 @@ draft: false
 - [in decent scale](https://github.com/tommy-curl/inDecentScale/) (Decent Scale API)
 - [almost decent scale](https://github.com/tadelv/almost-decent-scale) (Decent Scale API)
 - [EspressiScale](https://www.espressiscale.com/) (EspressiScale Firmware) - >=BeanConqueror 8.4
-- [WeightMyBru](https://github.com/031devstudios/weighmybru2) (WeightMyBru) - >=BeanConqueror 8.4
+- [WeighMyBru]((https://weighmybru.com/)) (WeighMyBru) - >=BeanConqueror 8.4
 
 
 ## Supported Temperature Devices:
