@@ -20,7 +20,7 @@ supportedscales:
     - "[Hiroia Jimmy](https://www.hiroia.com/pages/jimmy)"
     - "[Skale 2](https://skale.cc/en/)"
     - "[Varia](https://www.variabrewing.com/collections/aku-new) (AKU Pro, AKU Micro, AKU Mini)"
-    - "[WeighMyBru] (https://weighmybru.com/)"
+    - "[WeighMyBru](https://weighmybru.com/)"
     - "[EspressiScale](https://www.espressiscale.com/)"
     - "Smartchef Scale (available on Amazon in the US) V1"
 
