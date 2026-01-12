@@ -16,6 +16,7 @@ draft: false
 - [Acaia Scales](https://acaia.co/collections/coffee-scales) (Pearl, Pearl S, Lunar, Lunar 2021, Pyxis)
 - [Blackcoffee.io](https://blackcoffee.io/)
 - [Bookoo Mini Scale](https://bookoocoffee.com/)
+- [Bookoo Ultra Scale](https://bookoocoffee.com/)
 - [MyScale](https://de.aliexpress.com/item/1005005916581185.html?gatewayAdapt=glo2deu) (Aliexpress - No Name)
 - [Decent Scale](https://decentespresso.com/decentscale) (Sold out, but still supported) 
 - [EspressiScale](https://www.espressiscale.com/)
