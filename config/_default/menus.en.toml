@@ -21,6 +21,11 @@ name = "Contact"
 url = "/contact/"
 weight = 4
 
+[[main]]
+name = "Create Link"
+url = "/create/"
+weight = 5
+
 # footer menu
 [[footer]]
 name = "The App"

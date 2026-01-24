@@ -1,15 +1,25 @@
 {{/* Deaktivieren Sie Width/Height-Checks für Nicht-Bilder */}}
-{{- $src := .Src }}
+{{- $src := .Get "src" | default .Src }}
+{{- $alt := .Get "alt" | default .Alt }}
+{{- $class := .Get "class" | default .Class }}
+{{- $loading := .Get "loading" | default .Loading | default "lazy" }}
+{{- $width := .Get "width" }}
+{{- $height := .Get "height" }}
+
 {{- with resources.Get $src }}
   {{- $image := . }}
   <img src="{{ $image.RelPermalink }}" 
-       alt="{{ .Alt }}"
-       class="{{ .Class }}"
-       loading="{{ .Loading }}">
+       {{ with $alt }}alt="{{ . }}"{{ end }}
+       {{ with $class }}class="{{ . }}"{{ end }}
+       {{ with $width }}width="{{ . }}"{{ end }}
+       {{ with $height }}height="{{ . }}"{{ end }}
+       loading="{{ $loading }}">
 {{- else }}
   {{/* Fallback für Nicht-Bildressourcen */}}
   <img src="{{ $src | relURL }}" 
-       alt="{{ .Alt }}"
-       class="{{ .Class }}"
-       loading="{{ .Loading }}">
+       {{ with $alt }}alt="{{ . }}"{{ end }}
+       {{ with $class }}class="{{ . }}"{{ end }}
+       {{ with $width }}width="{{ . }}"{{ end }}
+       {{ with $height }}height="{{ . }}"{{ end }}
+       loading="{{ $loading }}">
 {{- end }}

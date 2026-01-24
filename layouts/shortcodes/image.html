@@ -1,0 +1,21 @@
+{{/* Overrides the default image shortcode to support SVGs and explicit width/height */}}
+{{- $src := .Get "src" }}
+{{- $alt := .Get "alt" }}
+{{- $class := .Get "class" }}
+{{- $loading := .Get "loading" | default "lazy" }}
+{{- $width := .Get "width" }}
+{{- $height := .Get "height" }}
+
+{{- if $src }}
+{{- $imageResource := resources.Get $src }}
+{{- if $imageResource }}
+<img src="{{ $imageResource.RelPermalink }}" {{ with $alt }}alt="{{ . }}" {{ end }} {{ with $class }}class="{{ . }}" {{
+    end }} {{ if and $width (ne $width "" ) }}width="{{ $width }}" {{ end }} {{ if and $height (ne $height "" )
+    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}">
+{{- else }}
+{{- /* Fallback for external URLs or missing resources */}}
+<img src="{{ $src | relURL }}" {{ with $alt }}alt="{{ . }}" {{ end }} {{ with $class }}class="{{ . }}" {{ end }} {{ if
+    and $width (ne $width "" ) }}width="{{ $width }}" {{ end }} {{ if and $height (ne $height "" )
+    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}">
+{{- end }}
+{{- end }}

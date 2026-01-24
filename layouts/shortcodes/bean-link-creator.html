@@ -1,0 +1,533 @@
+{{/* layouts/shortcodes/bean-link-creator.html */}}
+<div
+    class="max-w-4xl mx-auto my-8 p-8 bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 transition-all duration-300">
+    <div class="text-center mb-10">
+        <h2
+            class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-amber-500 to-orange-700 bg-clip-text text-transparent mb-2">
+            Create Beanconqueror Link</h2>
+        <p class="text-zinc-500 dark:text-zinc-400">Generate a shareable link and QR code for your coffee beans.</p>
+    </div>
+
+    <form id="beanForm" class="space-y-8">
+
+        <!-- Section: General Information -->
+        <div class="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-zinc-800 dark:text-zinc-100 block-header">
+                <span class="w-1 h-6 bg-amber-500 rounded-full inline-block"></span>
+                General Information
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Coffee
+                        Name *</label>
+                    <input type="text" name="coffeeName" required
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all placeholder-zinc-400 text-zinc-900 dark:text-zinc-100"
+                        placeholder="e.g. Ethiopia Yirgacheffe">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roaster</label>
+                    <input type="text" name="roaster"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all placeholder-zinc-400 text-zinc-900 dark:text-zinc-100"
+                        placeholder="e.g. The Barn">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roasting
+                        Date</label>
+                    <input type="date" name="roastingDate"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Webshop
+                        URL</label>
+                    <input type="url" name="website"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all placeholder-zinc-400 text-zinc-900 dark:text-zinc-100"
+                        placeholder="https://...">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Roast Details -->
+        <div class="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-zinc-800 dark:text-zinc-100 block-header">
+                <span class="w-1 h-6 bg-amber-500 rounded-full inline-block"></span>
+                Roast Details
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roast
+                        Profile</label>
+                    <select name="beanRoastingType"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                        <option value="">Select Profile</option>
+                        <option value="FILTER">Filter</option>
+                        <option value="ESPRESSO">Espresso</option>
+                        <option value="OMNI">Omni</option>
+                    </select>
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roast
+                        Level</label>
+                    <select name="roast"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                        <option value="">Select Level</option>
+                        <option value="CINNAMON_ROAST">Cinnamon (Light)</option>
+                        <option value="AMERICAN_ROAST">American (Light)</option>
+                        <option value="NEW_ENGLAND_ROAST">New England (Light)</option>
+                        <option value="HALF_CITY_ROAST">Half City (Light)</option>
+                        <option value="MODERATE_LIGHT_ROAST">Moderate Light</option>
+                        <option value="CITY_ROAST">City (Medium)</option>
+                        <option value="CITY_PLUS_ROAST">City+ (Medium)</option>
+                        <option value="FULL_CITY_ROAST">Full City (Medium)</option>
+                        <option value="FULL_CITY_PLUS_ROAST">Full City+ (Dark)</option>
+                        <option value="ITALIAN_ROAST">Italian (Dark)</option>
+                        <option value="VIEANNA_ROAST">Vienna (Dark)</option>
+                        <option value="FRENCH_ROAST">French (Dark)</option>
+                        <option value="CUSTOM_ROAST">Custom...</option>
+                    </select>
+                </div>
+                <div id="roastCustomContainer" class="hidden">
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Custom
+                        Roast</label>
+                    <input type="text" name="roastCustom"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100"
+                        placeholder="e.g. Nordic Light">
+                </div>
+
+
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roast
+                        Range (0-5)</label>
+                    <input type="number" name="degreeOfRoast" min="0" max="5" step="0.1"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Type</label>
+                    <select name="beanMix" id="beanMixSelect"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                        <option value="">Select Type</option>
+                        <option value="SINGLE_ORIGIN">Single Origin</option>
+                        <option value="BLEND">Blend</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Bean Details -->
+        <div class="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-zinc-800 dark:text-zinc-100 block-header">
+                <span class="w-1 h-6 bg-amber-500 rounded-full inline-block"></span>
+                Bean Details
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Weight
+                        (g)</label>
+                    <input type="number" name="weight"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Cost</label>
+                    <input type="number" name="cost" step="0.01"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                </div>
+                <div>
+                    <label
+                        class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">EAN
+                        Article</label>
+                    <input type="text" name="eanArticle"
+                        class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
+                </div>
+                <div class="md:col-span-3 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Flavor
+                            Profile</label>
+                        <input type="text" name="flavourProfile"
+                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100"
+                            placeholder="Floral, citrus, chocolate...">
+                    </div>
+                    <div>
+                        <label
+                            class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Cupping
+                            Points</label>
+                        <input type="text" name="cuppingPoints"
+                            class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100"
+                            placeholder="e.g. 87.5">
+                    </div>
+                </div>
+                <div class="flex items-center gap-3 mt-4">
+                    <input type="checkbox" name="decaffeinated" id="decaffeinated"
+                        class="w-5 h-5 rounded border-zinc-300 text-amber-500 focus:ring-amber-500">
+                    <label for="decaffeinated"
+                        class="text-sm font-medium text-zinc-700 dark:text-zinc-300">Decaffeinated</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Variety Information -->
+        <div class="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold flex items-center gap-2 text-zinc-800 dark:text-zinc-100 block-header">
+                    <span class="w-1 h-6 bg-amber-500 rounded-full inline-block"></span>
+                    Varieties
+                </h3>
+                <button type="button" id="addVarietyBtn"
+                    class="hidden text-sm px-4 py-2 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 rounded-lg transition-colors font-medium text-zinc-800 dark:text-zinc-100">
+                    + Add Variety
+                </button>
+            </div>
+            <div id="varietiesContainer" class="space-y-4">
+                <!-- Dynamic varieties will be added here -->
+            </div>
+        </div>
+
+
+        <!-- Section: Notes -->
+        <div class="bg-zinc-50 dark:bg-zinc-800/50 p-6 rounded-2xl border border-zinc-100 dark:border-zinc-700/50">
+            <h3 class="text-xl font-bold mb-4 flex items-center gap-2 text-zinc-800 dark:text-zinc-100 block-header">
+                <span class="w-1 h-6 bg-amber-500 rounded-full inline-block"></span>
+                Notes
+            </h3>
+            <textarea name="notes" rows="4"
+                class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100"></textarea>
+        </div>
+
+        <div class="pt-4 flex flex-col md:flex-row gap-4">
+            <button type="button" id="resetBtn"
+                class="flex-1 py-4 px-6 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-zinc-800 dark:text-zinc-100 font-bold rounded-xl shadow-lg transition-all duration-200 flex justify-center items-center gap-2">
+                Reset Form
+            </button>
+            <button type="submit"
+                class="flex-[2] py-4 px-6 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 flex justify-center items-center gap-2">
+                Generate Import Link
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+                </svg>
+            </button>
+        </div>
+    </form>
+
+    <div id="resultsArea"
+        class="hidden mt-10 p-8 bg-zinc-50 dark:bg-zinc-800/50 rounded-2xl border border-zinc-200 dark:border-zinc-700 animate-fade-in text-center">
+        <h3 class="text-2xl font-bold mb-6 text-zinc-900 dark:text-white">Your Beanconqueror Import Code</h3>
+
+        <div class="flex flex-col items-center justify-center gap-6 mb-8">
+            <div id="qrcode" class="p-4 bg-white rounded-xl shadow-md"></div>
+            <p class="text-sm text-zinc-500">Scan with your camera to import directly</p>
+        </div>
+
+        <div class="bg-white dark:bg-zinc-900 p-4 rounded-xl mb-6 break-all font-mono text-sm max-h-40 overflow-y-auto border border-zinc-200 dark:border-zinc-700 text-left"
+            id="generatedLinkDisplay">
+        </div>
+
+        <div class="flex gap-4 max-w-md mx-auto">
+            <button id="copyBtn"
+                class="flex-1 py-3 bg-zinc-200 dark:bg-zinc-700 hover:bg-zinc-300 dark:hover:bg-zinc-600 text-zinc-800 dark:text-zinc-100 font-semibold rounded-xl transition-colors">
+                Copy Link
+            </button>
+            <a id="openLinkBtn" href="#"
+                class="flex-1 py-3 bg-amber-500 dark:text-zinc-100 hover:bg-amber-600 text-white text-center font-semibold rounded-xl transition-colors">
+                Open in App
+            </a>
+        </div>
+    </div>
+
+</div>
+
+<template id="varietyTemplate">
+    <div
+        class="variety-item bg-white dark:bg-zinc-900 p-4 rounded-xl border border-zinc-200 dark:border-zinc-700 relative group">
+        <button type="button"
+            class="remove-variety absolute -top-2 -right-2 bg-red-500 text-white rounded-full p-1 opacity-100 shadow-md hover:bg-red-600 transition-all hidden"
+            title="Remove">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+        </button>
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <input type="text" name="variety_country" placeholder="Country"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_region" placeholder="Region"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_farm" placeholder="Farm"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_farmer" placeholder="Farmer"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_variety" placeholder="Variety"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_processing" placeholder="Processing"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_elevation" placeholder="Elevation"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_harvestTime" placeholder="Harvest Time"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="text" name="variety_certification" placeholder="Certification"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+            <input type="number" name="variety_percentage" placeholder="%"
+                class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
+        </div>
+    </div>
+</template>
+
+<script src="https://cdn.jsdelivr.net/npm/protobufjs@7.2.4/dist/protobuf.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/qr-code-styling@1.5.0/lib/qr-code-styling.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('beanForm');
+        const varietyContainer = document.getElementById('varietiesContainer');
+        const addVarietyBtn = document.getElementById('addVarietyBtn');
+        const beanMixSelect = document.getElementById('beanMixSelect');
+        const roastSelect = document.querySelector('[name="roast"]'); // Select the roast dropdown
+        const roastCustomContainer = document.getElementById('roastCustomContainer');
+        const varietyTemplate = document.getElementById('varietyTemplate');
+
+        const resultsArea = document.getElementById('resultsArea');
+        const generatedLinkDisplay = document.getElementById('generatedLinkDisplay');
+        const qrcodeContainer = document.getElementById('qrcode');
+        const copyBtn = document.getElementById('copyBtn');
+        const openLinkBtn = document.getElementById('openLinkBtn');
+        const resetBtn = document.getElementById('resetBtn');
+
+        // Initial variety
+        addVariety();
+        updateVarietyUI();
+
+        addVarietyBtn.addEventListener('click', () => {
+            addVariety();
+            updateVarietyUI();
+        });
+
+        roastSelect.addEventListener('change', function () {
+            if (this.value === 'CUSTOM_ROAST') {
+                roastCustomContainer.classList.remove('hidden');
+            } else {
+                roastCustomContainer.classList.add('hidden');
+                // clear value when hidden?
+                roastCustomContainer.querySelector('input').value = "";
+            }
+        });
+
+        beanMixSelect.addEventListener('change', function () {
+            if (this.value === 'BLEND') {
+                addVarietyBtn.classList.remove('hidden');
+            } else {
+                addVarietyBtn.classList.add('hidden');
+                // Optional: trim varieties to 1 if user agreed, strictly enforced or lenient?
+                // For now, let's keep it simple and just hide the add button. 
+            }
+        });
+
+        resetBtn.addEventListener('click', function () {
+            form.reset();
+            resultsArea.classList.add('hidden');
+            qrcodeContainer.innerHTML = '';
+
+            // Reset varieties to just 1
+            varietyContainer.innerHTML = '';
+            addVariety();
+            updateVarietyUI();
+            addVarietyBtn.classList.add('hidden'); // Default is unknown/single -> hidden
+        });
+
+        function addVariety() {
+            const clone = varietyTemplate.content.cloneNode(true);
+            const removeBtn = clone.querySelector('.remove-variety');
+
+            removeBtn.addEventListener('click', function (e) {
+                e.target.closest('.variety-item').remove();
+                updateVarietyUI();
+            });
+
+            varietyContainer.appendChild(clone);
+        }
+
+        function updateVarietyUI() {
+            const items = varietyContainer.querySelectorAll('.variety-item');
+            items.forEach(item => {
+                const removeBtn = item.querySelector('.remove-variety');
+                // Only show remove button if there is more than 1 item
+                if (items.length > 1) {
+                    removeBtn.classList.remove('hidden');
+                } else {
+                    removeBtn.classList.add('hidden');
+                }
+            });
+        }
+
+        copyBtn.addEventListener('click', () => {
+            navigator.clipboard.writeText(generatedLinkDisplay.innerText);
+            const originalText = copyBtn.innerText;
+            copyBtn.innerText = 'Copied!';
+            setTimeout(() => copyBtn.innerText = originalText, 2000);
+        });
+
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(form);
+            const values = Object.fromEntries(formData.entries());
+
+            try {
+                const root = await protobuf.load("/beanconqueror.proto");
+                const BeanProto = root.lookupType("beanconqueror.BeanProto");
+                const Config = root.lookupType("beanconqueror.Config");
+                const BeanInformation = root.lookupType("beanconqueror.BeanInformation");
+                const ICupping = root.lookupType("beanconqueror.ICupping");
+                const BeanRoastInformation = root.lookupType("beanconqueror.BeanRoastInformation");
+                const Roast = root.lookupEnum("beanconqueror.Roast");
+                const BeanMix = root.lookupEnum("beanconqueror.BeanMix");
+                const BeanRoastingType = root.lookupEnum("beanconqueror.BeanRoastingType");
+
+                // Parse varieties
+                const varieties = [];
+                const varietyItems = document.querySelectorAll('.variety-item');
+                varietyItems.forEach(item => {
+                    varieties.push({
+                        country: item.querySelector('[name="variety_country"]').value || null,
+                        region: item.querySelector('[name="variety_region"]').value || null,
+                        farm: item.querySelector('[name="variety_farm"]').value || null,
+                        farmer: item.querySelector('[name="variety_farmer"]').value || null,
+                        elevation: item.querySelector('[name="variety_elevation"]').value || null,
+                        variety: item.querySelector('[name="variety_variety"]').value || null,
+                        processing: item.querySelector('[name="variety_processing"]').value || null,
+                        harvestTime: item.querySelector('[name="variety_harvestTime"]').value || null,
+                        certification: item.querySelector('[name="variety_certification"]').value || null,
+                        percentage: item.querySelector('[name="variety_percentage"]').value ? parseInt(item.querySelector('[name="variety_percentage"]').value) : null,
+                    });
+                });
+
+                // Construct Protobuf payload
+                const payload = {
+                    name: values.coffeeName,
+                    roastingDate: values.roastingDate ? new Date(values.roastingDate).toISOString() : "",
+                    note: values.notes || "",
+                    roaster: values.roaster || "",
+                    roast: values.roast ? Roast.values[values.roast] : Roast.values.UNKNOWN_ROAST,
+                    roastRange: values.degreeOfRoast ? parseInt(values.degreeOfRoast) : 0,
+                    beanMix: values.beanMix ? BeanMix.values[values.beanMix] : BeanMix.values.UNKNOWN_BEAN_MIX,
+                    roastCustom: values.roastCustom || "",
+                    config: {}, // create empty
+                    aromatics: values.flavourProfile || "",
+                    weight: values.weight ? parseInt(values.weight) : 0,
+                    finished: false,
+                    cost: values.cost ? parseInt(values.cost) : 0,
+                    cuppingPoints: values.cuppingPoints || "",
+                    decaffeinated: values.decaffeinated === "on",
+                    url: values.website || "",
+                    eanArticleNumber: values.eanArticle || "",
+                    rating: 0,
+                    beanInformation: varieties.map(info => ({
+                        country: info.country,
+                        region: info.region,
+                        farm: info.farm,
+                        farmer: info.farmer,
+                        elevation: info.elevation,
+                        variety: info.variety,
+                        processing: info.processing,
+                        harvestTime: info.harvestTime,
+                        certification: info.certification,
+                        percentage: info.percentage
+                    })),
+                    beanRoastingType: values.beanRoastingType ? BeanRoastingType.values[values.beanRoastingType] : BeanRoastingType.values.UNKNOWN_BEAN_ROASTING_TYPE,
+                    beanRoastInformation: {
+                        dropTemperature: 0,
+                        roastLength: 0,
+                        roasterMachine: "",
+                        greenBeanWeight: 0,
+                        outsideTemperature: 0,
+                        humidity: 0,
+                        beanUuid: "",
+                        firstCrackMinute: 0,
+                        firstCrackTemperature: 0,
+                        secondCrackMinute: 0,
+                        secondCrackTemperature: 0,
+                    },
+                    qrCode: "",
+                    favourite: false,
+                    shared: false,
+                    cupping: {
+                        dryFragrance: 0,
+                        wetAroma: 0,
+                        brightness: 0,
+                        flavor: 0,
+                        body: 0,
+                        finish: 0,
+                        sweetness: 0,
+                        cleanCup: 0,
+                        complexity: 0,
+                        uniformity: 0,
+                        cuppersCorrection: 0,
+                    },
+                    cuppedFlavor: {}
+                };
+
+                const message = BeanProto.create(payload);
+                const buffer = BeanProto.encode(message).finish();
+
+                // Base64 encode
+                const binary = String.fromCharCode(...new Uint8Array(buffer));
+                const encoded = btoa(binary);
+
+                // Build URL
+                const url = new URL("https://beanconqueror.com");
+                const limit = 400;
+                const length = Math.ceil(encoded.length / limit);
+
+                for (let i = 0; i < length; i++) {
+                    const key = `shareUserBean${i}`;
+                    url.searchParams.set(key, encoded.substring(i * limit, i * limit + limit));
+                }
+
+                const finalLink = url.toString();
+
+                // Show results
+                generatedLinkDisplay.innerText = finalLink;
+                openLinkBtn.href = finalLink;
+                resultsArea.classList.remove('hidden');
+
+                // Generate QR Code
+                qrcodeContainer.innerHTML = '';
+                const qrCode = new QRCodeStyling({
+                    width: 300,
+                    height: 300,
+                    type: "svg",
+                    data: finalLink,
+                    image: '{{ (resources.Get "images/logo.svg").RelPermalink }}',
+                    dotsOptions: {
+                        color: "#000000",
+                        type: "rounded"
+                    },
+                    backgroundOptions: {
+                        color: "#ffffff",
+                    },
+                    imageOptions: {
+                        crossOrigin: "anonymous",
+                        margin: 5
+                    }
+                });
+                qrCode.append(qrcodeContainer);
+
+                // Scroll to results
+                resultsArea.scrollIntoView({ behavior: 'smooth' });
+
+            } catch (err) {
+                console.error("Error creating proto", err);
+                alert("Failed to create link: " + err.message);
+            }
+        });
+    });
+</script>

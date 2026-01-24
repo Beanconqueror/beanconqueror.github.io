@@ -252,10 +252,7 @@ flowchart TD
 
 ### Side-by-Side Image
 
-{{< image-comparison 
-before="images/gallery/01.jpg" 
-after="images/gallery/06.jpg" 
-alt="Bildvergleich" >}}
+
 
 <hr>
 
