@@ -13,7 +13,7 @@ draft: false
 
 ## Supported Scales:
 
-- [Acaia Scales](https://acaia.co/collections/coffee-scales) (Pearl, Pearl S, Lunar, Lunar 2021, Pyxis)
+- [Acaia Scales](https://acaia.co/collections/coffee-scales) (Pearl, Pearl S, Lunar, Lunar 2021, Pyxis), NOT! the new Pyxis
 - [Blackcoffee.io](https://blackcoffee.io/)
 - [Bookoo Mini Scale](https://bookoocoffee.com/)
 - [Bookoo Ultra Scale](https://bookoocoffee.com/)
