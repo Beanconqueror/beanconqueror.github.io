@@ -1,0 +1,171 @@
+{{ define "main" }}
+<section class="section pt-0">
+    <div class="container text-center">
+        <div
+            class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-dark rounded-2xl bg-gradient-to-b px-8 py-20 lg:py-32">
+            <h1 class="mb-6 text-4xl font-bold lg:text-6xl">{{ .Title }}</h1>
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light lg:text-xl">{{ .Description }}</p>
+            
+            {{ if .Content }}
+            <div class="content mx-auto mt-6 max-w-3xl text-left lg:text-center">
+                {{ .Content }}
+            </div>
+            {{ end }}
+
+            <div class="mt-8">
+                <a href="https://www.sanremomachines.com/en/products/you/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    View Sanremo YOU Official Details
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{{ if .Params.videos }}
+<section class="section-sm">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {{ range $index, $video := .Params.videos }}
+            <div class="relative overflow-hidden rounded-xl shadow-lg {{ if $video.mark_first }}ring-4 ring-primary{{ end }}">
+                {{ if $video.mark_first }}
+                <div class="absolute top-0 right-0 bg-primary text-white text-sm font-bold px-4 py-1 rounded-bl-xl z-10">
+                    Watch First
+                </div>
+                {{ end }}
+                <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe src="https://www.youtube.com/embed/{{ $video.id }}?rel=0&modestbranding=1"
+                        title="{{ $video.title }}" class="absolute top-0 left-0 w-full h-full" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ else if .Params.video_id }}
+<section class="section-sm">
+    <div class="container">
+        <div class="mx-auto max-w-4xl overflow-hidden rounded-xl shadow-lg">
+            <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://www.youtube.com/embed/{{ .Params.video_id }}?rel=0&modestbranding=1"
+                    title="Sanremo YOU Video" class="absolute top-0 left-0 w-full h-full" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ if .Params.slider_images }}
+<section class="section">
+    <div class="container">
+        <h2 class="mb-12 text-center text-3xl font-bold">Gallery</h2>
+        <div class="swiper sanremo-slider !pb-12">
+            <div class="swiper-wrapper">
+                {{ range .Params.slider_images }}
+                <div class="swiper-slide">
+                    <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-darkmode-body cursor-pointer">
+                        <!-- Use hugo image processing if possible, or just img tag -->
+                        {{ if fileExists (printf "assets/%s" .) }}
+                        {{ $image := resources.Get . }}
+                        <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener noreferrer" class="block aspect-w-4 aspect-h-9 sm:aspect-none">
+                            <img src="{{ $image.RelPermalink }}" alt="Sanremo YOU" class="h-[500px] w-full object-contain p-4">
+                        </a>
+                        {{ else }}
+                        <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" class="block aspect-w-4 aspect-h-9 sm:aspect-none">
+                            <img src="{{ . | absURL }}" alt="Sanremo YOU"
+                                class="h-[500px] w-full object-contain p-4 bg-gray-50 dark:bg-gray-800">
+                        </a>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ if .Params.features }}
+<section class="section">
+    <div class="container">
+        {{ range $index, $element := .Params.features }}
+        <div id="{{ .title | urlize }}" class="row items-center mb-24 {{ if .reverse }}flex-row-reverse{{ end }}">
+            <div class="mb-8 lg:mb-0 lg:w-1/2 {{ if .reverse }}lg:pl-12{{ else }}lg:pr-12{{ end }}">
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    {{ if fileExists (printf "assets/%s" .image) }}
+                    {{ $img := resources.Get .image }}
+                    <img src="{{ $img.RelPermalink }}" alt="{{ .title }}"
+                        class="w-full h-auto transform transition hover:scale-105 duration-500">
+                    {{ else }}
+                    <div
+                        class="w-full h-64 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-400">
+                        <span class="text-xl">Image Placeholder</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="mb-6 text-3xl font-bold">{{ .title }}</h2>
+                <p class="text-lg text-light dark:text-darkmode-light leading-relaxed">{{ .description | markdownify }}
+                </p>
+                {{ if .url }}
+                <a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener noreferrer"{{ end }}
+                    class="btn btn-primary mt-8">Learn More</a>
+                {{ else }}
+                <a href="https://www.sanremomachines.com/en/products/you/" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary mt-8">Learn More</a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+<style>
+    /* Ensure gallery pagination is clearly visible in dark mode */
+    html.dark .sanremo-slider .swiper-pagination-bullet,
+    .dark .sanremo-slider .swiper-pagination-bullet {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        opacity: 1 !important;
+    }
+    html.dark .sanremo-slider .swiper-pagination-bullet-active,
+    .dark .sanremo-slider .swiper-pagination-bullet-active {
+        background-color: rgba(255, 255, 255, 1) !important;
+        opacity: 1 !important;
+    }
+</style>
+
+<!-- Initialize Swiper for this page -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        new Swiper(".sanremo-slider", {
+            spaceBetween: 24,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+    });
+</script>
+{{ end }}
