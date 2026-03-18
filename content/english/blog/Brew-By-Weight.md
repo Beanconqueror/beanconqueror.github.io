@@ -21,7 +21,7 @@ At its core, the Brew By Weight logic works by acting as the unified "brain" bet
 
 ## Benefit
 
-This means you don't have to manually the machine. The flow will stop precisely when needed so that the final few drops resting in the cup bring the yield exactly to your desired extraction weight.
+This means you don't have to manually stop the machine. The flow will stop precisely when needed so that the final few drops resting in the cup bring the yield exactly to your desired extraction weight.
 
 ## Compatible Equipment
 
