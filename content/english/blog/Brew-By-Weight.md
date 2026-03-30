@@ -23,6 +23,14 @@ At its core, the Brew By Weight logic works by acting as the unified "brain" bet
 
 This means you don't have to manually stop the machine. The flow will stop precisely when needed so that the final few drops resting in the cup bring the yield exactly to your desired extraction weight.
 
+## Limitations: Flow Rate and Turbo/Soup Shots
+
+Because the automated stopping calculation relies on a predictable flow rate to accurately determine the stop signal, there are limits to how fast a shot can pour.
+
+- **Ideal Flow Rates**: The Brew By Weight logic works exceptionally well for flow rates up to about **2.5g/s**.
+- **Faster Extractions**: Higher values, such as **3g/s**, can still work, but as the shot pours faster, it becomes increasingly difficult to precisely predict the target value.
+- **Turbo Shots & Soup Shots**: Extremely fast extractions, like **Turbo Shots** or **"Soup Shots"**, will definitely not work well with this configuration. The flow rate is simply too rapid to guarantee a precise stop.
+
 ## Compatible Equipment
 
 BeanConqueror supports a wide array of smart scales that can provide the necessary real-time data to make Brew By Weight possible.
