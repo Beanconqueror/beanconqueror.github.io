@@ -3,7 +3,7 @@ enable: true
 stats:
   - attribute: "+"
     icon: ""
-    number: "80000"
+    number: "85000"
     decimals: 0
     content: "Installations"
   - attribute: "+"

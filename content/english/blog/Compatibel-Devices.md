@@ -74,6 +74,7 @@ draft: false
 
 ## Supported Portafilters:
 
+- [Sanremo YOU](https://www.sanremomachines.com/en/products/you/)
 - [Xenia](https://www.xenia-espresso.de/en/)
 - [Meticulous](https://meticuloushome.com/)
 - [Gaggiuino](https://gaggiuino.github.io/) - Shot import

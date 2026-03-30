@@ -12,7 +12,25 @@
             </div>
             {{ end }}
 
-            <div class="mt-8">
+            {{ if .Params.requirements }}
+            <div class="mt-12 text-left max-w-2xl mx-auto bg-white/40 dark:bg-black/20 p-6 rounded-xl border border-border dark:border-darkmode-border shadow-sm">
+                <h3 class="font-bold text-xl mb-4 text-center">{{ .Params.requirements.title }}</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    {{ range .Params.requirements.items }}
+                    <div>
+                        <h4 class="font-semibold text-lg mb-2 text-primary">{{ .category }}</h4>
+                        <ul class="list-disc pl-5 opacity-90 text-light dark:text-darkmode-light space-y-1">
+                            {{ range .details }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+            <div class="mt-12">
                 <a href="https://www.sanremomachines.com/en/products/you/" target="_blank" rel="noopener noreferrer"
                     class="btn btn-primary">
                     View Sanremo YOU Official Details
@@ -65,7 +83,7 @@
 <section class="section">
     <div class="container">
         <h2 class="mb-12 text-center text-3xl font-bold">Gallery</h2>
-        <div class="swiper sanremo-slider !pb-12">
+        <div class="swiper sanremo-slider !pb-8 sm:!pb-12">
             <div class="swiper-wrapper">
                 {{ range .Params.slider_images }}
                 <div class="swiper-slide">
@@ -73,13 +91,13 @@
                         <!-- Use hugo image processing if possible, or just img tag -->
                         {{ if fileExists (printf "assets/%s" .) }}
                         {{ $image := resources.Get . }}
-                        <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener noreferrer" class="block aspect-w-4 aspect-h-9 sm:aspect-none">
-                            <img src="{{ $image.RelPermalink }}" alt="Sanremo YOU" class="h-[500px] w-full object-contain p-4">
+                        <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener noreferrer" class="block">
+                            <img src="{{ $image.RelPermalink }}" alt="Sanremo YOU" class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4">
                         </a>
                         {{ else }}
-                        <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" class="block aspect-w-4 aspect-h-9 sm:aspect-none">
+                        <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" class="block">
                             <img src="{{ . | absURL }}" alt="Sanremo YOU"
-                                class="h-[500px] w-full object-contain p-4 bg-gray-50 dark:bg-gray-800">
+                                class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4 bg-gray-50 dark:bg-gray-800">
                         </a>
                         {{ end }}
                     </div>
@@ -125,6 +143,40 @@
             </div>
         </div>
         {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{ if .Params.support }}
+<section class="section pt-0">
+    <div class="container text-center">
+        <div class="rounded-2xl bg-theme-light dark:bg-darkmode-theme-dark px-8 py-12 lg:py-16">
+            <h2 class="mb-4 text-3xl font-bold">{{ .Params.support.title }}</h2>
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light">
+                {{ .Params.support.description }}
+            </p>
+            <p class="mt-4">
+                <a href="mailto:{{ .Params.support.email }}" class="text-primary text-xl font-bold hover:underline inline-block">{{ .Params.support.email }}</a>
+            </p>
+            {{ if .Params.support.discord_url }}
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light mt-8">
+                {{ .Params.support.discord_text }}
+            </p>
+            <p class="mt-2">
+                <a href="{{ .Params.support.discord_url }}" target="_blank" rel="noopener noreferrer" class="text-primary text-xl font-bold hover:underline inline-flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                    Discord Community
+                </a>
+            </p>
+            {{ end }}
+            {{ if .Params.support.disclaimer }}
+            <p class="mt-6 text-sm text-light dark:text-darkmode-light italic">
+                {{ .Params.support.disclaimer }}
+            </p>
+            {{ end }}
+        </div>
     </div>
 </section>
 {{ end }}

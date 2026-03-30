@@ -6,7 +6,18 @@ banner:
   webp: "/video/en/main/beanconqueror-demo.webp"
   linkAppleAppStore: "https://apps.apple.com/de/app/beanconqueror/id1445297158"
   linkGooglePlayStore: "https://play.google.com/store/apps/details?id=com.beanconqueror.app"
-  
+
+# Spotlight
+spotlight:
+  enable: true
+  title: "New Release: BeanConqueror x Sanremo YOU"
+  content: "Experience the ultimate control. The Sanremo YOU now integrates directly with BeanConqueror for complete smart automation and precision."
+  image: "images/sanremo-you/baristamode.png"
+  button:
+    enable: true
+    label: "Discover the Integration"
+    link: "/sanremo-you/"
+    
 # Top Reason
 headline: "Still not convinced?"
 discription: "Beanconqueror is the ultimate coffee companion for coffee enthusiasts. Here are some of the top reasons to choose Beanconqueror:"
