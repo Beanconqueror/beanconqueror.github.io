@@ -22,16 +22,19 @@ If the machine was left on overnight and the app was also connected overnight, t
 ### 3. Verify Local Network Access
 If all of this does not work, try to access the machine's IP address from your laptop or another device on the same network to ensure it is reachable.
 
-### 4. Network Stability & Device Variations
+### 4. Check Network Permissions
+Check if BeanConqueror is allowed to connect to the network, on iOS this can be checked in the general iOS Settings e.g.
+
+### 5. Network Stability & Device Variations
 The stability of your WiFi network is a crucial factor for a seamless connection. Additionally, the smartphone or tablet you are using (iOS or Android) can make a huge difference: depending on the device's built-in WiFi chip and the general load on your network, you might experience lags or temporary disconnections.
 
-### 5. Auto-Reconnect Feature
+### 6. Auto-Reconnect Feature
 To improve stability, Beanconqueror includes a safety feature that automatically attempts to reconnect to the Sanremo YOU if the connection is lost. The app will try to reconnect up to 10 times. If a connection still cannot be established after these attempts, an error popup will be shown.
 
-### 6. Best Practices for Daily Use
+### 7. Best Practices for Daily Use
 For the best experience, we recommend starting the Sanremo YOU machine fresh each day, as well as restarting the Beanconqueror app daily. While we have conducted load and performance tests over several days without finding any issues, refreshing your connection daily and avoiding stale sessions can help prevent unexpected behavior.
 
-### 7. Send Us the Logs
+### 8. Send Us the Logs
 If accessing the IP address doesn't work or you are still facing issues:
 - Go to **Menu** -> **About Beanconqueror** -> **Logs**.
 - Send us the logs at [sanremo@beanconqueror.com](mailto:sanremo@beanconqueror.com) so we can have a look. 
