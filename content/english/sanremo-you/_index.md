@@ -2,6 +2,7 @@
 title: "BeanConqueror x Sanremo YOU"
 meta_title: "BeanConqueror x Sanremo YOU Integration - Espresso Perfected"
 description: "Experience the ultimate control with BeanConqueror and the Sanremo YOU."
+date: 2026-03-30T00:00:00Z
 image: "images/sanremo-you/baristamode_menu.png"
 type: "sanremo"
 layout: "list"
