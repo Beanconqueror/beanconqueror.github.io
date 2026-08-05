@@ -30,6 +30,9 @@ draft: false
 - [Skale 2](https://skale.cc/en/)
 - [Varia](https://www.variabrewing.com/collections/aku-new)(AKU Pro, AKU Micro, AKU Mini)
 - [WeighMyBru](https://weighmybru.com/)
+- [Timemore DOT](https://www.timemore.com/collections/coffee-scale)
+- [Timemore Basic 4](https://www.timemore.com/collections/coffee-scale)
+- [Mantabrew](https://mantabrew.com/)
 - Smartchef Scale (available on Amazon in the US) V1
 
 ### Scale with discount:

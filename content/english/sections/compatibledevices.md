@@ -23,6 +23,9 @@ supportedscales:
     - "[Varia](https://www.variabrewing.com/collections/aku-new) (AKU Pro, AKU Micro, AKU Mini)"
     - "[WeighMyBru](https://weighmybru.com/)"
     - "[EspressiScale](https://www.espressiscale.com/)"
+    - "[Timemore Basic 4](https://www.timemore.com/collections/coffee-scale)"
+    - "[Timemore DOT](https://www.timemore.com/collections/coffee-scale)"
+    - "[Mantabrew](https://mantabrew.com/)"
     - "Smartchef Scale (available on Amazon in the US) V1"
 
 scalediscount:
