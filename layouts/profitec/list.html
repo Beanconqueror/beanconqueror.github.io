@@ -1,0 +1,282 @@
+{{ define "main" }}
+<section class="section pt-0">
+    <div class="container text-center">
+        <div
+            class="from-body to-theme-light dark:from-darkmode-body dark:to-darkmode-theme-dark rounded-2xl bg-gradient-to-b px-8 py-20 lg:py-32">
+            <h1 class="mb-6 text-4xl font-bold lg:text-6xl">{{ .Title }}</h1>
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light lg:text-xl">{{ .Description }}</p>
+
+            <!-- Prominent Bluetooth / No Wi-Fi Badge -->
+            <div class="mt-8 inline-flex items-center gap-3 px-6 py-4 rounded-xl bg-blue-500/10 border border-blue-500/30 text-blue-900 dark:text-blue-200 text-left max-w-xl mx-auto shadow-sm">
+                <div class="p-2.5 bg-blue-500/20 rounded-lg text-blue-600 dark:text-blue-400 shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="m7 7 10 10-5 5V2l5 5L7 17"></path>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-bold text-base block">Direct Bluetooth (BLE) Integration</span>
+                    <span class="text-sm opacity-90">This integration communicates directly via <strong>Bluetooth</strong>. <strong>No Wi-Fi</strong> connection or local network is required!</span>
+                </div>
+            </div>
+            
+            {{ if .Content }}
+            <div class="content mx-auto mt-8 max-w-3xl text-left lg:text-center">
+                {{ .Content }}
+            </div>
+            {{ end }}
+
+            {{ if .Params.requirements }}
+            <div class="mt-12 text-left max-w-3xl mx-auto bg-white/40 dark:bg-black/20 p-6 sm:p-8 rounded-xl border border-border dark:border-darkmode-border shadow-sm">
+                <h3 class="font-bold text-xl mb-6 text-center">{{ .Params.requirements.title }}</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {{ range .Params.requirements.items }}
+                    <div class="bg-white/60 dark:bg-darkmode-theme-dark/60 p-4 rounded-lg border border-border/50 dark:border-darkmode-border/50">
+                        <h4 class="font-semibold text-lg mb-2 text-primary">{{ .category }}</h4>
+                        <ul class="list-disc pl-5 opacity-90 text-light dark:text-darkmode-light space-y-1">
+                            {{ range .details }}
+                            <li>{{ . }}</li>
+                            {{ end }}
+                        </ul>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            {{ end }}
+
+            {{ with .Params.official_url }}
+            <div class="mt-12">
+                <a href="{{ . }}" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary">
+                    {{ $.Params.official_label | default "View Official Details" }}
+                </a>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+{{ if .Params.videos }}
+<section class="section-sm">
+    <div class="container">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {{ range $index, $video := .Params.videos }}
+            <div class="relative overflow-hidden rounded-xl shadow-lg {{ if $video.mark_first }}ring-4 ring-primary{{ end }}">
+                {{ if $video.mark_first }}
+                <div class="absolute top-0 right-0 bg-primary text-white text-sm font-bold px-4 py-1 rounded-bl-xl z-10">
+                    Watch First
+                </div>
+                {{ end }}
+                <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%; height: 0;">
+                    <iframe src="https://www.youtube.com/embed/{{ $video.id }}?rel=0&modestbranding=1"
+                        title="{{ $video.title }}" class="absolute top-0 left-0 w-full h-full" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ else if .Params.video_id }}
+<section class="section-sm">
+    <div class="container">
+        <div class="mx-auto max-w-4xl overflow-hidden rounded-xl shadow-lg">
+            <div class="aspect-w-16 aspect-h-9 relative" style="padding-bottom: 56.25%; height: 0;">
+                <iframe src="https://www.youtube.com/embed/{{ .Params.video_id }}?rel=0&modestbranding=1"
+                    title="{{ $.Title }} Video" class="absolute top-0 left-0 w-full h-full" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ if or .Params.slider_images .Params.carousel_video }}
+<section class="section">
+    <div class="container">
+        <h2 class="mb-12 text-center text-3xl font-bold">{{ .Params.gallery_title | default "Gallery" }}</h2>
+        <div class="swiper profitec-slider !pb-8 sm:!pb-12">
+            <div class="swiper-wrapper">
+                {{ with .Params.carousel_video }}
+                <div class="swiper-slide">
+                    <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-darkmode-body h-[350px] sm:h-[500px] flex items-center justify-center">
+                        {{ if fileExists (printf "assets/%s" .) }}
+                        {{ $videoRes := resources.Get . }}
+                        <video src="{{ $videoRes.RelPermalink }}" controls playsinline muted loop class="h-full w-full object-contain p-2 sm:p-4"></video>
+                        {{ else }}
+                        <video src="{{ . | absURL }}" controls playsinline muted loop class="h-full w-full object-contain p-2 sm:p-4 bg-gray-50 dark:bg-gray-800"></video>
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+                {{ range .Params.slider_images }}
+                <div class="swiper-slide">
+                    <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-darkmode-body cursor-pointer">
+                        {{ $isVideo := false }}
+                        {{ if or (strings.HasSuffix . ".mp4") (strings.HasSuffix . ".webm") (strings.HasSuffix . ".mov") }}
+                            {{ $isVideo = true }}
+                        {{ end }}
+                        {{ if $isVideo }}
+                            {{ if fileExists (printf "assets/%s" .) }}
+                            {{ $vid := resources.Get . }}
+                            <video src="{{ $vid.RelPermalink }}" controls playsinline muted loop class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4"></video>
+                            {{ else }}
+                            <video src="{{ . | absURL }}" controls playsinline muted loop class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4 bg-gray-50 dark:bg-gray-800"></video>
+                            {{ end }}
+                        {{ else }}
+                            {{ if fileExists (printf "assets/%s" .) }}
+                            {{ $image := resources.Get . }}
+                            <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener noreferrer" class="block">
+                                <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }}" class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4">
+                            </a>
+                            {{ else }}
+                            <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" class="block">
+                                <img src="{{ . | absURL }}" alt="{{ $.Title }}"
+                                    class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4 bg-gray-50 dark:bg-gray-800">
+                            </a>
+                            {{ end }}
+                        {{ end }}
+                    </div>
+                </div>
+                {{ end }}
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>
+{{ end }}
+
+{{ if .Params.features }}
+<section class="section">
+    <div class="container">
+        {{ range $index, $element := .Params.features }}
+        <div id="{{ .title | urlize }}" class="row items-center mb-24 {{ if .reverse }}flex-row-reverse{{ end }}">
+            <div class="mb-8 lg:mb-0 lg:w-1/2 {{ if .reverse }}lg:pl-12{{ else }}lg:pr-12{{ end }}">
+                <div class="overflow-hidden rounded-xl shadow-lg">
+                    {{ if fileExists (printf "assets/%s" .image) }}
+                    {{ $img := resources.Get .image }}
+                    <img src="{{ $img.RelPermalink }}" alt="{{ .title }}"
+                        class="w-full h-auto transform transition hover:scale-105 duration-500">
+                    {{ else }}
+                    <div
+                        class="w-full h-64 bg-gray-200 dark:bg-gray-700 flex items-center justify-center text-gray-400">
+                        <span class="text-xl">Image Placeholder</span>
+                    </div>
+                    {{ end }}
+                </div>
+            </div>
+            <div class="lg:w-1/2">
+                <h2 class="mb-6 text-3xl font-bold">{{ .title }}</h2>
+                <p class="text-lg text-light dark:text-darkmode-light leading-relaxed">{{ .description | markdownify }}
+                </p>
+                {{ if .url }}
+                <a href="{{ .url }}" {{ if hasPrefix .url "http" }}target="_blank" rel="noopener noreferrer"{{ end }}
+                    class="btn btn-primary mt-8">Learn More</a>
+                {{ else if $.Params.official_url }}
+                <a href="{{ $.Params.official_url }}" target="_blank" rel="noopener noreferrer"
+                    class="btn btn-primary mt-8">Learn More</a>
+                {{ end }}
+            </div>
+        </div>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{ if .Params.support }}
+<section class="section pt-0">
+    <div class="container text-center">
+        <div class="rounded-2xl bg-theme-light dark:bg-darkmode-theme-dark px-8 py-12 lg:py-16">
+            <h2 class="mb-4 text-3xl font-bold">{{ .Params.support.title }}</h2>
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light">
+                {{ .Params.support.description }}
+            </p>
+            {{ with .Params.support.email }}
+            <p class="mt-4">
+                <a href="mailto:{{ . }}" class="text-primary text-xl font-bold hover:underline inline-block">{{ . }}</a>
+            </p>
+            {{ end }}
+            {{ if .Params.support.discord_url }}
+            <p class="mx-auto max-w-2xl text-lg text-light dark:text-darkmode-light mt-8">
+                {{ .Params.support.discord_text }}
+            </p>
+            <p class="mt-2">
+                <a href="{{ .Params.support.discord_url }}" target="_blank" rel="noopener noreferrer" class="text-primary text-xl font-bold hover:underline inline-flex items-center justify-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/>
+                    </svg>
+                    Discord Community
+                </a>
+            </p>
+            {{ end }}
+            {{ if .Params.support.disclaimer }}
+            <p class="mt-6 text-sm text-light dark:text-darkmode-light italic">
+                {{ .Params.support.disclaimer }}
+            </p>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}
+
+<style>
+    /* Ensure gallery pagination is clearly visible in dark mode */
+    html.dark .profitec-slider .swiper-pagination-bullet,
+    .dark .profitec-slider .swiper-pagination-bullet {
+        background-color: rgba(255, 255, 255, 0.4) !important;
+        opacity: 1 !important;
+    }
+    html.dark .profitec-slider .swiper-pagination-bullet-active,
+    .dark .profitec-slider .swiper-pagination-bullet-active {
+        background-color: rgba(255, 255, 255, 1) !important;
+        opacity: 1 !important;
+    }
+</style>
+
+<!-- Initialize Swiper for this page -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sliderEl = document.querySelector('.profitec-slider');
+        if (sliderEl) {
+            const swiper = new Swiper(".profitec-slider", {
+                spaceBetween: 24,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                },
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                breakpoints: {
+                    640: {
+                        slidesPerView: 2,
+                    },
+                    1024: {
+                        slidesPerView: 3,
+                    },
+                },
+            });
+
+            // Pause slider autoplay when video is playing
+            const videos = sliderEl.querySelectorAll('video');
+            videos.forEach(v => {
+                v.addEventListener('play', () => {
+                    if (swiper.autoplay) swiper.autoplay.stop();
+                });
+                v.addEventListener('pause', () => {
+                    if (swiper.autoplay) swiper.autoplay.start();
+                });
+                v.addEventListener('ended', () => {
+                    if (swiper.autoplay) swiper.autoplay.start();
+                });
+            });
+        }
+    });
+</script>
+{{ end }}

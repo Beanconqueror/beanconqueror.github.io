@@ -100,6 +100,10 @@
   <!-- Spotlight -->
   {{ with .Params.spotlight }}
   {{ if .enable }}
+  {{ $items := .items }}
+  {{ if and (not $items) .title }}
+    {{ $items = slice (dict "title" .title "content" .content "image" .image "button" .button) }}
+  {{ end }}
   <style>
     @keyframes golden-glow {
       0% { box-shadow: 0 0px 15px -3px rgba(251, 191, 36, 0.4), 0 4px 6px -4px rgba(251, 191, 36, 0.2); }
@@ -109,32 +113,136 @@
     .animate-glow {
       animation: golden-glow 3s infinite ease-in-out;
     }
+    .spotlight-slider .swiper-pagination {
+      position: absolute;
+      bottom: 0px !important;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+    }
+    .spotlight-slider .swiper-pagination-bullet {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+      opacity: 1 !important;
+      width: 10px;
+      height: 10px;
+      margin: 0 6px !important;
+      border-radius: 9999px !important;
+      transition: all 0.3s ease !important;
+      cursor: pointer;
+    }
+    .spotlight-slider .swiper-pagination-bullet-active {
+      background-color: #AE9F87 !important;
+      width: 28px !important;
+    }
+    html.dark .spotlight-slider .swiper-pagination-bullet,
+    .dark .spotlight-slider .swiper-pagination-bullet {
+      background-color: rgba(255, 255, 255, 0.35) !important;
+    }
+    html.dark .spotlight-slider .swiper-pagination-bullet-active,
+    .dark .spotlight-slider .swiper-pagination-bullet-active {
+      background-color: #f1f5f9 !important;
+    }
+    .spotlight-nav-btn {
+      transition: all 0.2s ease;
+    }
+    .spotlight-nav-btn:hover {
+      transform: translateY(-50%) scale(1.08);
+    }
   </style>
   <section class="section-sm bg-theme-light dark:bg-darkmode-theme-dark relative z-10 -mt-10 rounded-b-3xl animate-glow" id="spotlight">
-    <div class="container">
-      <div class="row items-center justify-center">
-        <div class="md:col-6 lg:col-5">
-          <div class="pr-0 md:pr-8">
-            <h2 class="mb-4">{{ .title | markdownify }}</h2>
-            <p class="mb-6 text-lg">{{ .content | markdownify }}</p>
-            {{ with .button }}
-              {{ if .enable }}
-                <a class="btn btn-primary" href="{{ .link | absLangURL }}">
-                  {{ .label }}
-                  <i class="fa fa-arrow-right pl-2"></i>
+    <div class="container relative">
+      <div class="swiper spotlight-slider !pb-12">
+        <div class="swiper-wrapper items-center">
+          {{ range $item := $items }}
+          <div class="swiper-slide">
+            <div class="row items-center justify-center">
+              <div class="md:col-6 lg:col-5">
+                <div class="pr-0 md:pr-8">
+                  <h2 class="mb-4">{{ $item.title | markdownify }}</h2>
+                  <p class="mb-6 text-lg">{{ $item.content | markdownify }}</p>
+                  {{ with $item.button }}
+                    {{ if .enable }}
+                      <a class="btn btn-primary" href="{{ .link | absLangURL }}">
+                        {{ .label }}
+                        <i class="fa fa-arrow-right pl-2"></i>
+                      </a>
+                    {{ end }}
+                  {{ end }}
+                </div>
+              </div>
+              <div class="md:col-6 lg:col-5 mt-8 md:mt-0">
+                {{ if and $item.button $item.button.enable }}
+                <a href="{{ $item.button.link | absLangURL }}" class="block group">
+                  <div class="overflow-hidden rounded-xl shadow-md border group-hover:border-primary transition-colors duration-300">
+                    {{ partial "image" (dict "Src" $item.image "Alt" $item.title "Class" "w-full object-cover group-hover:scale-105 transition-transform duration-500") }}
+                  </div>
                 </a>
-              {{ end }}
-            {{ end }}
+                {{ else }}
+                <div class="overflow-hidden rounded-xl shadow-md border hover:border-primary transition-colors duration-300">
+                  {{ partial "image" (dict "Src" $item.image "Alt" $item.title "Class" "w-full object-cover") }}
+                </div>
+                {{ end }}
+              </div>
+            </div>
           </div>
+          {{ end }}
         </div>
-        <div class="md:col-6 lg:col-5 mt-8 md:mt-0">
-          <div class="overflow-hidden rounded-xl shadow-md border hover:border-primary transition-colors duration-300">
-            {{ partial "image" (dict "Src" .image "Alt" .title "Class" "w-full object-cover") }}
-          </div>
-        </div>
+        <div class="spotlight-slider-pagination swiper-pagination"></div>
       </div>
+      {{ if gt (len $items) 1 }}
+      <button class="spotlight-prev spotlight-nav-btn hidden md:flex absolute left-0 lg:-left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center rounded-full bg-white/80 dark:bg-darkmode-theme-light/80 hover:bg-white dark:hover:bg-darkmode-theme-light text-dark dark:text-darkmode-dark shadow-md border border-border/50 dark:border-darkmode-border/50 cursor-pointer" aria-label="Previous slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+      <button class="spotlight-next spotlight-nav-btn hidden md:flex absolute right-0 lg:-right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 items-center justify-center rounded-full bg-white/80 dark:bg-darkmode-theme-light/80 hover:bg-white dark:hover:bg-darkmode-theme-light text-dark dark:text-darkmode-dark shadow-md border border-border/50 dark:border-darkmode-border/50 cursor-pointer" aria-label="Next slide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+      {{ end }}
     </div>
   </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      function initSpotlight() {
+        if (typeof Swiper !== 'undefined') {
+          const sliderEl = document.querySelector('.spotlight-slider');
+          if (sliderEl) {
+            const slides = sliderEl.querySelectorAll('.swiper-wrapper > .swiper-slide');
+            if (slides.length > 0) {
+              new Swiper('.spotlight-slider', {
+                slidesPerView: 1,
+                spaceBetween: 30,
+                loop: slides.length > 1,
+                autoplay: slides.length > 1 ? {
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                } : false,
+                speed: 600,
+                pagination: {
+                  el: '.spotlight-slider-pagination',
+                  clickable: true,
+                },
+                navigation: {
+                  nextEl: '.spotlight-next',
+                  prevEl: '.spotlight-prev',
+                },
+              });
+            }
+          }
+        } else {
+          setTimeout(initSpotlight, 50);
+        }
+      }
+      initSpotlight();
+    });
+  </script>
   {{ end }}
   {{ end }}
   <!-- /Spotlight -->
@@ -153,8 +261,10 @@
             {{ if .icon }}
               <h3><i class="{{ .icon }} mr-2"></i></h3>
             {{ end }}
-            <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
-            <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span></h1>
+            {{ if .attribute }}
+              <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
+            {{ end }}
+            <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span>{{ with or .unit .suffix }}<span class="unit">{{ . }}</span>{{ end }}</h1>
           </div>
           <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
         </div>

@@ -34,6 +34,7 @@ draft: false
 - [Timemore Basic 4](https://www.timemore.com/collections/coffee-scale)
 - [Mantabrew](https://mantabrew.com/)
 - Smartchef Scale (available on Amazon in the US) V1
+- Futula Scale
 
 ### Scale with discount:
 
@@ -60,6 +61,8 @@ draft: false
 - ETI Ltd ([ThermaQ Blue](https://thermometer.co.uk/bluetooth-thermometers/1220-1466-thermaq-blue-thermometer-monitors-temperature-remotely-5024368182791.html#/316-thermaq_blue_options-thermaq_blue_only))
 - [Combustion](https://combustion.inc/)
 - [Meater](https://www.meater.com/) (not Meater+ or Meater 2)
+- [Ember Cup](https://ember.com/)
+- [INKBIRD](https://eu.inkbird.com/) (INT-11I-B, INT-11P-B, IHT-2PB, iBBQ, TNT-11-B)
 
 
 ## Supported Pressure Devices:
@@ -78,9 +81,11 @@ draft: false
 ## Supported Portafilters:
 
 - [Sanremo YOU](https://www.sanremomachines.com/en/products/you/)
+- [Profitec Move 2.0](/profitec-move-2-0/)
 - [Xenia](https://www.xenia-espresso.de/en/)
 - [Meticulous](https://meticuloushome.com/)
 - [Gaggiuino](https://gaggiuino.github.io/) - Shot import
+- [GaggiMate](https://gaggimate.eu/) - Shot import
 
 
 Your Bluetooth device is not in the list? Unfortunately each device needs to be integrated individually as there is no standard. Check the Beanconqueror discord to reach out to the contributors.

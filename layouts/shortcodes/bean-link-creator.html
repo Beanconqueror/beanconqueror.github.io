@@ -105,7 +105,7 @@
                     <label
                         class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Roast
                         Range (0-5)</label>
-                    <input type="number" name="degreeOfRoast" min="0" max="5" step="0.1"
+                    <input type="number" name="degreeOfRoast" min="0" max="5" step="any"
                         class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
                 </div>
                 <div>
@@ -132,13 +132,13 @@
                     <label
                         class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Weight
                         (g)</label>
-                    <input type="number" name="weight"
+                    <input type="number" name="weight" step="any"
                         class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
                 </div>
                 <div>
                     <label
                         class="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-400 mb-2">Cost</label>
-                    <input type="number" name="cost" step="0.01"
+                    <input type="number" name="cost" step="any"
                         class="w-full px-4 py-3 rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all text-zinc-900 dark:text-zinc-100">
                 </div>
                 <div>
@@ -277,7 +277,7 @@
                 class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
             <input type="text" name="variety_certification" placeholder="Certification"
                 class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
-            <input type="number" name="variety_percentage" placeholder="%"
+            <input type="number" name="variety_percentage" step="any" placeholder="%"
                 class="px-3 py-2 rounded-lg bg-zinc-50 dark:bg-zinc-800 border-zinc-200 dark:border-zinc-700 border text-sm text-zinc-900 dark:text-zinc-100">
         </div>
     </div>
@@ -406,7 +406,7 @@
                         processing: item.querySelector('[name="variety_processing"]').value || null,
                         harvestTime: item.querySelector('[name="variety_harvestTime"]').value || null,
                         certification: item.querySelector('[name="variety_certification"]').value || null,
-                        percentage: item.querySelector('[name="variety_percentage"]').value ? parseInt(item.querySelector('[name="variety_percentage"]').value) : null,
+                        percentage: item.querySelector('[name="variety_percentage"]').value ? parseFloat(item.querySelector('[name="variety_percentage"]').value) : null,
                     });
                 });
 
@@ -417,14 +417,14 @@
                     note: values.notes || "",
                     roaster: values.roaster || "",
                     roast: values.roast ? Roast.values[values.roast] : Roast.values.UNKNOWN_ROAST,
-                    roastRange: values.degreeOfRoast ? parseInt(values.degreeOfRoast) : 0,
+                    roastRange: values.degreeOfRoast ? parseFloat(values.degreeOfRoast) : 0,
                     beanMix: values.beanMix ? BeanMix.values[values.beanMix] : BeanMix.values.UNKNOWN_BEAN_MIX,
                     roastCustom: values.roastCustom || "",
                     config: {}, // create empty
                     aromatics: values.flavourProfile || "",
-                    weight: values.weight ? parseInt(values.weight) : 0,
+                    weight: values.weight ? parseFloat(values.weight) : 0,
                     finished: false,
-                    cost: values.cost ? parseInt(values.cost) : 0,
+                    cost: values.cost ? parseFloat(values.cost) : 0,
                     cuppingPoints: values.cuppingPoints || "",
                     decaffeinated: values.decaffeinated === "on",
                     url: values.website || "",

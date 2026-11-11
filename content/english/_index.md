@@ -10,13 +10,22 @@ banner:
 # Spotlight
 spotlight:
   enable: true
-  title: "New Release: BeanConqueror x Sanremo YOU"
-  content: "Experience the ultimate control. The Sanremo YOU now integrates directly with BeanConqueror for complete smart automation and precision."
-  image: "images/sanremo-you/baristamode.png"
-  button:
-    enable: true
-    label: "Discover the Integration"
-    link: "/sanremo-you/"
+  items:
+    - title: "New Release: BeanConqueror x Profitec Move 2.0"
+      content: "Elevate your espresso workflow with direct Bluetooth integration. Real-time feedback, smart tracking, and brew by weight precision for your Profitec Move 2.0."
+      image: "images/profitec-move/device_connected.png"
+      button:
+        enable: true
+        label: "Discover the Integration"
+        link: "/profitec-move-2-0/"
+
+    - title: "New Release: BeanConqueror x Sanremo YOU"
+      content: "Experience the ultimate control. The Sanremo YOU now integrates directly with BeanConqueror for complete smart automation and precision."
+      image: "images/sanremo-you/baristamode.png"
+      button:
+        enable: true
+        label: "Discover the Integration"
+        link: "/sanremo-you/"
     
 # Top Reason
 headline: "Still not convinced?"

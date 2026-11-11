@@ -1,14 +1,14 @@
 ---
 enable: true
 stats:
-  - attribute: "+"
+  - attribute: ""
     icon: ""
-    number: "85000"
+    number: "100k+"
     decimals: 0
     content: "Installations"
   - attribute: "+"
     icon: ""
-    number: "13"
+    number: "14"
     decimals: 0
     content: "Supported languages"
   - attribute: ""
@@ -18,7 +18,7 @@ stats:
     content: "Rating reviews"
   - attribute: "over"
     icon: ""
-    number: "8"
+    number: "9"
     decimals: 0
     content: "years product development"
 ---

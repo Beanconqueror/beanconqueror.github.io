@@ -89,20 +89,34 @@
       const countElements = document.querySelectorAll('.countTo');
 
       countElements.forEach(element => {
-        const target = parseFloat(element.getAttribute('data-count'));
+        const rawCount = element.getAttribute('data-count') || '0';
+        const hasSpace = rawCount.includes(' ');
+        const suffixMatch = rawCount.match(/[^0-9.]+$/);
+        const suffix = suffixMatch ? suffixMatch[0] : '';
+        const target = parseFloat(rawCount.replace(/[^\d.]/g, '')) || 0;
         const decimals = parseInt(element.getAttribute('data-decimals') || '0', 10);
         let count = 0;
         const duration = 2000; // 2 seconds
         const steps = 50;
         const increment = target / steps;
 
+        const formatNumber = (val) => {
+          let str = val.toFixed(decimals);
+          if (hasSpace) {
+            const parts = str.split('.');
+            parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+            return parts.join('.') + suffix;
+          }
+          return str + suffix;
+        };
+
         const timer = setInterval(() => {
           count += increment;
           if (count >= target) {
             clearInterval(timer);
-            element.textContent = target.toFixed(decimals);
+            element.textContent = formatNumber(target);
           } else {
-            element.textContent = count.toFixed(decimals);
+            element.textContent = formatNumber(count);
           }
         }, duration / steps);
       });
