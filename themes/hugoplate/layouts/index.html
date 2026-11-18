@@ -85,8 +85,7 @@
 
                 <picture>
                   <source srcset="{{ $videoUrl }}" type="image/webp">
-                  <source srcset="{{ replace .webp ".webp" ".jpg" | relURL }}" type="image/jpeg">
-                  <img loading="eager" src="{{ replace .webp ".webp" ".jpg" | relURL }}" alt="{{ .webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
+                  <img loading="eager" fetchpriority="high" decoding="async" width="272" height="572" src="{{ $videoUrl }}" alt="{{ .webp_alt | default "BeanConqueror coffee app demo: tracking a brew with beans, grinder and scale" }}" class="w-full h-full object-cover">
                 </picture>
               {{- end }}
             </div>            
@@ -823,8 +822,7 @@
                   {{- $videoUrlSecond := partial "GrabWebPFile.html" (dict "ImageSrc" .Params.webp) -}}
                   <picture>
                     <source srcset="{{ $videoUrlSecond }}" type="image/webp">
-                    <source srcset="{{ replace .Params.webp ".webp" ".jpg" | relURL }}" type="image/jpeg">
-                    <img loading="eager" src="{{ replace .Params.webp ".webp" ".jpg" | relURL }}" alt="{{ .Params.webp_alt | default "Animated WebP" }}" class="w-full h-full object-cover">
+                    <img loading="lazy" decoding="async" width="272" height="572" src="{{ $videoUrlSecond }}" alt="{{ .Params.webp_alt | default "BeanConqueror app walkthrough on a smartphone" }}" class="w-full h-full object-cover">
                   </picture>
                   {{- end }}
                 </div>                

@@ -46,7 +46,7 @@
       "@type": "Organization",
       "name": "BeanConqueror",
       "url": "{{ site.BaseURL }}",
-      "logo": "{{ "images/beanconqueror-logo.svg" | absURL }}",
+      "logo": "{{ "images/beanconqueror_round.png" | absURL }}",
       "sameAs": [
         "https://github.com/graphefruit/BeanConqueror",
         "https://discord.gg/vDzA5dZjG8",
@@ -98,7 +98,7 @@
     "name": "BeanConqueror",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ "images/beanconqueror-logo.svg" | absURL }}"
+      "url": "{{ "images/beanconqueror_round.png" | absURL }}"
     }
   }
 }
@@ -121,4 +121,31 @@
 }
 </script>
 {{ end }}
+{{ end }}
+
+<!-- BreadcrumbList (all pages except home) -->
+{{ if and (not .IsHome) (not .Params.noindex) }}
+{{ $crumbs := slice (dict "name" "Home" "url" site.Home.Permalink) }}
+{{ range .Ancestors.Reverse }}
+  {{ if and (not .IsHome) .Title (ne .Title "Pages") }}
+    {{ $crumbs = $crumbs | append (dict "name" .Title "url" .Permalink) }}
+  {{ end }}
+{{ end }}
+{{ $crumbs = $crumbs | append (dict "name" (.Title | default site.Title) "url" .Permalink) }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {{- range $i, $c := $crumbs }}{{ if $i }},{{ end }}
+    {
+      "@type": "ListItem",
+      "position": {{ add $i 1 }},
+      "name": {{ $c.name | plainify | jsonify }},
+      "item": {{ $c.url | jsonify }}
+    }
+    {{- end }}
+  ]
+}
+</script>
 {{ end }}

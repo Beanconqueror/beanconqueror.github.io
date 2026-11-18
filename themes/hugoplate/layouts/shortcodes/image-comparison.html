@@ -12,12 +12,12 @@
 <div class="relative w-full aspect-video overflow-hidden diff-container">
   <!-- Erstes Bild (Vorher) -->
   <div class="absolute inset-0 diff-before">
-    <img src="{{ $before.RelPermalink }}" alt="{{ $alt }} (Vorher)" class="w-full h-full object-cover">
+    <img src="{{ $before.RelPermalink }}" alt="{{ $alt }} (Vorher)" loading="lazy" decoding="async" class="w-full h-full object-cover">
   </div>
 
   <!-- Zweites Bild (Nachher) -->
   <div class="absolute inset-0 diff-after clip-right">
-    <img src="{{ $after.RelPermalink }}" alt="{{ $alt }} (Nachher)" class="w-full h-full object-cover">
+    <img src="{{ $after.RelPermalink }}" alt="{{ $alt }} (Nachher)" loading="lazy" decoding="async" class="w-full h-full object-cover">
   </div>
 
   <!-- Divider (Resizer) -->

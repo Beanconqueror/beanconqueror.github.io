@@ -85,18 +85,18 @@
         <h2 class="mb-12 text-center text-3xl font-bold">Gallery</h2>
         <div class="swiper sanremo-slider !pb-8 sm:!pb-12">
             <div class="swiper-wrapper">
-                {{ range .Params.slider_images }}
+                {{ range $sIdx, $sImg := .Params.slider_images }}
                 <div class="swiper-slide">
                     <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 bg-white dark:bg-darkmode-body cursor-pointer">
                         <!-- Use hugo image processing if possible, or just img tag -->
                         {{ if fileExists (printf "assets/%s" .) }}
                         {{ $image := resources.Get . }}
                         <a href="{{ $image.RelPermalink }}" target="_blank" rel="noopener noreferrer" class="block">
-                            <img src="{{ $image.RelPermalink }}" alt="Sanremo YOU" class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4">
+                            <img src="{{ $image.RelPermalink }}" alt="Sanremo YOU" {{ if $sIdx }}loading="lazy" {{ end }}decoding="async" class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4">
                         </a>
                         {{ else }}
                         <a href="{{ . | absURL }}" target="_blank" rel="noopener noreferrer" class="block">
-                            <img src="{{ . | absURL }}" alt="Sanremo YOU"
+                            <img src="{{ . | absURL }}" alt="Sanremo YOU" {{ if $sIdx }}loading="lazy" {{ end }}decoding="async"
                                 class="h-[350px] sm:h-[500px] w-full object-contain p-2 sm:p-4 bg-gray-50 dark:bg-gray-800">
                         </a>
                         {{ end }}
@@ -119,7 +119,7 @@
                 <div class="overflow-hidden rounded-xl shadow-lg">
                     {{ if fileExists (printf "assets/%s" .image) }}
                     {{ $img := resources.Get .image }}
-                    <img src="{{ $img.RelPermalink }}" alt="{{ .title }}"
+                    <img src="{{ $img.RelPermalink }}" alt="{{ .title }}" loading="lazy" decoding="async"
                         class="w-full h-auto transform transition hover:scale-105 duration-500">
                     {{ else }}
                     <div

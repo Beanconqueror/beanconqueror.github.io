@@ -70,7 +70,15 @@
 <!-- Mermaid -->
 {{ partial "mermaid/assets/js" . }}
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Loopple/loopple-public-assets@main/motion-tailwind/motion-tailwind.css" rel="stylesheet">
+{{/* Removed render-blocking third-party motion-tailwind.css (57 KB full Tailwind build):
+     none of its classes are used that aren't already in our own compiled CSS. */}}
+
+<!-- Preload the hero media on the home page (LCP element) -->
+{{ if and .IsHome .Params.banner.webp }}
+  {{ with resources.Get .Params.banner.webp }}
+  <link rel="preload" as="image" href="{{ .RelPermalink }}" type="image/webp" fetchpriority="high" />
+  {{ end }}
+{{ end }}
 
 
 <!-- Bean import to BEANCONQUEROR  -->
@@ -78,12 +86,12 @@
 <script src="{{ . | absURL }}"></script>
 {{- end }}
 
-{{/* Lottie-Skript einbinden */}}
+{{/* Lottie-Skript einbinden (pinned version, non-blocking) */}}
 {{ if $.Site.Data.files.static_files }}
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@2.0.12/dist/lottie-player.js"></script>
 {{ end }}
 
 {{ if .HasShortcode "chart" }}
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.6.1/dist/chart.umd.min.js"></script>
 {{ end }}
 

@@ -6,7 +6,7 @@ date: 2025-03-03T10:00:00Z
 image: ""
 categories: ["Languages"]
 author: "Lars Saalbach"
-tags: ["English", "French", "Norwegian", "Spanish", "German", "Indonesian", "Polish", "Turkish", "Chinese", "Dutch", "Greed", "Italian", "Portuguese"]
+tags: ["English", "French", "Norwegian", "Spanish", "German", "Indonesian", "Polish", "Turkish", "Chinese", "Dutch", "Greek", "Italian", "Portuguese"]
 draft: false
 ---
 

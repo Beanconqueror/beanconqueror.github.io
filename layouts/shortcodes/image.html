@@ -11,11 +11,11 @@
 {{- if $imageResource }}
 <img src="{{ $imageResource.RelPermalink }}" {{ with $alt }}alt="{{ . }}" {{ end }} {{ with $class }}class="{{ . }}" {{
     end }} {{ if and $width (ne $width "" ) }}width="{{ $width }}" {{ end }} {{ if and $height (ne $height "" )
-    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}">
+    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}" decoding="async">
 {{- else }}
 {{- /* Fallback for external URLs or missing resources */}}
 <img src="{{ $src | relURL }}" {{ with $alt }}alt="{{ . }}" {{ end }} {{ with $class }}class="{{ . }}" {{ end }} {{ if
     and $width (ne $width "" ) }}width="{{ $width }}" {{ end }} {{ if and $height (ne $height "" )
-    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}">
+    }}height="{{ $height }}" {{ end }} loading="{{ $loading }}" decoding="async">
 {{- end }}
 {{- end }}

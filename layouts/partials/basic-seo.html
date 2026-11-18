@@ -1,0 +1,179 @@
+{{/*
+  Project override of the gethugothemes basic-seo module partial.
+  Changes vs. upstream:
+  - unique meta description fallback (page summary) instead of the site-wide default on every page
+  - taxonomy pages (tags / categories) are "noindex, follow" (thin content)
+  - og:type "article" + article:published_time / modified_time for blog posts
+  - og:site_name, og:locale, og:image:alt
+  - twitter:creator only when a real twitter handle is configured (was "@Lars Saalbach")
+  - title gets " | BeanConqueror" suffix when the page has no explicit meta_title
+*/}}
+
+<!-- base url -->
+{{ if or (eq site.BaseURL "/") (eq site.BaseURL "http://localhost:1313/") }}
+{{ else }}
+  <base href="{{ .Permalink }}" />
+{{ end }}
+
+
+<!-- title -->
+{{ $title := site.Title }}
+{{ if .Params.meta_title }}
+  {{ $title = .Params.meta_title }}
+{{ else if .IsHome }}
+  {{ $title = .Params.title | default site.Title }}
+{{ else if or .Title .Params.question }}
+  {{ $title = .Title | default .Params.question }}
+  {{ if not (findRE `(?i)beanconqueror` $title) }}
+    {{ $title = printf "%s | BeanConqueror" $title }}
+  {{ end }}
+{{ end }}
+
+<title>{{ $title }}</title>
+
+
+<!-- meta robots -->
+{{ if .Params.noindex }}
+  <meta name="robots" content="noindex,nofollow" />
+{{ else if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+  <meta name="robots" content="noindex,follow" />
+{{ else }}
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+{{ end }}
+
+
+<!-- meta canonical -->
+{{ with .Params.canonical }}
+  <link rel="canonical" href="{{ . }}" itemprop="url" />
+{{ end }}
+
+
+<!-- multilingual SEO optimizations -->
+{{ if .IsTranslated }}
+  {{ range .AllTranslations }}
+    <link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}" />
+  {{ end }}
+  <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
+{{ end }}
+
+
+<!-- meta keywords -->
+{{ if .Params.keywords }}
+  <meta name="keywords" content="{{ delimit .Params.keywords `, ` }}" />
+{{ else if site.Params.metadata.keywords }}
+  <meta
+    name="keywords"
+    content="{{ delimit site.Params.metadata.keywords `, ` }}" />
+{{ end }}
+
+
+<!-- description: explicit > page summary (regular pages) > site default -->
+{{ $description := site.Params.metadata.description }}
+{{ if .Params.meta_description }}
+  {{ $description = .Params.meta_description }}
+{{ else if .Params.description }}
+  {{ $description = .Params.description }}
+{{ else if and .IsPage .Summary }}
+  {{ $summary := .Summary | plainify | htmlUnescape | replaceRE `\s+` " " | strings.TrimSpace }}
+  {{ $pageTitle := .Params.question | default .Title }}
+  {{ if eq .Section "changelog" }}
+    {{ $summary = printf "BeanConqueror %s release notes (%s): %s" $pageTitle (.Date.Format "January 2006") $summary }}
+  {{ else if le (len $summary) 60 }}
+    {{ $summary = printf "%s – %s" $pageTitle $summary }}
+  {{ end }}
+  {{ if gt (len $summary) 40 }}
+    {{ $description = $summary | truncate 160 "…" }}
+  {{ end }}
+{{ end }}
+
+<meta name="description" content="{{ $description }}" />
+
+<!-- meta author -->
+{{ with site.Params.metadata.author }}
+  <meta name="author" content="{{ . }}" />
+{{ end }}
+
+
+<!-- checking og image -->
+{{ $imagePath := site.Params.metadata.image }}
+{{ if .Params.meta_image }}
+  {{ $imagePath = .Params.meta_image }}
+{{ else if .Params.images }}
+  {{ range first 1 .Params.images }}
+    {{ $imagePath = . }}
+  {{ end }}
+{{ else if .Params.image }}
+  {{ $imagePath = .Params.image }}
+{{ end }}
+{{ $imagePath = strings.TrimPrefix "/" (string $imagePath) }}
+
+
+<!-- ######### Opengraph and Twitter image meta ############## -->
+
+{{ if or (hasPrefix $imagePath "http") (fileExists (add `static/` $imagePath)) }}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="{{ $imagePath | absURL }}" />
+  <meta property="og:image" content="{{ $imagePath | absURL }}" />
+{{ else }}
+  {{ $contentImage:= .Resources.GetMatch (printf "*%s*" $imagePath) }}
+  {{ $assetImage:= fileExists (add `assets/` $imagePath) }}
+
+  {{ if or $contentImage $assetImage }}
+    {{ if $contentImage }}
+      {{ .Scratch.Set "image-exists" $contentImage }}
+    {{ else if $assetImage }}
+      {{ .Scratch.Set "image-exists" (resources.Get $imagePath) }}
+    {{ end }}
+
+    {{ $image:= .Scratch.Get "image-exists" }}
+    {{ $imageExt:= path.Ext $image }}
+
+    {{ if ne $imageExt `.svg` }}
+      {{ $imageWidth := $image.Width }}
+      {{ $imageHeight := $image.Height }}
+      {{ if (and (gt $imageWidth 144) (gt $imageHeight 144)) }}
+        <meta property="og:image" content="{{ $image.Permalink }}" />
+        <meta name="twitter:image" content="{{ $image.Permalink }}" />
+        <meta
+          name="twitter:card"
+          content="{{- if (and (gt $imageWidth 300) (gt $imageHeight 157) (not (eq $imageWidth $imageHeight))) -}}summary_large_image{{- else -}}summary{{- end -}}" />
+      {{ end }}
+      <meta property="og:image:width" content="{{ $imageWidth }}" />
+      <meta property="og:image:height" content="{{ $imageHeight }}" />
+    {{ end }}
+
+    <meta
+      property="og:image:type"
+      content="image/{{- if eq $imageExt `.svg` -}}
+        svg+xml
+      {{- else -}}
+        {{- replaceRE `^\.?jpg$` `jpeg` (strings.TrimPrefix `.` $imageExt) -}}
+      {{- end -}}" />
+  {{ end }}
+{{ end }}
+<meta property="og:image:alt" content="{{ .Params.image_alt | default $title }}" />
+<!-- ######### /Opengraph and Twitter image meta ############## -->
+
+<!-- ######### opengraph others meta ############## -->
+<meta property="og:site_name" content="BeanConqueror" />
+<meta property="og:locale" content="{{ replace (site.LanguageCode | default "en-US") "-" "_" }}" />
+<meta property="og:title" content="{{ $title }}" />
+<meta property="og:description" content="{{ $description }}" />
+<meta property="og:url" content="{{ .Permalink }}" />
+{{ if and .IsPage (eq .Section "blog" "changelog") }}
+  <meta property="og:type" content="article" />
+  {{ with .Date }}{{ if not .IsZero }}<meta property="article:published_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />{{ end }}{{ end }}
+  {{ with .Lastmod }}{{ if not .IsZero }}<meta property="article:modified_time" content="{{ .Format "2006-01-02T15:04:05Z07:00" }}" />{{ end }}{{ end }}
+  {{ range .Params.tags }}<meta property="article:tag" content="{{ . }}" />{{ end }}
+{{ else }}
+  <meta property="og:type" content="website" />
+{{ end }}
+
+<!-- ########## twitter others meta ############### -->
+<meta name="twitter:title" content="{{ $title }}" />
+<meta name="twitter:description" content="{{ $description }}" />
+
+{{ with site.Params.metadata.twitter }}
+  <meta name="twitter:site" content="@{{ . }}" />
+  <meta name="twitter:creator" content="@{{ . }}" />
+{{ end }}
