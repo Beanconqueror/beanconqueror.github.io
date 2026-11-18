@@ -197,10 +197,20 @@
 
 <!-- Initialize Swiper for this page -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function initSanremoSlider() {
+        const sliderEl = document.querySelector('.sanremo-slider');
+        if (!sliderEl) return;
+        if (sliderEl.classList.contains('swiper-initialized')) return;
+        if (typeof Swiper === 'undefined') {
+            setTimeout(initSanremoSlider, 50);
+            return;
+        }
         new Swiper(".sanremo-slider", {
+            slidesPerView: 1,
             spaceBetween: 24,
             loop: true,
+            observer: true,
+            observeParents: true,
             autoplay: {
                 delay: 3000,
                 disableOnInteraction: false,
@@ -218,6 +228,12 @@
                 },
             },
         });
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initSanremoSlider);
+    } else {
+        initSanremoSlider();
+    }
 </script>
 {{ end }}

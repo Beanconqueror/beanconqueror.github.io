@@ -1,0 +1,124 @@
+<!-- Canonical URL -->
+{{ if not .Params.canonical }}
+<link rel="canonical" href="{{ .Permalink }}" itemprop="url" />
+{{ end }}
+
+<!-- Apple Smart App Banner -->
+<meta name="apple-itunes-app" content="app-id=1445297158" />
+
+<!-- Structured Data (JSON-LD) -->
+{{ if .IsHome }}
+{{ $faqPages := where .Site.RegularPages "Section" "faq" }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "BeanConqueror",
+      "headline": "The Ultimate Open-Source Coffee Brewing App",
+      "applicationCategory": "LifestyleApplication",
+      "operatingSystem": "iOS, Android",
+      "url": "{{ site.BaseURL }}",
+      "description": {{ site.Params.metadata.description | default "BeanConqueror is an open-source coffee app for enthusiasts and baristas to track brews, connect smart Bluetooth scales, dial in espresso, and log beans 100% offline." | jsonify }},
+      "image": "{{ "images/beanconqueror_round.png" | absURL }}",
+      "author": {
+        "@type": "Person",
+        "name": "Lars Saalbach"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "500",
+        "bestRating": "5"
+      },
+      "installUrl": [
+        "https://apps.apple.com/de/app/beanconqueror/id1445297158",
+        "https://play.google.com/store/apps/details?id=com.beanconqueror.app"
+      ]
+    },
+    {
+      "@type": "Organization",
+      "name": "BeanConqueror",
+      "url": "{{ site.BaseURL }}",
+      "logo": "{{ "images/beanconqueror-logo.svg" | absURL }}",
+      "sameAs": [
+        "https://github.com/graphefruit/BeanConqueror",
+        "https://discord.gg/vDzA5dZjG8",
+        "https://www.youtube.com/@beanconqueror"
+      ]
+    }
+    {{ if gt (len $faqPages) 0 }}
+    ,
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {{ range $index, $faq := $faqPages }}
+        {{ if $index }},{{ end }}
+        {
+          "@type": "Question",
+          "name": {{ $faq.Params.question | default $faq.Title | jsonify }},
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": {{ $faq.Content | plainify | chomp | jsonify }}
+          }
+        }
+        {{ end }}
+      ]
+    }
+    {{ end }}
+  ]
+}
+</script>
+{{ else if and .IsPage (eq .Section "blog") }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ (.Description | default .Summary) | plainify | chomp | jsonify }},
+  "url": "{{ .Permalink }}",
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  {{ with .Lastmod }}"dateModified": "{{ .Format "2006-01-02T15:04:05Z07:00" }}",{{ end }}
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "author": {
+    "@type": "Person",
+    "name": {{ (.Params.author | default "Lars Saalbach") | jsonify }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "BeanConqueror",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ "images/beanconqueror-logo.svg" | absURL }}"
+    }
+  }
+}
+</script>
+{{ else if and .IsPage (eq .Section "faq") }}
+{{ $q := .Params.question | default .Title }}
+{{ if $q }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": {{ $q | jsonify }},
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": {{ .Content | plainify | chomp | jsonify }}
+    }
+  }]
+}
+</script>
+{{ end }}
+{{ end }}

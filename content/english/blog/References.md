@@ -1,7 +1,7 @@
 ---
 title: "References"
 meta_title: "References"
-description: "this is meta description"
+description: "Discover the BeanConqueror community across Discord, Reddit, Kaffee-Netz, Home-Barista, and international coffee forums."
 date: 2025-03-02T12:00:00Z
 image: ""
 categories: ["References"]
@@ -10,7 +10,7 @@ tags: ["References"]
 draft: false
 ---
 
-Beanconqueror is available on numerous platforms; feel free to explore them all.
+BeanConqueror is available on numerous platforms; feel free to explore them all.
 
 ## Discord:
 

@@ -1,11 +1,13 @@
---- 
+---
+sitemap:
+  disable: true
 enable: true
 preline: "Get your brews on point"
 headline: "Everything You need for Brewing Perfection"
-discription: "Beanconqueror is more than just an app—it’s your ultimate coffee brewing companion. Every feature is designed with precision and passion to help you get the most out of every single bean."
+discription: "BeanConqueror is more than just an app—it’s your ultimate coffee brewing companion. Every feature is designed with precision and passion to help you get the most out of every single bean."
 features:
   - title: "Comprehensive Coffee Companion"
-    content: "Beanconqueror is designed for coffee enthusiasts, providing tools to optimize brewing and track coffee beans."
+    content: "BeanConqueror is designed for coffee enthusiasts, providing tools to optimize brewing and track coffee beans."
     image: "/images/en/main/comprehensive-coffee-companion.png"
     button:
       enable: false
@@ -69,7 +71,7 @@ features:
       link: "#"
 
   - title: "Open Source and Free"
-    content: "Beanconqueror is an open-source application that is free to use, promoting community-driven improvements."
+    content: "BeanConqueror is an open-source application that is free to use, promoting community-driven improvements."
     image: "/images/en/main/open-source-and-free.png"
     button:
       enable: false

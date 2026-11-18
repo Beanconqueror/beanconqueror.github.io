@@ -1,9 +1,9 @@
 ---
-title: "Legal"
+title: "Legal Notice"
 # meta title
-meta_title: "Your privacy is important to us - honestly"
+meta_title: "Legal Notice & Impressum – BeanConqueror"
 # meta description
-description: "Your privacy is important to us - honestly"
+description: "Legal notice, provider identification (Impressum), and contact information for the BeanConqueror project."
 # save as draft
 draft: false
 ---

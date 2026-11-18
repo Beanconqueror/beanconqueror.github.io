@@ -15,4 +15,4 @@ social:
 ---
 
 Coffee lover since ever, started his nerdy career in 2017
-Loving coffee and ultimate Beanconqueror user
+Loving coffee and ultimate BeanConqueror user

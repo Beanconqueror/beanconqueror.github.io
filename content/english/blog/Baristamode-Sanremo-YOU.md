@@ -43,4 +43,4 @@ Because the learning algorithm relies on a predictable flow rate to adjust the r
 
 ## Compatible Equipment
 
-For Baristamode to function, you need a smart scale capable of rapid weight transmission via Bluetooth. Check out the complete list of [Compatible Devices](/blog/compatibel-devices/) to find the right scale for your setup.
+For Baristamode to function, you need a smart scale capable of rapid weight transmission via Bluetooth. Check out the complete list of [Compatible Devices](/blog/compatible-devices/) to find the right scale for your setup.

@@ -1,5 +1,8 @@
 ---
 question: "Are you really open source?"
+slug: "are-you-really-open-source"
+aliases:
+  - "/faq/are-you-really-open-soruce/"
 search_include: true
 search_tags: ["FAQ", "faq"]
 ---

@@ -1,5 +1,7 @@
 ---
 enable: true
+sitemap:
+  disable: true
 stats:
   - attribute: ""
     icon: ""

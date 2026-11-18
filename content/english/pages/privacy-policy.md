@@ -1,9 +1,9 @@
 ---
-title: "Legal & Policies"
+title: "Privacy Policy"
 # meta title
-meta_title: "Your privacy is important to us - honestly"
+meta_title: "Privacy Policy – BeanConqueror"
 # meta description
-description: "Your privacy is important to us - honestly"
+description: "BeanConqueror's privacy policy: 100% transparency on how we handle personal data, local storage, and tracking."
 # save as draft
 draft: false
 ---

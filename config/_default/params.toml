@@ -71,11 +71,11 @@ content = "You must replace the **baseURL** in **hugo.toml** file when deploying
 # seo meta data for OpenGraph / Twitter Card
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 [metadata]
-keywords = ["BeanConqueror", "BEAN" , "CONQUEROR" , "BEANCONQUEROR"]
-description = "The Ultimate Coffee App"
+keywords = ["BeanConqueror", "coffee app", "coffee brewing app", "espresso tracker", "coffee journal", "bluetooth scale coffee", "dial in espresso", "open source coffee"]
+description = "BeanConqueror is an open-source coffee app for enthusiasts and baristas to track brews, connect smart Bluetooth scales, dial in espresso, and log beans."
 author = "Lars Saalbach"
 twitter = ""
-image = ""
+image = "images/beanconqueror_round.png"
 
 
 # site verifications

@@ -1,7 +1,7 @@
 ---
 title: "Technical Stack"
 meta_title: "Technical Stack"
-description: "this is meta description"
+description: "Explore the modern technical architecture behind BeanConqueror, including its hybrid mobile framework, plugins, and open-source codebase."
 date: 2025-03-01T10:00:00Z
 image: ""
 categories: ["Technic"]
@@ -10,7 +10,7 @@ tags: ["Technic", "Stack", "Code", "Framework"]
 draft: false
 ---
 
-Beanconqueror is an open source application for iOS and Android build on a hybrid plattform.
+BeanConqueror is an open source application for iOS and Android build on a hybrid plattform.
 
 ## Code
 

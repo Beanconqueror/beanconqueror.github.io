@@ -1,7 +1,7 @@
 ---
 title: "Customize your workflow"
 meta_title: "Customize your workflow"
-description: "this is meta description"
+description: "Tailor BeanConqueror to your barista workflow: enable custom brew parameters, hide unused fields, and streamline your coffee logging."
 date: 2025-03-01T12:00:00Z
 image: ""
 categories: ["Application"]
@@ -10,14 +10,14 @@ tags: ["app workflow"]
 draft: false
 ---
 
-Beanconqueror tries to give the user the maximum of freedom by allowing them to customize the parameters that are used. Most parameters can be enabled or disabled. This makes the app a fitting option for beginners as well as professionals.
+BeanConqueror tries to give the user the maximum of freedom by allowing them to customize the parameters that are used. Most parameters can be enabled or disabled. This makes the app a fitting option for beginners as well as professionals.
 
 There are some important key aspects to understand first:
 You can customize the global parameter (Menu → Brew parameters), aswell as customizing your preparation method parameters.
 
 The global parameter will be taken for all preparations, but are overwritten from a customized preparation method.
 
-Now Beanconqueror differs between different things:
+Now BeanConqueror differs between different things:
 
 1. Manage parameters → Which parameter you want to see when adding/editing
 2. Sort parameters → In which order shall the parameter being displayed.

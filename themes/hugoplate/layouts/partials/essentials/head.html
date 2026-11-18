@@ -23,6 +23,9 @@
 <!-- opengraph and twitter card -->
 {{ partial "basic-seo.html" . }}
 
+<!-- SEO extensions: canonical fallback, smart app banner, schema.org JSON-LD -->
+{{ partial "seo-addons.html" . }}
+
 
 <!-- custom script -->
 {{ partialCached "custom-script.html" . }}

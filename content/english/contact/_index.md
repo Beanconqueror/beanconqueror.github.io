@@ -1,7 +1,7 @@
 ---
 title: "Contact"
 meta_title: "Contact"
-description: "this is meta description"
+description: "Get in touch with the BeanConqueror team for support, feature requests, bug reports, or partnership inquiries."
 image: "/images/mailto_image.png"
 draft: false
 ---

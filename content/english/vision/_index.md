@@ -1,6 +1,16 @@
 ---
 enable: true
-preline: "Our vision for Beanconqueror"
+title: "Our Vision"
+meta_title: "Our Vision – BeanConqueror Coffee Ecosystem"
+description: "Discover the vision behind BeanConqueror: building a transparent, open-source coffee brewing ecosystem centered around the BEAN-DNA."
+_build:
+  render: always
+  list: always
+cascade:
+  _build:
+    render: never
+    list: local
+preline: "Our vision for BeanConqueror"
 headline: "One app - a comprehensive coffee-ecosystem"
 webp: "/video/en/main/beanconqueror-demo.webp"
 ---

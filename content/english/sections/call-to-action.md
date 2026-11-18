@@ -1,4 +1,6 @@
 ---
+sitemap:
+  disable: true
 enable: true
 title: "Ready to build your next project with Hugo?"
 image: "/images/call-to-action.png"

@@ -3,6 +3,8 @@
 baseURL = "https://beanconqueror.com/"
 # Title of your website (required).
 title = "BEANCONQUEROR"
+# Enable robots.txt generation
+enableRobotsTXT = true
 # Your theme name
 theme = ["hugoplate"] 
 # Default time zone for time stamps; use any valid tz database name: https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List
@@ -138,22 +140,22 @@ notAlternative = true
 # CSS Plugins
 [[params.plugins.css]]
 link = "plugins/swiper/swiper-bundle.css"
-lazy = true
+lazy = false
 [[params.plugins.css]]
 link = "plugins/glightbox/glightbox.css"
 lazy = true
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/brands.css"
-lazy = true
+lazy = false
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/solid.css"
-lazy = true
+lazy = false
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/icons.css"
-lazy = true
+lazy = false
 [[params.plugins.css]]
 link = "plugins/font-awesome/v6/regular.css"
-lazy = true
+lazy = false
 
 # JS Plugins
 [[params.plugins.js]]

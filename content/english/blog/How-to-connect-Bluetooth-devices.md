@@ -1,7 +1,7 @@
 ---
 title: "How to connect Bluetooth scale/ pressure device"
 meta_title: "How to connect Bluetooth scale/ pressure device"
-description: "this is meta description"
+description: "Quick tutorial and video guide on connecting your Bluetooth coffee scale or pressure sensor to BeanConqueror for automated extraction tracking."
 date: 2025-03-25T10:00:00Z
 image: ""
 categories: ["Bluetooth"]
@@ -12,15 +12,15 @@ draft: false
 
 {{< youtube AIuxAjGdkxY >}}
 
-Thanks in advanced for this video from BooKoo Coffee, published on August 9, 2024, demonstrates how to integrate their BooKoo Espresso Monitor Kit with the Beanconqueror app. This combination transforms conventional coffee machines into smart devices, significantly enhancing the coffee experience.
+Thanks in advanced for this video from BooKoo Coffee, published on August 9, 2024, demonstrates how to integrate their BooKoo Espresso Monitor Kit with the BeanConqueror app. This combination transforms conventional coffee machines into smart devices, significantly enhancing the coffee experience.
 
 {{< notice "info" >}}
-The combination of the BooKoo Espresso Monitor Kit and Beanconqueror app enables precise control and monitoring of the espresso brewing process, offering a professional coffee experience for home users.
+The combination of the BooKoo Espresso Monitor Kit and BeanConqueror app enables precise control and monitoring of the espresso brewing process, offering a professional coffee experience for home users.
 {{< /notice >}}
 
 ## Open Settings (0:10-0:25)
 
-1. Open the Beanconqueror app on your smartphone
+1. Open the BeanConqueror app on your smartphone
 2. Tap the menu icon (three horizontal lines) in the top left corner
 3. Select "Settings" from the menu
 4. Connect Bluetooth scale (0:25-0:40)

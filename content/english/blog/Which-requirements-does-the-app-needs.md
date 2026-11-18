@@ -1,7 +1,7 @@
 ---
 title: "Which requirements does the app needs?"
 meta_title: "App Permissions"
-description: "this is meta description"
+description: "Overview of device permissions and hardware requirements needed to run the BeanConqueror app smoothly on iOS and Android devices."
 date: 2025-02-03T10:00:00Z
 image: ""
 categories: ["Application"]
@@ -12,7 +12,7 @@ draft: false
 
 The app needs access to your filesystem as well as the camera
 
-- Filesystem: Beanconqueror writes data to his own application directory, on Android aswell as on iOS, no where else (Images, Brew Graphs, Backup files, etc)
+- Filesystem: BeanConqueror writes data to his own application directory, on Android aswell as on iOS, no where else (Images, Brew Graphs, Backup files, etc)
    - Due to changes, the file system access is handled on Android differently, we’re using the file-picker which you choose, or also referencing to the Camera.
      There is no interaction with your “normal” filesystem without a specific wanted user action.
 

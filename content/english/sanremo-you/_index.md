@@ -9,12 +9,12 @@ layout: "list"
 draft: false
 videos:
   - id: "RqnVrx4KQkY"
-    title: "Sanremo YOU x Beanconqueror - Main"
+    title: "Sanremo YOU x BeanConqueror - Main"
     mark_first: true
   - id: "WUYxG6rqq98"
-    title: "Sanremo YOU x Beanconqueror - Second"
+    title: "Sanremo YOU x BeanConqueror - Second"
   - id: "AWr_eS4BOlw"
-    title: "Sanremo YOU x Beanconqueror - Third"
+    title: "Sanremo YOU x BeanConqueror - Third"
 slider_images:
   - "images/sanremo-you/baristamode.png"
   - "images/sanremo-you/detail.png"

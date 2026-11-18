@@ -1,7 +1,7 @@
 ---
 title: "The Value of Transparency: Why Understanding Emissions Matters"
 meta_title: "The Value of Transparency: Why Understanding Emissions Matters"
-description: "this is meta description"
+description: "Understand coffee carbon footprint tracking in BeanConqueror and why emissions data transparency matters for sustainable coffee consumption."
 date: 2025-03-17T10:00:00Z
 image: ""
 categories: ["Emission","CO2e(kg)"]
@@ -11,7 +11,7 @@ draft: false
 ---
 
 ## The Value of Transparency: Why Understanding Emissions Matters
-> This article was created by Kaffeemacher in collaboration with Beanconqueror to celebrate the introduction of the new kg CO₂e per kg roasted coffee parameter—bringing greater transparency to coffee emissions.
+> This article was created by Kaffeemacher in collaboration with BeanConqueror to celebrate the introduction of the new kg CO₂e per kg roasted coffee parameter—bringing greater transparency to coffee emissions.
 
 Knowing the carbon footprint of coffee allows us to quantify and compare emissions per cup. Beyond data, this transparency fosters awareness, enabling consumers to make informed choices. Interestingly, sustainability can even subconsciously influence taste perception.
 

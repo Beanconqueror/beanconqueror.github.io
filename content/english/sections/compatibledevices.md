@@ -1,4 +1,6 @@
---- 
+---
+sitemap:
+  disable: true
 enable: true
 preline: "The app with the most supported devices on the market!"
 headline: "Compatible Devices"

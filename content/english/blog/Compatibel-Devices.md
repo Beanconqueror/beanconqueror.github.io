@@ -1,7 +1,10 @@
 ---
-title: "Compatibel Devices"
-meta_title: "Compatibel Devices"
-description: "this is meta description"
+title: "Compatible Devices"
+meta_title: "Compatible Devices & Hardware – BeanConqueror"
+slug: "compatible-devices"
+aliases:
+  - "/blog/compatibel-devices/"
+description: "Complete list of supported Bluetooth coffee scales, pressure transducers, and smart espresso machines compatible with BeanConqueror."
 date: 2025-03-03T05:00:00Z
 image: ""
 categories: ["Devices", "Bluetooth"]
@@ -53,7 +56,7 @@ draft: false
 - [in decent scale](https://github.com/tommy-curl/inDecentScale/) (Decent Scale API)
 - [almost decent scale](https://github.com/tadelv/almost-decent-scale) (Decent Scale API)
 - [EspressiScale](https://www.espressiscale.com/) (EspressiScale Firmware) - >=BeanConqueror 8.4
-- [WeighMyBru]((https://weighmybru.com/)) (WeighMyBru) - >=BeanConqueror 8.4
+- [WeighMyBru](https://weighmybru.com/) (WeighMyBru) - >=BeanConqueror 8.4
 
 
 ## Supported Temperature Devices:
@@ -89,6 +92,6 @@ draft: false
 - [GaggiMate](https://gaggimate.eu/) - Shot import
 
 
-Your Bluetooth device is not in the list? Unfortunately each device needs to be integrated individually as there is no standard. Check the Beanconqueror discord to reach out to the contributors.
+Your Bluetooth device is not in the list? Unfortunately each device needs to be integrated individually as there is no standard. Check the BeanConqueror discord to reach out to the contributors.
 
 The implementing contributor will probably need a test device and ideally a documentation of the Bluetooth communication.

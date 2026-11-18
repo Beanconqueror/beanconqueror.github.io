@@ -1,7 +1,7 @@
 ---
-title: "How to translate Beanconqueror to your language"
-meta_title: "How to translate Beanconqueror to your language"
-description: "this is meta description"
+title: "How to translate BeanConqueror to your language"
+meta_title: "How to translate BeanConqueror to your language"
+description: "Learn how to contribute to BeanConqueror by translating the app into your native language using Lokalise."
 date: 2025-03-01T10:00:00Z
 image: ""
 categories: ["Application"]

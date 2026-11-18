@@ -1,7 +1,7 @@
 ---
 title: "Concept & Terminology"
 meta_title: "Concept & Terminology"
-description: "this is meta description"
+description: "Master the core concepts of BeanConqueror: Beans, Brews, Preparation Methods, Grinders, and how they connect to perfect your coffee."
 date: 2025-03-02T10:00:00Z
 image: ""
 categories: ["Concept", "Bean", "Brew"]
@@ -12,7 +12,7 @@ draft: false
 
 ## Concept
 
-Beanconqueror combines the most important things you need to make a good coffee (Brew):
+BeanConqueror combines the most important things you need to make a good coffee (Brew):
 
 - Beans
 - Brewing/ Preparation Methods

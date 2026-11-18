@@ -35,4 +35,4 @@ Because the automated stopping calculation relies on a predictable flow rate to 
 
 BeanConqueror supports a wide array of smart scales that can provide the necessary real-time data to make Brew By Weight possible.
 
-Want to know if your scale is supported? Check out our complete list of [Compatible Devices](/blog/compatibel-devices/).
+Want to know if your scale is supported? Check out our complete list of [Compatible Devices](/blog/compatible-devices/).

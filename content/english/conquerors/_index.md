@@ -1,7 +1,7 @@
 ---
-title: "Meet the Conquerors of Beanconqueror"
-meta_title: "Meet the Conquerors of Beanconqueror"
-description: "this is meta description"
+title: "Meet the Conquerors of BeanConqueror"
+meta_title: "Meet the Conquerors of BeanConqueror"
+description: "Meet the developers, designers, and contributors behind the open-source BeanConqueror coffee brewing app."
 image: "/images/authors/icon-only.png"
 draft: false
 ---

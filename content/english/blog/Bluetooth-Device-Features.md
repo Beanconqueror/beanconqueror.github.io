@@ -1,7 +1,7 @@
 ---
 title: "Bluetooth Device Features"
 meta_title: "Bluetooth Device Features"
-description: "this is meta description"
+description: "Configure how your smart scale and Bluetooth pressure sensor interact with BeanConqueror, from auto-tare to automatic brew stopping."
 date: 2025-03-01T10:00:00Z
 image: ""
 categories: ["Bluetooth"]
@@ -10,9 +10,9 @@ tags: ["Bluetooth", "Features", "Device"]
 draft: false
 ---
 
-You can customize pretty much how your smart scale should interact with Beanconqueror and what should be done when. For this navigate to Menu -> Settings -> Bluetooth Scales / Bluetooth Pressure
+You can customize pretty much how your smart scale should interact with BeanConqueror and what should be done when. For this navigate to Menu -> Settings -> Bluetooth Scales / Bluetooth Pressure
 
-The cool thing? All features are inside the Beanconqueror software, no need to buy a specific device to get these features.
+The cool thing? All features are inside the BeanConqueror software, no need to buy a specific device to get these features.
 
 ## Smartscales
 
@@ -20,7 +20,7 @@ The cool thing? All features are inside the Beanconqueror software, no need to b
 
 This mode works just on a preparation method which is set to espresso.
 
-When falling below a specific flow rate, Beanconqueror automatic stops the timer, and therefore the graph drawing.
+When falling below a specific flow rate, BeanConqueror automatic stops the timer, and therefore the graph drawing.
 
 This can be customized to a custom flow rate threshold, where you may get an minimum offset of 0.1 to 0.2 grams in the cup.
 

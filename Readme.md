@@ -3,7 +3,7 @@
 
 [![CICD Status](https://github.com/wildperformance/BeanConqueror/actions/workflows/hugo.yml/badge.svg)](https://github.com/wildperformance/BeanConqueror/actions/workflows/hugo.yml)
  
-<img src="https://beanconqueror.com/images/Beanconqueror.png" width="100">
+<img src="https://beanconqueror.com/images/BeanConqueror.png" width="100">
 
 ----
 ### Website of the ultimate Coffee App

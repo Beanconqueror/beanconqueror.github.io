@@ -1,7 +1,7 @@
 ---
-title: "Getting Started with Beanconqueror: Your Ultimate Coffee Companion"
-meta_title: "Getting Started with Beanconqueror"
-description: "this is meta description"
+title: "Getting Started with BeanConqueror: Your Ultimate Coffee Companion"
+meta_title: "Getting Started with BeanConqueror"
+description: "Begin your coffee journey with BeanConqueror. Learn how to add your coffee beans, set up your grinder and brewer, and log your first brew."
 date: 2024-12-21T05:00:00Z
 image: ""
 categories: ["Application", "Data"]
@@ -10,7 +10,7 @@ tags: ["get started"]
 draft: false
 ---
 
-Beanconqueror is a powerful, free, and open-source coffee tracking app designed for coffee enthusiasts of all levels. Here's how to begin your coffee tracking journey:
+BeanConqueror is a powerful, free, and open-source coffee tracking app designed for coffee enthusiasts of all levels. Here's how to begin your coffee tracking journey:
 
 ### 1. Download the App
 - Available for both iOS and Android
@@ -45,11 +45,11 @@ This 3 things are the basic setup to start tracking your coffee journey
 - Generate brew graphs
 - Track caffeine consumption in Apple Health
 
-**Pro Tip**: Start simple and gradually add more parameters as you become comfortable with the app. Beanconqueror is designed to be flexible and adapt to your specific coffee tracking needs.
+**Pro Tip**: Start simple and gradually add more parameters as you become comfortable with the app. BeanConqueror is designed to be flexible and adapt to your specific coffee tracking needs.
 
 ### Bonus: Community and Development
 - The app is **open-source**
 - Continuously updated by passionate coffee lovers
 - Founded in 2017 by Lars, a coffee enthusiast dedicated to creating the ultimate coffee tracking ecosystem
 
-Remember, Beanconqueror isn't just an app—it's a comprehensive coffee companion that helps you perfect your brewing journey from bean to cup!
+Remember, BeanConqueror isn't just an app—it's a comprehensive coffee companion that helps you perfect your brewing journey from bean to cup!

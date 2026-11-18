@@ -238,45 +238,58 @@
 
 <!-- Initialize Swiper for this page -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
+    function initProfitecSlider() {
         const sliderEl = document.querySelector('.profitec-slider');
-        if (sliderEl) {
-            const swiper = new Swiper(".profitec-slider", {
-                spaceBetween: 24,
-                loop: true,
-                autoplay: {
-                    delay: 4000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: true,
-                },
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                    },
-                },
-            });
-
-            // Pause slider autoplay when video is playing
-            const videos = sliderEl.querySelectorAll('video');
-            videos.forEach(v => {
-                v.addEventListener('play', () => {
-                    if (swiper.autoplay) swiper.autoplay.stop();
-                });
-                v.addEventListener('pause', () => {
-                    if (swiper.autoplay) swiper.autoplay.start();
-                });
-                v.addEventListener('ended', () => {
-                    if (swiper.autoplay) swiper.autoplay.start();
-                });
-            });
+        if (!sliderEl) return;
+        if (sliderEl.classList.contains('swiper-initialized')) return;
+        if (typeof Swiper === 'undefined') {
+            setTimeout(initProfitecSlider, 50);
+            return;
         }
-    });
+        const swiper = new Swiper(".profitec-slider", {
+            slidesPerView: 1,
+            spaceBetween: 24,
+            loop: true,
+            observer: true,
+            observeParents: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+        // Pause slider autoplay when video is playing
+        const videos = sliderEl.querySelectorAll('video');
+        videos.forEach(v => {
+            v.addEventListener('play', () => {
+                if (swiper.autoplay) swiper.autoplay.stop();
+            });
+            v.addEventListener('pause', () => {
+                if (swiper.autoplay) swiper.autoplay.start();
+            });
+            v.addEventListener('ended', () => {
+                if (swiper.autoplay) swiper.autoplay.start();
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initProfitecSlider);
+    } else {
+        initProfitecSlider();
+    }
 </script>
 {{ end }}

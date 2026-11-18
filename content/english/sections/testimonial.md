@@ -1,7 +1,9 @@
 ---
+sitemap:
+  disable: true
 enable: true
-title: "What Users are saying about Beanconqueror"
-description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about Beanconqueror."
+title: "What Users are saying about BeanConqueror"
+description: "Don't just take our word for it - hear from some of our satisfied users!  Check out some of our testimonials below to see what others are saying about BeanConqueror."
 
 # Testimonials
 testimonials:
@@ -43,7 +45,7 @@ testimonials:
   - name: "Sumthingasian"
     designation: "App Store Review"
     avatar: "/images/avatar-sm.png"
-    content: "I’ve been using Beanconqueror for a long time now, and always find new ways to tinker with the settings so that each section is exactly aligned to what I want it to look like and contain. The amount of flexibility the app offers is unmatched! I also love the Bluetooth integration of scales and refractometers, so I can track as many of the stats of the brews I make as I can to deepen my understanding of extraction. I suggest making monthly exported backups, as all data is stored on your phone and nothing is automatically backed up to a server (good for privacy!). 10/10, you’ve killed it Lars. Thank you!"
+    content: "I’ve been using BeanConqueror for a long time now, and always find new ways to tinker with the settings so that each section is exactly aligned to what I want it to look like and contain. The amount of flexibility the app offers is unmatched! I also love the Bluetooth integration of scales and refractometers, so I can track as many of the stats of the brews I make as I can to deepen my understanding of extraction. I suggest making monthly exported backups, as all data is stored on your phone and nothing is automatically backed up to a server (good for privacy!). 10/10, you’ve killed it Lars. Thank you!"
 
   - name: "Pgsoccer11"
     designation: "App Store Review"

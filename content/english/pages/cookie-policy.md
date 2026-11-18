@@ -1,9 +1,9 @@
 ---
 title: "Cookie Policy"
 # meta title
-meta_title: "Your privacy is important to us - honestly"
+meta_title: "Cookie Policy – BeanConqueror"
 # meta description
-description: "Your privacy is important to us - honestly"
+description: "Learn how BeanConqueror uses essential cookies and local storage to provide and improve our services."
 # save as draft
 draft: false
 ---

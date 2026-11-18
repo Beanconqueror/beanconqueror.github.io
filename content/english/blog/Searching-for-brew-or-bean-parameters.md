@@ -1,7 +1,7 @@
 ---
 title: "Searching for brew or bean parameters?"
 meta_title: "Searching for brew or bean parameters?"
-description: "this is meta description"
+description: "Discover how to unlock hidden brew and bean parameters in BeanConqueror to customize photos, flavors, TDS, and more for your coffee brews."
 date: 2025-03-01T10:00:00Z
 image: ""
 categories: ["Search", "Bean", "Brew"]
@@ -10,7 +10,7 @@ tags: ["Beans", "Brews", "search", "parameters"]
 draft: false
 ---
 
-Beanconqueror has a lot of parameters which are not accessable by start.
+BeanConqueror has a lot of parameters which are not accessable by start.
 
 ## Brew parameters
 

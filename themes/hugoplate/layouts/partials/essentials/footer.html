@@ -25,13 +25,13 @@
                     {{ if findRE `^http` .URL }}
                       target="_blank" rel="noopener"
                     {{ end }}
-                    href="{{ if findRE `^#` .URL }}
-                      {{ if not $.IsHome }}
-                        {{ site.Home.RelPermalink }}
-                      {{ end }}{{ .URL }}
-                    {{ else }}
-                      {{ .URL | relLangURL }}
-                    {{ end }}"
+                    href="{{- if findRE `^#` .URL -}}
+                      {{- if not $.IsHome -}}
+                        {{- site.Home.RelPermalink -}}
+                      {{- end -}}{{- .URL -}}
+                    {{- else -}}
+                      {{- .URL | relLangURL -}}
+                    {{- end -}}"
                     class="hover:text-primary"
                     >{{ .Name }}</a>
                 {{ else }}
@@ -45,13 +45,13 @@
                       {{ if findRE `^http` .URL }}
                         target="_blank" rel="noopener"
                       {{ end }}
-                      href="{{ if findRE `^#` .URL }}
-                        {{ if not $.IsHome }}
-                          {{ site.Home.RelPermalink }}
-                        {{ end }}{{ .URL }}
-                      {{ else }}
-                        {{ .URL | relLangURL }}
-                      {{ end }}"
+                      href="{{- if findRE `^#` .URL -}}
+                        {{- if not $.IsHome -}}
+                          {{- site.Home.RelPermalink -}}
+                        {{- end -}}{{- .URL -}}
+                      {{- else -}}
+                        {{- .URL | relLangURL -}}
+                      {{- end -}}"
                       class="hover:text-primary"
                       >{{ .Name }}</a>
                   </li>
