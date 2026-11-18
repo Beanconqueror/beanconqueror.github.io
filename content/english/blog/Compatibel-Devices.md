@@ -63,6 +63,7 @@ draft: false
 - [Meater](https://www.meater.com/) (not Meater+ or Meater 2)
 - [Ember Cup](https://ember.com/)
 - [INKBIRD](https://eu.inkbird.com/) (INT-11I-B, INT-11P-B, IHT-2PB, iBBQ, TNT-11-B)
+- [Geisinger](https://geisinger.eu/gb/cms/12/GBTpro) (GBTpro)
 
 
 ## Supported Pressure Devices:
