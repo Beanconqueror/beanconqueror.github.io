@@ -3,7 +3,7 @@ sitemap:
   disable: true
 enable: true
 title: "Powerful and stylish"
-description: "Experience powerful brew monitoring that helps you change your life every day."
+description: "Experience powerful brew monitoring that helps you dial in the perfect cup every day."
  
 # Top-Features
 topfeatures:

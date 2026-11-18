@@ -1,7 +1,7 @@
 ---
 title: "Running Costs"
 # meta title
-meta_title: ""
+meta_title: "Running Costs & Transparency – BeanConqueror"
 # meta description
 description: "100% transparency: A complete breakdown of server, service, and tooling costs required to build and maintain BeanConqueror."
 # save as draft

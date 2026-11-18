@@ -1,6 +1,7 @@
 ---
 title: How It Started
-description: A chronological overview of our milestones.
+meta_title: "How It Started – BeanConqueror Milestones"
+description: "A chronological overview of BeanConqueror milestones, from the first release in 2017 to Bluetooth scales, smart espresso machines, and open-source innovation."
 milestones:
   - year: 2017
     title: App started

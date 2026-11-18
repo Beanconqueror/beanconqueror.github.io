@@ -1,5 +1,6 @@
 User-agent: *
 Disallow: /sections/
 Disallow: /elements/
+Disallow: /app/
 
 Sitemap: {{ "sitemap.xml" | absURL }}

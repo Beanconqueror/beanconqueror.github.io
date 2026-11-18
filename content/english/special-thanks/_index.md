@@ -1,6 +1,7 @@
 ---
 title: Special Thanks to formal contributors
-description: Our heartfelt appreciation to these amazing supporters
+meta_title: "Special Thanks – BeanConqueror Contributors"
+description: "Heartfelt appreciation to the contributors, translators, and designers who helped shape BeanConqueror."
 contributors:
   - name: "Nicola"
     message: "for giving the app a whole new design"

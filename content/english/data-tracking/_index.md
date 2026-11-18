@@ -1,6 +1,7 @@
 ---
 title: "Data & Tracking"
-description: "Your data is safe - promised"
+meta_title: "Data & Tracking Transparency – BeanConqueror"
+description: "Learn how BeanConqueror protects your privacy. Transparent breakdown of what parameters are tracked, what is never tracked, and why."
 ---
 
 As stated in our [vision](/#vision) we want to be as transparent as possible. Especially when it comes to your data, the tracking concept, usage and with which tools we are working. We are not making any compromises here - promised.

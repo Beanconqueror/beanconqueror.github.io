@@ -40,6 +40,15 @@
               <i class="fa-regular fa-clock mr-2"></i>
               {{ time.Format ":date_long" .PublishDate }}
             </li>
+            <li class="mr-4 inline-block">
+              <i class="fa-solid fa-clock mr-2"></i>
+              {{ .ReadingTime }} min read
+            </li>
+            {{ if and (not .Lastmod.IsZero) (ne (.Lastmod.Format "2006-01-02") (.PublishDate.Format "2006-01-02")) }}
+              <li class="mr-4 inline-block opacity-80 text-sm">
+                (Updated: {{ time.Format ":date_long" .Lastmod }})
+              </li>
+            {{ end }}
           </ul>
           <div class="content mb-10">
             {{ partial "toc.html" (dict "Class" "blog" "Collapsed" false "TableOfContents" .TableOfContents ) }}
