@@ -33,7 +33,7 @@
 
 
 <!-- meta robots -->
-{{ if .Params.noindex }}
+{{ if or .Params.noindex (eq .Kind "404") }}
   <meta name="robots" content="noindex,nofollow" />
 {{ else if or (eq .Kind "taxonomy") (eq .Kind "term") }}
   <meta name="robots" content="noindex,follow" />

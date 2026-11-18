@@ -4,7 +4,7 @@ meta_title: "Backup & Import"
 description: "How to manage, export, and restore automatic backups in BeanConqueror on iOS and Android to keep your coffee brew history safe."
 date: 2025-03-02T14:00:00Z
 image: ""
-categories: ["Backup & Import"]
+categories: ["Backup and Import"]
 author: "Lars Saalbach"
 tags: ["Backup", "Import", "iOS", "Android"]
 draft: false

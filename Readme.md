@@ -1,8 +1,5 @@
 # BeanConqueror
 
-
-[![CICD Status](https://github.com/wildperformance/BeanConqueror/actions/workflows/hugo.yml/badge.svg)](https://github.com/wildperformance/BeanConqueror/actions/workflows/hugo.yml)
- 
 <img src="https://beanconqueror.com/images/BeanConqueror.png" width="100">
 
 ----

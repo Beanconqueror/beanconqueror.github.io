@@ -4,4 +4,8 @@ title: "App"
 noindex: true
 sitemap:
   disable: true
+cascade:
+  noindex: true
+  sitemap:
+    disable: true
 ---

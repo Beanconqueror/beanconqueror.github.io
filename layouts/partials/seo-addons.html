@@ -20,7 +20,7 @@
       "applicationCategory": "LifestyleApplication",
       "operatingSystem": "iOS, Android",
       "url": "{{ site.BaseURL }}",
-      "description": {{ site.Params.metadata.description | default "BeanConqueror is an open-source coffee app for enthusiasts and baristas to track brews, connect smart Bluetooth scales, dial in espresso, and log beans 100% offline." | jsonify }},
+      "description": {{ (site.Params.metadata.description | default "BeanConqueror is an open-source coffee app for enthusiasts and baristas to track brews, connect smart Bluetooth scales, dial in espresso, and log beans 100% offline.") | plainify | jsonify | safeJS }},
       "image": "{{ "images/beanconqueror_round.png" | absURL }}",
       "author": {
         "@type": "Person",
@@ -62,10 +62,10 @@
         {{ if $index }},{{ end }}
         {
           "@type": "Question",
-          "name": {{ $faq.Params.question | default $faq.Title | jsonify }},
+          "name": {{ ($faq.Params.question | default $faq.Title) | plainify | jsonify | safeJS }},
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": {{ $faq.Content | plainify | chomp | jsonify }}
+            "text": {{ $faq.Content | plainify | chomp | jsonify | safeJS }}
           }
         }
         {{ end }}
@@ -76,29 +76,31 @@
 }
 </script>
 {{ else if and .IsPage (eq .Section "blog") }}
+{{ $postImage := .Params.image | default site.Params.metadata.image }}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": {{ .Title | jsonify }},
-  "description": {{ (.Description | default .Summary) | plainify | chomp | jsonify }},
-  "url": "{{ .Permalink }}",
-  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
-  {{ with .Lastmod }}"dateModified": "{{ .Format "2006-01-02T15:04:05Z07:00" }}",{{ end }}
+  "headline": {{ .Title | plainify | jsonify | safeJS }},
+  "description": {{ (.Description | default .Summary) | plainify | chomp | jsonify | safeJS }},
+  "image": {{ ($postImage | absURL) | jsonify | safeJS }},
+  "url": {{ .Permalink | jsonify | safeJS }},
+  "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},
+  {{ with .Lastmod }}"dateModified": {{ .Format "2006-01-02T15:04:05Z07:00" | jsonify | safeJS }},{{ end }}
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "{{ .Permalink }}"
+    "@id": {{ .Permalink | jsonify | safeJS }}
   },
   "author": {
     "@type": "Person",
-    "name": {{ (.Params.author | default "Lars Saalbach") | jsonify }}
+    "name": {{ (.Params.author | default "Lars Saalbach") | plainify | jsonify | safeJS }}
   },
   "publisher": {
     "@type": "Organization",
     "name": "BeanConqueror",
     "logo": {
       "@type": "ImageObject",
-      "url": "{{ "images/beanconqueror_round.png" | absURL }}"
+      "url": {{ ("images/beanconqueror_round.png" | absURL) | jsonify | safeJS }}
     }
   }
 }
@@ -112,10 +114,10 @@
   "@type": "FAQPage",
   "mainEntity": [{
     "@type": "Question",
-    "name": {{ $q | jsonify }},
+    "name": {{ $q | plainify | jsonify | safeJS }},
     "acceptedAnswer": {
       "@type": "Answer",
-      "text": {{ .Content | plainify | chomp | jsonify }}
+      "text": {{ .Content | plainify | chomp | jsonify | safeJS }}
     }
   }]
 }
@@ -141,8 +143,8 @@
     {
       "@type": "ListItem",
       "position": {{ add $i 1 }},
-      "name": {{ $c.name | plainify | jsonify }},
-      "item": {{ $c.url | jsonify }}
+      "name": {{ $c.name | plainify | jsonify | safeJS }},
+      "item": {{ $c.url | jsonify | safeJS }}
     }
     {{- end }}
   ]

@@ -258,12 +258,12 @@
           p-4">
           <div class="leading-tight text-center flex items-center">
             {{ if .icon }}
-              <h3><i class="{{ .icon }} mr-2"></i></h3>
+              <span class="h3"><i class="{{ .icon }} mr-2"></i></span>
             {{ end }}
             {{ if .attribute }}
-              <h3><span class="attribute mr-1">{{ .attribute }}</span></h3>
+              <span class="h3"><span class="attribute mr-1">{{ .attribute }}</span></span>
             {{ end }}
-            <h1><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span>{{ with or .unit .suffix }}<span class="unit">{{ . }}</span>{{ end }}</h1>
+            <span class="h1 font-bold"><span class="countTo" data-count="{{ .number }}" data-decimals="{{ .decimals | default 0 }}">0</span>{{ with or .unit .suffix }}<span class="unit">{{ . }}</span>{{ end }}</span>
           </div>
           <p class="text-base font-medium leading-7 text-center">{{ .content | markdownify }}</p>
         </div>
