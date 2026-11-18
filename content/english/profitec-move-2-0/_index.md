@@ -13,6 +13,7 @@ aliases:
   - "/profitec/"
 official_url: "https://www.profitec-espresso.com/produkte/move-2-0"
 official_label: "View Profitec Move 2.0 Official Details"
+video_id: "OFZKMuRZ0Co"
 slider_images:
   - "images/profitec-move/add_preparation_method.png"
   - "images/profitec-move/search_bluetooth_devices.png"
