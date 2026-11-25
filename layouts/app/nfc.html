@@ -1,0 +1,95 @@
+{{- /* Standalone page (no baseof): no theme scripts, no tracking, no fonts, nothing from other hosts.
+  Root-relative URLs only, so the page also works when served under another path.
+  The tag code in the URL is never read. */ -}}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>{{ .Params.en.title }}</title>
+    <link rel="icon" href="{{ "images/BeanConqueror.png" | relURL }}" />
+    <style>
+      :root {
+        --bg: #ffffff;
+        --text: #2b2216;
+        --muted: #504027;
+        --button-bg: #0a0a0a;
+        --button-text: #fafafa;
+        --focus: #1d4ed8;
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #1c1917;
+          --text: #f5f0e8;
+          --muted: #e2d8c6;
+          --button-bg: #fafafa;
+          --button-text: #0a0a0a;
+          --focus: #93c5fd;
+        }
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+        font-size: 1.0625rem;
+        line-height: 1.55;
+      }
+      main {
+        max-width: 34rem;
+        margin: 0 auto;
+        padding: 3rem 1rem;
+        text-align: center;
+      }
+      img { display: block; margin: 0 auto 1.5rem; border-radius: 22%; }
+      h1 { font-size: 1.6rem; line-height: 1.25; margin: 0 0 1rem; }
+      p { margin: 0 0 1rem; color: var(--muted); }
+      ul { list-style: none; padding: 0; margin: 0 0 2rem; display: flex; flex-direction: column; gap: 0.75rem; align-items: center; }
+      li { width: 100%; max-width: 22rem; }
+      a {
+        display: block;
+        padding: 0.8rem 1.25rem;
+        border-radius: 0.6rem;
+        background: var(--button-bg);
+        color: var(--button-text);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      a:hover { text-decoration: underline; }
+      a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img src="{{ "images/BeanConqueror.png" | relURL }}" width="96" height="96" alt="" />
+      {{- range $lang := slice "en" "de" }}
+        {{- with index $.Params $lang }}
+          <div lang="{{ $lang }}" data-lang="{{ $lang }}"{{ if ne $lang "en" }} hidden{{ end }}>
+            <h1>{{ .title }}</h1>
+            <p>{{ .intro }}</p>
+            <p>{{ .install }}</p>
+            <ul>
+              <li><a href="{{ i18n "apple_app_store_link" }}">{{ .appstore }}</a></li>
+              <li><a href="{{ i18n "google_play_store_link" }}">{{ .googleplay }}</a></li>
+            </ul>
+            <p>{{ .again }}</p>
+          </div>
+        {{- end }}
+      {{- end }}
+    </main>
+    <script>
+      (function () {
+        var langs = navigator.languages || [navigator.language || ""];
+        if (String(langs[0]).toLowerCase().indexOf("de") !== 0) return;
+        var de = document.querySelector('[data-lang="de"]');
+        document.querySelector('[data-lang="en"]').hidden = true;
+        de.hidden = false;
+        document.documentElement.lang = "de";
+        document.title = de.querySelector("h1").textContent;
+      })();
+    </script>
+  </body>
+</html>
