@@ -1,4 +1,5 @@
-{{- /* Standalone page (no baseof): no theme scripts, no tracking, no fonts, nothing from other hosts.
+{{- /* Standalone page (no baseof): no theme scripts, no Matomo, no fonts, nothing from other hosts in the source
+  (Cloudflare may inject its own beacon at the edge; it never sees the fragment).
   Tags link to /app/nfc/#<code>/<action>. The fragment never leaves the browser; the script only turns
   it into the app's own beanconqueror:// link, so a phone with the app can still open the bean. */ -}}
 <!doctype html>

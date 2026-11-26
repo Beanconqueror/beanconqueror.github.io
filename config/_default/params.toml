@@ -126,5 +126,3 @@ url = "https://analytics-beanconqueror.com"       # your matomo url
 id = "1"        # your matomo id
 
 
-# Bean import to BEANCONQUEROR
-beanimport_js = ["js/beanimport.js"]
