@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>BeanConqueror</title>
+<script>
+  // Old link from the previous website (printed QR codes, shared links): keep query and fragment.
+  (function () {
+    var search = location.search;
+    // The old page took the roaster code as "id", the new one as "qr".
+    var params = new URLSearchParams(search);
+    if (params.has("id") && !params.has("qr")) {
+      params.set("qr", params.get("id"));
+      params.delete("id");
+      search = "?" + params.toString();
+    }
+    location.replace("/app/bean/" + search + location.hash);
+  })();
+</script>
+</head>
+<body style="font-family: system-ui, sans-serif; text-align: center; padding: 3rem 1rem;">
+<p>This page has moved. <a href="/app/bean/">Continue to BeanConqueror</a></p>
+<p lang="de">Diese Seite ist umgezogen. <a href="/app/bean/">Weiter zu BeanConqueror</a></p>
+</body>
+</html>
