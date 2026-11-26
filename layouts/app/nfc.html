@@ -1,6 +1,6 @@
 {{- /* Standalone page (no baseof): no theme scripts, no tracking, no fonts, nothing from other hosts.
-  Root-relative URLs only, so the page also works when served under another path.
-  The tag code in the URL is never read. */ -}}
+  Tags link to /app/nfc/#<code>/<action>. The fragment never leaves the browser; the script only turns
+  it into the app's own beanconqueror:// link, so a phone with the app can still open the bean. */ -}}
 <!doctype html>
 <html lang="en">
   <head>
@@ -58,6 +58,7 @@
         font-weight: 600;
         text-decoration: none;
       }
+      a.secondary { background: transparent; color: var(--text); border: 2px solid currentColor; }
       a:hover { text-decoration: underline; }
       a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
     </style>
@@ -75,6 +76,10 @@
               <li><a href="{{ i18n "apple_app_store_link" }}">{{ .appstore }}</a></li>
               <li><a href="{{ i18n "google_play_store_link" }}">{{ .googleplay }}</a></li>
             </ul>
+            <div data-open hidden>
+              <p>{{ .open }}</p>
+              <ul><li><a class="secondary" data-open-link href="">{{ .openlink }}</a></li></ul>
+            </div>
             <p>{{ .again }}</p>
           </div>
         {{- end }}
@@ -82,6 +87,13 @@
     </main>
     <script>
       (function () {
+        var tag = /^#([A-Za-z0-9-]{1,64})\/(START_BREW|START_BREW_CHOOSE_PREPARATION|REPEAT_LAST_BREW|DETAIL|EDIT|CHOOSE_ACTION)\/?$/.exec(location.hash);
+        if (tag) {
+          document.querySelectorAll("[data-open-link]").forEach(function (a) {
+            a.href = "beanconqueror://int/bean/" + tag[1] + "/" + tag[2];
+          });
+          document.querySelectorAll("[data-open]").forEach(function (el) { el.hidden = false; });
+        }
         var langs = navigator.languages || [navigator.language || ""];
         if (String(langs[0]).toLowerCase().indexOf("de") !== 0) return;
         var de = document.querySelector('[data-lang="de"]');
